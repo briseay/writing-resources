@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mrs. Seay's Writing Center</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --lavender:#c9b6e4;
+    --plum:#5b3d74;
+    --sage:#dbe8d8;
+    --background:#faf8fc;
+    --card:#ffffff;
+    --text:#2d2d2d;
+    --border:#e8e2f2;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--background);
+    color:var(--text);
+    line-height:1.7;
+}
+
+header{
+    background:white;
+    border-bottom:4px solid var(--lavender);
+    padding:20px 0;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-family:'Libre Baskerville',serif;
+    color:var(--plum);
+    font-size:1.5rem;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--plum);
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#8660a8;
+}
+
+.hero{
+    padding:90px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-family:'Libre Baskerville',serif;
+    color:var(--plum);
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-weight:300;
+    color:#777;
+    margin-bottom:40px;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    font-size:1.1rem;
+}
+
+.section{
+    padding:70px 20px;
+}
+
+.section h2{
+    text-align:center;
+    font-family:'Libre Baskerville',serif;
+    color:var(--plum);
+    margin-bottom:40px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px;
+    transition:.25s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:var(--plum);
+    margin-bottom:15px;
+}
+
+.card p{
+    font-size:.95rem;
+}
+
+footer{
+    margin-top:80px;
+    padding:35px;
+    text-align:center;
+    background:white;
+    border-top:4px solid var(--lavender);
+    color:#666;
+}
+
+@media(max-width:700px){
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:2.3rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+🐦 Mrs. Seay's Writing Center
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">General Writing</a></li>
+
+<li><a href="#">Rhetorical Analysis</a></li>
+
+<li><a href="#">Annotated Bibliography</a></li>
+
+<li><a href="#">Argumentative Essay</a></li>
+
+<li><a href="#">MLA</a></li>
+
+<li><a href="#">APA</a></li>
+
+<li><a href="#">Grammar</a></li>
+
+<li><a href="#">FAQ</a></li>
+
+</ul>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<h1>Mrs. Seay's Writing Center</h1>
+
+<h2>Writing is a process.</h2>
+
+<p>
+
+Welcome! Whether you're brainstorming your first idea, organizing your essay, polishing a final draft, or figuring out how to cite a source, this Writing Center is here to help. Every resource on this site is designed to guide you through the writing process one step at a time while helping you become a stronger, more confident writer.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2>Where would you like to start?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>✏️ General Writing</h3>
+<p>Learn the foundations of effective writing, including planning, drafting, revising, organization, audience, and purpose.</p>
+</div>
+
+<div class="card">
+<h3>📖 Essay Types</h3>
+<p>Find resources specifically designed for rhetorical analysis, argumentative essays, annotated bibliographies, and additional writing assignments.</p>
+</div>
+
+<div class="card">
+<h3>📚 MLA & APA</h3>
+<p>Access citation guides, formatting examples, in-text citations, reference pages, and common documentation questions.</p>
+</div>
+
+<div class="card">
+<h3>📝 Grammar</h3>
+<p>Review common grammar concerns, punctuation, sentence structure, clarity, style, and proofreading strategies.</p>
+</div>
+
+<div class="card">
+<h3>❓ Frequently Asked Questions</h3>
+<p>Quick answers to the questions students ask most often throughout the writing process.</p>
+</div>
+
+<div class="card">
+<h3>🤖 RA Finch Writing Coach</h3>
+<p>Use the AI Writing Coach alongside these resources for guided feedback that reflects the materials found throughout this Writing Center.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+Created by Brittany Seay • Mrs. Seay's Writing Center
+
+</footer>
+
+</body>
+</html>
