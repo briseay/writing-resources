@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>General Writing | Mrs. Seay's Writing Center</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --deep-plum: #43235f;
+            --plum: #684080;
+            --lavender: #b99ad0;
+            --soft-lavender: #eee4f3;
+            --pale-lavender: #f8f2fa;
+            --warm-white: #fffdfb;
+            --text: #25212a;
+            --muted-text: #625b68;
+            --border: #dbcbe4;
+            --light-gray: #f4f4f4;
+            --good-example: #edf8ed;
+            --good-border: #79a979;
+            --bad-example: #f6f2f2;
+            --bad-border: #a98787;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--warm-white);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--deep-plum);
+        }
+
+        .container {
+            width: min(92%, 1120px);
+            margin: 0 auto;
+        }
+
+        header {
+            background: rgba(255, 253, 251, 0.98);
+            border-bottom: 7px solid var(--lavender);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 22px 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            min-width: max-content;
+        }
+
+        .brand-logo {
+            width: 76px;
+            height: 76px;
+            object-fit: cover;
+            border-radius: 24px;
+        }
+
+        .brand-text h1 {
+            font-family: "Libre Baskerville", serif;
+            font-size: clamp(1.25rem, 2.2vw, 2rem);
+            color: var(--deep-plum);
+            line-height: 1.15;
+        }
+
+        .brand-text p {
+            margin-top: 5px;
+            font-family: "Libre Baskerville", serif;
+            font-style: italic;
+            color: var(--plum);
+            font-size: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 24px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            position: relative;
+            text-decoration: none;
+            color: var(--deep-plum);
+            font-family: "Libre Baskerville", serif;
+            font-size: 0.92rem;
+            padding: 8px 0;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: var(--lavender);
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .page-heading {
+            background: linear-gradient(
+                135deg,
+                #fbf4fc 0%,
+                #eee0f3 52%,
+                #f8eef9 100%
+            );
+            text-align: center;
+            padding: 62px 20px;
+        }
+
+        .page-heading h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-plum);
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
+
+        .page-heading p {
+            margin-top: 14px;
+            font-family: "Libre Baskerville", serif;
+            font-style: italic;
+            color: var(--plum);
+            font-size: 1.2rem;
+        }
+
+        main {
+            padding: 46px 0 70px;
+        }
+
+        .table-of-contents {
+            background: var(--pale-lavender);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 28px 32px;
+            margin-bottom: 46px;
+        }
+
+        .table-of-contents h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-plum);
+            font-size: 1.6rem;
+            margin-bottom: 14px;
+        }
+
+        .table-of-contents ol {
+            padding-left: 24px;
+            columns: 2;
+            column-gap: 50px;
+        }
+
+        .table-of-contents li {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .table-of-contents a {
+            font-weight: 600;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .content-section {
+            scroll-margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        .content-section > h2 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-plum);
+            font-size: clamp(1.8rem, 3vw, 2.45rem);
+            line-height: 1.3;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--lavender);
+            margin-bottom: 22px;
+        }
+
+        .content-section h3 {
+            font-family: "Libre Baskerville", serif;
+            color: var(--plum);
+            font-size: 1.35rem;
+            margin: 28px 0 10px;
+        }
+
+        .content-section h4 {
+            color: var(--deep-plum);
+            font-size: 1.05rem;
+            margin: 20px 0 7px;
+        }
+
+        .content-section p {
+            margin-bottom: 16px;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 27px;
+            margin: 12px 0 20px;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: var(--soft-lavender);
+            color: var(--deep-plum);
+            font-weight: 700;
+            padding: 7px 13px;
+            border-radius: 7px;
+            margin-bottom: 18px;
+        }
+
+        .quick-tip {
+            background: var(--pale-lavender);
+            border-left: 7px solid var(--plum);
+            padding: 20px 23px;
+            margin: 24px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .quick-tip h3 {
+            margin: 0 0 7px;
+            font-family: "Libre Baskerville", serif;
+            color: var(--deep-plum);
+            font-size: 1.1rem;
+        }
+
+        .quick-tip p:last-child {
+            margin-bottom: 0;
+        }
+
+        .example {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px 20px;
+            margin: 14px 0 22px;
+        }
+
+        .example p:last-child {
+            margin-bottom: 0;
+        }
+
+        .example-good {
+            background: var(--good-example);
+            border-left: 7px solid var(--good-border);
+        }
+
+        .example-bad {
+            background: var(--bad-example);
+            border-left: 7px solid var(--bad-border);
+        }
+
+        .example-title {
+            display: block;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--deep-plum);
+            margin-bottom: 8px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 14px;
+            align-items: center;
+            margin: 12px 0 20px;
+        }
+
+        .comparison div {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 13px 16px;
+        }
+
+        .comparison .arrow {
+            background: none;
+            color: var(--plum);
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 0;
+        }
+
+        .checklist {
+            list-style: none;
+            padding-left: 0 !important;
+        }
+
+        .checklist li {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--plum);
+            font-size: 1.2rem;
+        }
+
+        .subsection-box {
+            background: #faf8fb;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin: 22px 0;
+        }
+
+        .subsection-box h3 {
+            margin-top: 0;
+        }
+
+        .teacher-note {
+            border-top: 1px solid var(--border);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        .teacher-note strong {
+            color: var(--deep-plum);
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer {
+            padding: 22px 20px;
+            background: linear-gradient(
+                90deg,
+                #d9c1e5,
+                #ead9ef,
+                #d9c1e5
+            );
+            color: var(--deep-plum);
+            text-align: center;
+            border-top: 1px solid var(--lavender);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 1100px) {
+            .header-inner {
+                flex-direction: column;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .brand {
+                min-width: 0;
+            }
+
+            .brand-logo {
+                width: 62px;
+                height: 62px;
+                border-radius: 19px;
+            }
+
+            nav ul {
+                gap: 12px 18px;
+            }
+
+            nav a {
+                font-size: 0.87rem;
+            }
+
+            .page-heading {
+                padding: 48px 18px;
+            }
+
+            .table-of-contents {
+                padding: 23px;
+            }
+
+            .table-of-contents ol {
+                columns: 1;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison .arrow {
+                text-align: center;
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <header>
+        <div class="container header-inner">
+
+            <a class="brand" href="index.html">
+                <img
+                    class="brand-logo"
+                    src="finch-logo.png"
+                    alt="A finch sitting on an open book"
+                >
+
+                <div class="brand-text">
+                    <h1>Mrs. Seay's Writing Center</h1>
+                    <p>Writing is a process.</p>
+                </div>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+
+                    <li>
+                        <a class="active" href="general-writing.html">
+                            General Writing
+                        </a>
+                    </li>
+
+                    <li><a href="essay-types.html">Essay Types</a></li>
+                    <li><a href="mla.html">MLA</a></li>
+                    <li><a href="apa.html">APA</a></li>
+                    <li><a href="grammar.html">Grammar</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section class="page-heading">
+        <h2>General Writing</h2>
+        <p>Guidelines commonly used in Composition I</p>
+    </section>
+
+    <main>
+        <div class="container">
+
+            <nav
+                class="table-of-contents"
+                aria-label="General Writing table of contents"
+            >
+                <h2>On This Page</h2>
+
+                <ol>
+                    <li>
+                        <a href="#expectations">
+                            Academic Writing Expectations
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#clarity">
+                            Clarity and Concision
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#introductions">
+                            Writing Introductions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#summaries">
+                            Writing Summaries
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#transitions">
+                            Transition Sentences
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#conclusions">
+                            Writing Conclusions
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <section
+                class="content-section"
+                id="expectations"
+            >
+                <h2>Academic Writing Expectations</h2>
+
+                <p class="section-label">
+                    Guidelines commonly used in Composition I
+                </p>
+
+                <p>
+                    These are the most frequent habits that weaken student
+                    writing. Use this list as a quick reference guide while
+                    drafting and revising your papers.
+                </p>
+
+                <h3>1. No First Person</h3>
+
+                <p>
+                    Avoid <em>I, me, my, our, we,</em> and <em>us</em>.
+                    Avoid phrases such as “I think,” “I feel,” and
+                    “I believe.”
+                </p>
+
+                <p>
+                    Your name is already on the paper. Your argument is your
+                    perspective.
+                </p>
+
+                <div class="comparison">
+                    <div>
+                        I feel that this claim is accurate based on the
+                        evidence.
+                    </div>
+
+                    <div class="arrow" aria-hidden="true">→</div>
+
+                    <div>
+                        This claim is accurate based on the evidence.
+                    </div>
+                </div>
+
+                <h3>2. No Second Person</h3>
+
+                <p>
+                    Avoid <em>you, your,</em> and <em>yours</em>.
+                    Academic writing is not a conversation. Second person
+                    sounds informal and bossy.
+                </p>
+
+                <h3>3. No Contractions</h3>
+
+                <p>
+                    Contractions are too casual. Spell words out fully.
+                </p>
+
+                <div class="comparison">
+                    <div>
+                        Scholars couldn't determine if the trial was
+                        successful.
+                    </div>
+
+                    <div class="arrow" aria-hidden="true">→</div>
+
+                    <div>
+                        Scholars could not determine if the trial was
+                        successful.
+                    </div>
+                </div>
+
+                <h3>4. Avoid Overusing “Like”</h3>
+
+                <p>
+                    Overusing “like” makes writing sound conversational
+                    instead of formal.
+                </p>
+
+                <h3>5. Avoid Informal Speech or Clichés</h3>
+
+                <p>
+                    Do not write how you talk to friends. Cut out phrases
+                    such as “at the end of the day” or “a matter of life
+                    and death.”
+                </p>
+
+                <h3>6. No Text Lingo or Shortened Words</h3>
+
+                <p>
+                    Write out words fully: <em>because</em>, not
+                    <em>bc</em>; <em>with</em>, not <em>w/</em>.
+                </p>
+
+                <h3>7. Use Active Voice, Not Passive Voice</h3>
+
+                <p>
+                    Active voice is clearer and stronger. The subject does
+                    the action.
+                </p>
+
+                <div class="subsection-box">
+                    <p>
+                        <strong>Active:</strong> I baked the cake.
+                    </p>
+
+                    <p>
+                        <strong>Passive:</strong> The cake was baked by me.
+                    </p>
+                </div>
+
+                <h3>8. Do Not Ask Questions</h3>
+
+                <p>
+                    Readers cannot answer. Instead of writing a question,
+                    write the answer you want them to understand.
+                </p>
+
+                <h3>9. Common Knowledge vs. Cited Information</h3>
+
+                <p>
+                    Common knowledge is widely known and used without
+                    citation.
+                </p>
+
+                <p>
+                    Rule of thumb: If five or more sources use the same fact
+                    with no citation, it is common knowledge.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>Quick Tip</h3>
+                    <p><strong>When in doubt, cite it.</strong></p>
+                </div>
+
+                <h3>10. No Quotes in Introductions or Conclusions</h3>
+
+                <p>
+                    Start and end with your words.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Introduction:</strong> context and thesis
+                    </li>
+
+                    <li>
+                        <strong>Conclusion:</strong> wrap-up and big picture,
+                        not new evidence or someone else's words
+                    </li>
+                </ul>
+
+                <h3>Quick Checklist Before You Submit</h3>
+
+                <ul class="checklist">
+                    <li>No first or second person</li>
+                    <li>No contractions</li>
+                    <li>No text lingo</li>
+                    <li>Formal tone with no casual speech</li>
+                    <li>Active voice</li>
+                    <li>No unanswered questions</li>
+                    <li>
+                        All facts cited unless they are truly common knowledge
+                    </li>
+                    <li>Quotes only in body paragraphs</li>
+                </ul>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <section
+                class="content-section"
+                id="clarity"
+            >
+                <h2>Clarity and Concision</h2>
+
+                <p>
+                    Writing that is clear and polished makes your ideas
+                    stronger. Use this section as a quick reference while
+                    drafting and revising.
+                </p>
+
+                <h3>Be Direct</h3>
+
+                <p>Avoid extra words and filler.</p>
+
+                <div class="comparison">
+                    <div>Due to the fact that</div>
+                    <div class="arrow" aria-hidden="true">→</div>
+                    <div>Because</div>
+                </div>
+
+                <h3>Cut Redundancies</h3>
+
+                <p>Do not say the same thing twice.</p>
+
+                <div class="comparison">
+                    <div>Each and every student must...</div>
+                    <div class="arrow" aria-hidden="true">→</div>
+                    <div>Each student must...</div>
+                </div>
+
+                <h3>Choose Precise Words</h3>
+
+                <p>Be specific instead of vague.</p>
+
+                <div class="comparison">
+                    <div>Things, stuff, a lot</div>
+                    <div class="arrow" aria-hidden="true">→</div>
+                    <div>Concepts, materials, several</div>
+                </div>
+
+                <h3>Avoid Clutter</h3>
+
+                <p>
+                    Shorter, stronger sentences are better than long,
+                    confusing ones.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>Quick Tip</h3>
+                    <p>
+                        Read each sentence and ask whether every word is
+                        necessary. Clear writing does not need extra padding.
+                    </p>
+                </div>
+
+                <h3>Mechanics Check</h3>
+
+                <ul>
+                    <li>
+                        Check spelling and grammar. Use tools, but also read
+                        carefully.
+                    </li>
+
+                    <li>
+                        Fix fragments. Every sentence needs a subject and verb.
+                    </li>
+
+                    <li>
+                        Fix run-ons. Break apart long sentences.
+                    </li>
+
+                    <li>
+                        Use commas for clarity and end sentences correctly.
+                    </li>
+
+                    <li>
+                        Use apostrophes for possession, not plurals.
+                    </li>
+
+                    <li>
+                        Use consistent verb tense. Past stays past; present
+                        stays present.
+                    </li>
+                </ul>
+
+                <div class="subsection-box">
+                    <p>
+                        <strong>Fragment:</strong> Because the study was
+                        difficult.
+                    </p>
+
+                    <p>
+                        <strong>Complete sentence:</strong> The study was
+                        difficult.
+                    </p>
+                </div>
+
+                <div class="subsection-box">
+                    <p>
+                        <strong>Run-on:</strong> The class was long it felt
+                        endless.
+                    </p>
+
+                    <p>
+                        <strong>Corrected:</strong> The class was long, and
+                        it felt endless.
+                    </p>
+                </div>
+
+                <h3>Quick Revision Checklist</h3>
+
+                <ul class="checklist">
+                    <li>My sentences are clear and concise.</li>
+                    <li>I cut wordiness and vague language.</li>
+                    <li>I fixed fragments and run-ons.</li>
+                    <li>My punctuation is correct.</li>
+                    <li>My verb tense is consistent.</li>
+                </ul>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <section
+                class="content-section"
+                id="introductions"
+            >
+                <h2>Writing Introductions</h2>
+
+                <p>
+                    An introduction should tell your reader exactly what your
+                    paper is about and how it is structured. Introductions are
+                    usually 5–10% of the length of a typical essay. Readers
+                    gain their first impressions of a paper from this section,
+                    so an effective introduction is vital.
+                </p>
+
+                <p>
+                    Generally, introductions begin broad and connect the topic
+                    of the paper with some larger idea or concept.
+                </p>
+
+                <p>
+                    Then, an introduction provides readers with brief
+                    background or contextual information that provides a focus
+                    for the paper.
+                </p>
+
+                <p>
+                    This should be followed by a clear articulation of your
+                    controlling argument or point of view, a sentence that is
+                    sometimes called a thesis statement.
+                </p>
+
+                <p>
+                    The thesis statement must directly and clearly respond to
+                    the set question or topic.
+                </p>
+
+                <h3>What the Introduction Should Tell Your Reader</h3>
+
+                <ul>
+                    <li>
+                        How you understand the topic, including context,
+                        background, or key terms
+                    </li>
+
+                    <li>What your controlling argument is</li>
+
+                    <li>
+                        What issues you will cover and in which order
+                    </li>
+
+                    <li>
+                        Which ideas are major or minor in longer essays
+                    </li>
+
+                    <li>What conclusion you will reach</li>
+                </ul>
+
+                <div class="quick-tip">
+                    <h3>Quick Tip</h3>
+
+                    <p>
+                        Writing an essay is not like writing a mystery novel
+                        with an unfolding plot. Aim to be transparent and
+                        direct.
+                    </p>
+
+                    <p>
+                        Your reader should not have to read several pages
+                        before finding your argument or thesis. It needs to
+                        appear in the introduction.
+                    </p>
+                </div>
+
+                <p>
+                    Do not pad your introduction with too much detail or
+                    references from other sources. Relate this section directly
+                    to the set question or topic.
+                </p>
+
+                <h3>Things to Avoid</h3>
+
+                <h4>The “Definition” Introduction</h4>
+
+                <p>
+                    Some students begin papers with a sentence such as,
+                    “Webster's Dictionary defines ‘term’ as...” This technique
+                    is dry and overused.
+                </p>
+
+                <p>
+                    If you must provide a definition, make sure the information
+                    is absolutely essential and directly relates to the point
+                    of the essay.
+                </p>
+
+                <h4>The “Restatement” Introduction</h4>
+
+                <p>
+                    If your professor gave you an assignment prompt, you may
+                    be tempted to restate the question as your introduction
+                    opener.
+                </p>
+
+                <p>
+                    Remember that your professor is already aware of the
+                    assignment. Merely restating the prompt will usually
+                    produce an ineffective introduction.
+                </p>
+
+                <h4>“In This Paper, I Will Be Discussing...”</h4>
+
+                <p>
+                    Because the reader is aware that you wrote the paper, it
+                    is unnecessary to remind them.
+                </p>
+
+                <p>
+                    This phrase is very common and boring. Do your best to
+                    avoid it.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <section
+                class="content-section"
+                id="summaries"
+            >
+                <h2>Writing Summaries</h2>
+
+                <ol>
+                    <li>
+                        Pure summaries do not include your personal opinion or
+                        analysis of the passage. They are simply a restatement
+                        of the author's ideas.
+                    </li>
+
+                    <li>
+                        Present only the main and supporting ideas in the text.
+                        Leave out supporting evidence, anecdotes, and
+                        counterarguments unless they are crucial to
+                        understanding the text.
+                    </li>
+
+                    <li>
+                        Describe the text accurately and fairly by using
+                        neutral language.
+                    </li>
+
+                    <li>
+                        Use a variety of signal verbs, not just “he discusses”
+                        or “the author states” repeatedly.
+                    </li>
+
+                    <li>
+                        Avoid verbs such as <em>say, speak,</em> and
+                        <em>talk</em>, as well as other verbs that refer to
+                        audible sound, when summarizing written text rather
+                        than spoken words such as speeches.
+                    </li>
+
+                    <li>
+                        Frame your summary with phrases that indicate how the
+                        article or speech is organized and how it moves from
+                        point to point.
+                    </li>
+
+                    <li>
+                        Make sure your summary phrases include direct and clear
+                        links to the author so you do not convey that an idea
+                        is yours when it is not.
+                    </li>
+
+                    <li>
+                        Connect to the author by using the author's name, a
+                        pronoun, or the phrase “the author” or “the authors.”
+                    </li>
+
+                    <li>
+                        Make sure you include all the important points and
+                        express them clearly.
+                    </li>
+
+                    <li>
+                        Make sure you are not accidentally distorting the
+                        source by stressing what you understand rather than
+                        what the original source emphasizes.
+                    </li>
+
+                    <li>Do not include quotes in a summary.</li>
+
+                    <li>
+                        Finally, proofread your summary by checking for grammar
+                        errors and sentence structure and variety.
+                    </li>
+                </ol>
+
+                <div class="quick-tip">
+                    <h3>Helpful Organizational Phrases</h3>
+
+                    <ul>
+                        <li>“She begins her article by claiming...”</li>
+                        <li>“She goes on to argue...”</li>
+                        <li>“Before concluding, she indicates...”</li>
+                        <li>
+                            “Immediately following this claim, she
+                            demonstrates...”
+                        </li>
+                    </ul>
+                </div>
+
+                <h3>Examples of Summaries</h3>
+
+                <div class="example example-bad">
+                    <span class="example-title">
+                        Bad Example of a Summary
+                    </span>
+
+                    <p>
+                        Martin Luther King Jr. gives a speech about how he wants
+                        freedom for Black people and he hopes everyone will be
+                        equal one day. He says “I have a dream” a lot and it's
+                        really inspiring. I think he makes good points about
+                        racism being bad and how people should get along.
+                    </p>
+                </div>
+
+                <div class="example example-good">
+                    <span class="example-title">
+                        Good Example of a Summary
+                    </span>
+
+                    <p>
+                        In his speech “I Have a Dream,” Martin Luther King Jr.
+                        urges the American people to recognize the failures of
+                        the nation in living up to its promise of equality. He
+                        begins by referencing the Emancipation Proclamation and
+                        arguing that true freedom has not yet been realized for
+                        African Americans. King emphasizes the injustices of
+                        segregation and discrimination while insisting on the
+                        urgency of change. He goes on to appeal to hope, using
+                        the repeated phrase “I have a dream” to describe his
+                        vision of racial harmony and justice. King concludes by
+                        pointing to faith and perseverance as essential tools
+                        in achieving freedom and equality for all.
+                    </p>
+                </div>
+
+                <p class="teacher-note">
+                    <strong>Teacher's Note:</strong> Notice how the bad example
+                    includes personal opinion (“I think...”) and vague
+                    generalizations, leaving out the speech's structure and
+                    main ideas. The good example clearly summarizes King's
+                    argument step by step, stays objective, and avoids quoting
+                    directly.
+                </p>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <section
+                class="content-section"
+                id="transitions"
+            >
+                <h2>Transition Sentences</h2>
+
+                <h3>Why Do I Need to Use Transition Sentences?</h3>
+
+                <ul>
+                    <li>
+                        They bring out the logical relationship between ideas,
+                        sentences, paragraphs, and sections of a paper.
+                    </li>
+
+                    <li>
+                        They provide the reader with directions for how to
+                        piece together your ideas into a logically coherent
+                        argument.
+                    </li>
+
+                    <li>
+                        They make your writing sound less choppy, jumpy, or
+                        abrupt and help establish flow.
+                    </li>
+                </ul>
+
+                <h3>
+                    What Are the Components of Good Transition Sentences?
+                </h3>
+
+                <ul>
+                    <li>
+                        They make an explicit connection between ideas,
+                        sentences, and paragraphs.
+                    </li>
+
+                    <li>
+                        They use specific words instead of vague pronouns such
+                        as “this” to clarify meaning.
+                    </li>
+                </ul>
+
+                <h3>External Transitions Between Paragraphs</h3>
+
+                <p>
+                    External transitions highlight the relationship between
+                    the two main ideas of each paragraph.
+                </p>
+
+                <div class="example example-good">
+                    <span class="example-title">Good Example</span>
+
+                    <p>
+                        <strong>Paragraph 1:</strong> High school gives students
+                        structure and support by providing daily schedules,
+                        reminders from teachers, and frequent guidance from
+                        parents. This constant oversight helps students stay on
+                        track with their assignments and responsibilities.
+                    </p>
+
+                    <p>
+                        <strong>Paragraph 2:</strong> While high school prepares
+                        students with basic academic skills, college requires a
+                        higher level of independence and time management. In
+                        college, students must create their own schedules,
+                        balance coursework with jobs or extracurricular
+                        activities, and take initiative to seek help from
+                        professors.
+                    </p>
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">Bad Example</span>
+
+                    <p>
+                        <strong>Paragraph 1:</strong> High school gives students
+                        structure and support by providing daily schedules,
+                        reminders from teachers, and frequent guidance from
+                        parents.
+                    </p>
+
+                    <p>
+                        <strong>Paragraph 2:</strong> College is different.
+                        Students in college must be responsible for their own
+                        time and choices.
+                    </p>
+                </div>
+
+                <h3>Internal Transitions Within Paragraphs</h3>
+
+                <p>
+                    Internal transitions are short words or phrases that help
+                    the reader anticipate what they will read next and guide
+                    them from sentence to sentence.
+                </p>
+
+                <div class="example example-good">
+                    <span class="example-title">Good Example</span>
+
+                    <p>
+                        For example, one major health effect of fast food is
+                        the increase in obesity rates. In addition, regular
+                        consumption of fast food has been linked to higher
+                        risks of diabetes and heart disease.
+                    </p>
+                </div>
+
+                <div class="example example-bad">
+                    <span class="example-title">Bad Example</span>
+
+                    <p>
+                        For example, one major health effect of fast food is
+                        the increase in obesity rates. Another thing is fast
+                        food is bad.
+                    </p>
+                </div>
+
+                <div class="quick-tip">
+                    <h3>Proofreading for Transitions</h3>
+
+                    <ul>
+                        <li>
+                            Check whether the end of each paragraph connects
+                            to the first sentence of the next.
+                        </li>
+
+                        <li>
+                            If there is no clear connection, clarify your logic
+                            or rearrange the paragraphs.
+                        </li>
+                    </ul>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+            <section
+                class="content-section"
+                id="conclusions"
+            >
+                <h2>Writing Conclusions</h2>
+
+                <p>
+                    A conclusion should bring together different sections of
+                    your essay.
+                </p>
+
+                <p>
+                    The assertions you made in your introductory paragraph
+                    should have been fully developed and substantiated through
+                    the essay so that the conclusion can bring together all
+                    strands of the argument, refer back to the essay topic, and
+                    end on a well-reasoned, logical note.
+                </p>
+
+                <div class="quick-tip">
+                    <h3>Remember</h3>
+
+                    <p>
+                        Your conclusion should not offer any new material.
+                    </p>
+                </div>
+
+                <p>Instead, consider telling your reader:</p>
+
+                <ul>
+                    <li>
+                        What the significance of your findings or the
+                        implications of your conclusion might be
+                    </li>
+
+                    <li>
+                        How your topic links to the wider context or “bigger
+                        picture” in your discipline
+                    </li>
+                </ul>
+
+                <p>
+                    Do not simply repeat yourself in this section. A conclusion
+                    that merely summarizes is repetitive and reduces the
+                    impact of the paper.
+                </p>
+
+                <h3>
+                    Key Structural Elements of Introductions and Conclusions
+                </h3>
+
+                <p>
+                    The introduction moves from general information to
+                    specific information, while the conclusion works in
+                    reverse, moving from specific information to general
+                    information.
+                </p>
+
+                <div class="subsection-box">
+                    <h3>The Introduction</h3>
+
+                    <ol>
+                        <li>Brief background or contextual information</li>
+
+                        <li>
+                            Focus attention on the specific theme of the
+                            writing
+                        </li>
+
+                        <li>
+                            Thesis statement outlining the main contention or
+                            argument
+                        </li>
+
+                        <li>
+                            Elaboration on organization or structure
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="subsection-box">
+                    <h3>The Conclusion</h3>
+
+                    <ol>
+                        <li>
+                            Refer back to the question and thesis statement
+                        </li>
+
+                        <li>
+                            Wrap up the ideas presented in the body paragraphs
+                        </li>
+
+                        <li>
+                            Connect to the larger academic conversation
+                        </li>
+                    </ol>
+                </div>
+
+                <a class="back-to-top" href="#top">Back to top ↑</a>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>Created by Brittany Seay • Mrs. Seay's Writing Center</p>
+    </footer>
+
+</body>
+</html>
