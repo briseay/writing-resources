@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grammar | Mrs. Seay's Writing Center</title>
+  <meta
+    name="description"
+    content="A student-friendly grammar guide focused on sentence structure, punctuation, consistency, revision, and quick-reference topics."
+  />
+
+  <style>
+    :root {
+      --lavender-50: #faf8ff;
+      --lavender-100: #f1ebff;
+      --lavender-200: #e4d8ff;
+      --lavender-500: #7d61b3;
+      --lavender-700: #563b88;
+      --lavender-900: #352451;
+      --orange: #cb6015;
+      --ink: #24222a;
+      --muted: #625e6a;
+      --line: #ded8e8;
+      --white: #ffffff;
+      --success: #eef8f0;
+      --warning: #fff8e8;
+      --danger: #fff1f1;
+      --shadow: 0 10px 30px rgba(53, 36, 81, 0.08);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(203, 96, 21, 0.08), transparent 26rem),
+        linear-gradient(180deg, var(--lavender-50), #ffffff 34rem);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--lavender-700);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--orange);
+    }
+
+    .page-shell {
+      width: min(100% - 2rem, var(--max-width));
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 2.4rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--lavender-900), var(--lavender-700));
+      color: var(--white);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 14rem;
+      height: 14rem;
+      right: -4rem;
+      bottom: -6rem;
+      border: 2rem solid rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.35rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #f4d7c2;
+      font-size: 0.82rem;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 1rem 0 0;
+      font-size: 1.08rem;
+    }
+
+    .intro-card,
+    .quick-nav,
+    .callout,
+    .reference-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-card {
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-left: 8px solid var(--orange);
+    }
+
+    .intro-card h2,
+    .quick-nav h2,
+    .section-heading h2 {
+      margin-top: 0;
+      color: var(--lavender-900);
+    }
+
+    .quick-nav {
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .nav-grid a {
+      display: block;
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      background: var(--lavender-50);
+      border: 1px solid var(--lavender-200);
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .nav-grid a:hover,
+    .nav-grid a:focus {
+      background: var(--lavender-100);
+      transform: translateY(-1px);
+    }
+
+    .topic-section {
+      margin: 2.4rem 0;
+      scroll-margin-top: 1rem;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-number {
+      flex: 0 0 auto;
+      width: 2.4rem;
+      height: 2.4rem;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--orange);
+      border-radius: 50%;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+    }
+
+    details {
+      margin: 0.85rem 0;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(53, 36, 81, 0.05);
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 1.1rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--lavender-900);
+      background: linear-gradient(90deg, var(--lavender-50), #ffffff);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      float: right;
+      color: var(--orange);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .detail-body {
+      padding: 0.2rem 1.25rem 1.3rem;
+    }
+
+    .detail-body h3 {
+      color: var(--lavender-700);
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-body ul,
+    .detail-body ol {
+      padding-left: 1.4rem;
+    }
+
+    .example,
+    .key-takeaway,
+    .warning,
+    .strategy {
+      margin: 1rem 0;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+    }
+
+    .example {
+      background: var(--lavender-50);
+      border-left: 5px solid var(--lavender-500);
+    }
+
+    .key-takeaway {
+      background: var(--success);
+      border-left: 5px solid #4d8c5f;
+    }
+
+    .warning {
+      background: var(--danger);
+      border-left: 5px solid #b65353;
+    }
+
+    .strategy {
+      background: var(--warning);
+      border-left: 5px solid var(--orange);
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 800;
+      color: var(--lavender-900);
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .reference-card {
+      padding: 1.2rem;
+    }
+
+    .reference-card h3 {
+      margin-top: 0;
+      color: var(--lavender-900);
+    }
+
+    .transparency {
+      margin-top: 2.5rem;
+      padding: 1rem 1.2rem;
+      background: var(--lavender-50);
+      border: 1px solid var(--lavender-200);
+      border-radius: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 1rem, var(--max-width));
+      }
+
+      .hero {
+        padding: 1.5rem;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+
+      summary {
+        padding-right: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page-shell" id="top">
+    <header class="hero">
+      <p class="eyebrow">Mrs. Seay's Writing Center</p>
+      <h1>Grammar</h1>
+      <p>
+        Grammar becomes easier when you stop treating it as a pile of unrelated rules.
+        Sentences are built from clauses. Once you understand that structure, punctuation,
+        sentence boundaries, consistency, and revision begin to fit together.
+      </p>
+    </header>
+
+    <section class="intro-card">
+      <h2>Sentence Structure First, Punctuation Second</h2>
+      <p>
+        Most sentence-level grammar errors are really sentence boundary problems. This guide
+        begins with clauses, subjects, and predicates, then moves into fragments, run-ons,
+        commas, semicolons, agreement, apostrophes, and revision choices.
+      </p>
+      <p>
+        You do not need to memorize everything at once. Start with the section that matches
+        the problem you are trying to solve.
+      </p>
+    </section>
+
+    <nav class="quick-nav" aria-label="Grammar page sections">
+      <h2>Jump to a Section</h2>
+      <div class="nav-grid">
+        <a href="#build-a-sentence">1. Build a Sentence</a>
+        <a href="#build-better-sentences">2. Build Better Sentences</a>
+        <a href="#punctuation">3. Use Punctuation with Purpose</a>
+        <a href="#consistency">4. Keep Writing Consistent</a>
+        <a href="#apostrophes">5. Small Marks, Big Difference</a>
+        <a href="#polish">6. Polish Your Writing</a>
+        <a href="#quick-reference">7. Quick Reference</a>
+      </div>
+    </nav>
+
+    <section class="topic-section" id="build-a-sentence">
+      <div class="section-heading">
+        <div class="section-number">1</div>
+        <div>
+          <h2>Build a Sentence</h2>
+          <p>Start with the pieces every sentence depends on.</p>
+        </div>
+      </div>
+
+      <details open>
+        <summary>What Is a Clause?</summary>
+        <div class="detail-body">
+          <p>
+            A clause is a group of words that contains a <strong>subject</strong> and a
+            <strong>predicate</strong>. Every complete sentence must contain at least one clause.
+          </p>
+
+          <div class="two-column">
+            <div>
+              <h3>Phrases</h3>
+              <p>A phrase is a group of related words that is missing a subject, a predicate, or both.</p>
+              <p>Phrases add description or detail, but they cannot stand alone as sentences.</p>
+            </div>
+            <div>
+              <h3>Clauses</h3>
+              <p>A clause contains both a subject and a predicate.</p>
+              <p>Clauses are the units sentences are built from.</p>
+            </div>
+          </div>
+
+          <div class="example">
+            <span class="label">Example</span>
+            <p><strong>Sentence:</strong> When the paper was finished, the student, impressed by her determination and willpower, turned it in to Turnitin.</p>
+            <p><strong>Phrases:</strong></p>
+            <ul>
+              <li>impressed by her determination and willpower</li>
+              <li>to Turnitin</li>
+            </ul>
+            <p><strong>Clauses:</strong></p>
+            <ul>
+              <li>When the paper was finished</li>
+              <li>the student turned it in</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Sentences are built from clauses, not just words.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Subjects and Predicates</summary>
+        <div class="detail-body">
+          <p>Every clause has two essential parts: a subject and a predicate.</p>
+
+          <h3>Subject</h3>
+          <p>The subject tells who or what the clause is about.</p>
+          <ul>
+            <li><strong>Simple subject:</strong> the main word or words doing the action</li>
+            <li><strong>Complete subject:</strong> the simple subject plus words that describe or modify it</li>
+          </ul>
+
+          <div class="example">
+            <span class="label">Example</span>
+            <p>The bright copper coin sparkled on the sidewalk.</p>
+            <ul>
+              <li><strong>Simple subject:</strong> coin</li>
+              <li><strong>Complete subject:</strong> The bright copper coin</li>
+            </ul>
+          </div>
+
+          <h3>Predicate</h3>
+          <p>The predicate tells what the subject is doing or being.</p>
+          <ul>
+            <li><strong>Simple predicate:</strong> the verb or verb phrase</li>
+            <li><strong>Complete predicate:</strong> the verb plus all words that modify or complete its meaning</li>
+          </ul>
+
+          <div class="example">
+            <span class="label">Example</span>
+            <p>The microscopic dust mite was discovered less than three decades ago.</p>
+            <ul>
+              <li><strong>Simple predicate:</strong> was discovered</li>
+              <li><strong>Complete predicate:</strong> was discovered less than three decades ago</li>
+            </ul>
+          </div>
+
+          <div class="strategy">
+            <span class="label">The Tense-Shift Test</span>
+            Change the time of the sentence. What changes is the verb.
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            If you can find the subject and predicate, you can find the clause.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Independent and Dependent Clauses</summary>
+        <div class="detail-body">
+          <h3>Independent Clauses</h3>
+          <p>An independent clause has a subject and predicate, expresses a complete thought, and can stand alone.</p>
+          <div class="example">
+            <ul>
+              <li>The students revised their essays.</li>
+              <li>The experiment failed.</li>
+            </ul>
+          </div>
+
+          <h3>Dependent Clauses</h3>
+          <p>
+            A dependent clause has a subject and predicate but begins with a word that makes it
+            depend on another clause. It does not express a complete thought.
+          </p>
+          <div class="example">
+            <ul>
+              <li>When the experiment failed...</li>
+              <li>Because the students revised their essays...</li>
+            </ul>
+          </div>
+
+          <h3>Words That Create Dependence</h3>
+          <ul>
+            <li><strong>Subordinating conjunctions:</strong> because, although, while, since, after, before, if, when, though</li>
+            <li><strong>Relative pronouns:</strong> who, whom, whose, which, that</li>
+          </ul>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            A dependent clause cannot stand alone as a sentence, even though it contains a subject and a verb.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="build-better-sentences">
+      <div class="section-heading">
+        <div class="section-number">2</div>
+        <div>
+          <h2>Build Better Sentences</h2>
+          <p>Understand how clauses combine and how sentence boundary errors happen.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Sentence Types</summary>
+        <div class="detail-body">
+          <h3>Simple Sentences</h3>
+          <p>A simple sentence contains one independent clause. It may still have compound subjects or predicates.</p>
+          <div class="example">
+            <ul>
+              <li>Sylvia swam.</li>
+              <li>Sylvia and Joseph swam.</li>
+              <li>The trailer sits on the edge of a pond and is surrounded by a wooden deck.</li>
+            </ul>
+          </div>
+
+          <h3>Compound Sentences</h3>
+          <p>A compound sentence contains two or more independent clauses joined by a comma plus FANBOYS or by a semicolon.</p>
+          <div class="example">
+            <ul>
+              <li>Cecelia walks, and Martha bikes.</li>
+              <li>The cell was large; it could attach to the molecule.</li>
+            </ul>
+          </div>
+
+          <h3>Complex Sentences</h3>
+          <p>A complex sentence contains one independent clause and at least one dependent clause.</p>
+          <div class="example">
+            <ul>
+              <li>When the experiment failed, the team regrouped.</li>
+              <li>The bicycle, which was in the street, is missing.</li>
+            </ul>
+          </div>
+
+          <h3>Optional: Compound-Complex Sentences</h3>
+          <p>A compound-complex sentence contains two or more independent clauses and at least one dependent clause.</p>
+          <div class="example">
+            I complimented Joe when he finished the job, and he seemed pleased.
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Sentence types are not about length. They are about how clauses connect.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Fragments</summary>
+        <div class="detail-body">
+          <p>
+            A fragment is a group of words written as a sentence that does not contain a complete independent clause.
+          </p>
+
+          <h3>Common Causes</h3>
+          <ul>
+            <li>A dependent clause is written as a sentence.</li>
+            <li>A phrase is mistaken for a complete thought.</li>
+          </ul>
+
+          <div class="warning">
+            <span class="label">Fragment Examples</span>
+            <ul>
+              <li>Because the experiment failed.</li>
+              <li>When the students revised their essays.</li>
+              <li>Running down the hallway.</li>
+              <li>To complete the assignment on time.</li>
+            </ul>
+          </div>
+
+          <h3>How to Fix Fragments</h3>
+          <ol>
+            <li>Attach the fragment to a nearby independent clause.</li>
+            <li>Rewrite it to include an independent clause.</li>
+          </ol>
+
+          <div class="example">
+            <span class="label">Corrected</span>
+            <ul>
+              <li>Because the experiment failed, the scientist tried another idea.</li>
+              <li>The instructor was happy when the students revised their essays.</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            If a sentence does not contain at least one independent clause, it is a fragment.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Run-On Sentences</summary>
+        <div class="detail-body">
+          <p>
+            A run-on sentence occurs when two or more independent clauses are joined without proper punctuation or connection.
+          </p>
+
+          <ul>
+            <li>Run-ons are not determined by length.</li>
+            <li>Short sentences can be run-ons.</li>
+            <li>Long sentences can be correct.</li>
+          </ul>
+
+          <div class="warning">
+            <span class="label">Run-On</span>
+            The experiment failed the team revised their hypothesis.
+          </div>
+
+          <h3>How to Fix Run-Ons</h3>
+          <ol>
+            <li>Separate the clauses into two sentences.</li>
+            <li>Join them with a comma and FANBOYS.</li>
+            <li>Join them with a semicolon.</li>
+            <li>Use dependent clause structure.</li>
+          </ol>
+
+          <div class="example">
+            <span class="label">Corrected</span>
+            <ul>
+              <li>The experiment failed. The team revised their hypothesis.</li>
+              <li>The experiment failed, and the team revised their hypothesis.</li>
+              <li>The experiment failed; the team revised their hypothesis.</li>
+              <li>When the experiment failed, the team revised their hypothesis.</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Run-ons happen when independent clauses are not properly separated.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Comma Splices</summary>
+        <div class="detail-body">
+          <p>A comma splice occurs when two independent clauses are joined using only a comma.</p>
+
+          <div class="warning">
+            <span class="label">Comma Splice</span>
+            The experiment failed, the team revised their hypothesis.
+          </div>
+
+          <p>A comma is not strong enough to join independent clauses by itself.</p>
+
+          <h3>How to Fix a Comma Splice</h3>
+          <ol>
+            <li>Add a coordinating conjunction.</li>
+            <li>Replace the comma with a semicolon.</li>
+            <li>Separate the clauses into two sentences.</li>
+          </ol>
+
+          <div class="example">
+            <span class="label">Corrected</span>
+            <ul>
+              <li>The experiment failed, and the team revised their hypothesis.</li>
+              <li>The experiment failed; the team revised their hypothesis.</li>
+              <li>The experiment failed. The team revised their hypothesis.</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            A comma alone cannot join independent clauses.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="punctuation">
+      <div class="section-heading">
+        <div class="section-number">3</div>
+        <div>
+          <h2>Use Punctuation with Purpose</h2>
+          <p>Commas and semicolons are structural tools, not decorative pauses.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Commas with Independent Clauses: FANBOYS</summary>
+        <div class="detail-body">
+          <p>
+            Use a comma before a coordinating conjunction when it joins two independent clauses.
+          </p>
+
+          <h3>FANBOYS</h3>
+          <p><strong>for, and, nor, but, or, yet, so</strong></p>
+
+          <div class="example">
+            <ul>
+              <li>The title sounds impressive, but the job is mostly clerical.</li>
+              <li>The experiment failed, so the team revised their hypothesis.</li>
+            </ul>
+          </div>
+
+          <div class="warning">
+            <span class="label">Incorrect</span>
+            The experiment failed, the team revised their hypothesis.
+          </div>
+
+          <div class="strategy">
+            <span class="label">How to Check</span>
+            <ol>
+              <li>Are there two independent clauses?</li>
+              <li>Is a coordinating conjunction joining them?</li>
+              <li>Is the comma placed before that conjunction?</li>
+            </ol>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            A comma can join independent clauses only with FANBOYS.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Commas with Introductory Elements</summary>
+        <div class="detail-body">
+          <p>
+            Commas often signal the end of an introductory phrase or clause before the main idea begins.
+          </p>
+
+          <h3>Introductory Dependent Clauses</h3>
+          <div class="example">
+            <ul>
+              <li>When the experiment failed, the team regrouped.</li>
+              <li>Because the students revised their essays, the final drafts improved.</li>
+            </ul>
+          </div>
+
+          <h3>Introductory Phrases</h3>
+          <div class="example">
+            <ul>
+              <li>After several revisions, the essay was ready to submit.</li>
+              <li>In the early morning hours, the campus was quiet.</li>
+            </ul>
+          </div>
+
+          <h3>When a Comma Is Usually Not Needed</h3>
+          <div class="example">
+            <ul>
+              <li>The team regrouped when the experiment failed.</li>
+              <li>The students revised their essays because the feedback was clear.</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Introductory elements use commas to prevent confusion, not to create pauses.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Semicolons</summary>
+        <div class="detail-body">
+          <p>
+            A semicolon connects closely related independent clauses without using a conjunction.
+          </p>
+
+          <div class="example">
+            <ul>
+              <li>The experiment failed; the team revised their hypothesis.</li>
+              <li>She loves research; writing is her strength.</li>
+            </ul>
+          </div>
+
+          <h3>Semicolon vs. Comma vs. Period</h3>
+          <ul>
+            <li><strong>Comma:</strong> weak boundary that needs help</li>
+            <li><strong>Semicolon:</strong> strong boundary</li>
+            <li><strong>Period:</strong> complete separation</li>
+          </ul>
+
+          <div class="warning">
+            <span class="label">Incorrect</span>
+            When the experiment failed; the scientists revised their hypothesis.
+          </div>
+
+          <h3>Semicolons with Conjunctive Adverbs</h3>
+          <p>Common conjunctive adverbs include however, therefore, meanwhile, moreover, consequently, nevertheless, and instead.</p>
+
+          <div class="example">
+            The data was incomplete; however, the trend was still visible.
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Semicolons join independent clauses when ideas are closely connected.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="consistency">
+      <div class="section-heading">
+        <div class="section-number">4</div>
+        <div>
+          <h2>Keep Your Writing Consistent</h2>
+          <p>Verb and pronoun consistency helps readers follow your meaning.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Verb Tense Consistency</summary>
+        <div class="detail-body">
+          <p>
+            Verb tense tells readers when something is happening. Unnecessary shifts can confuse readers even when individual sentences are grammatically correct.
+          </p>
+
+          <h3>Common Academic Patterns</h3>
+          <ul>
+            <li>Present tense for analysis, arguments, and general truths</li>
+            <li>Past tense for completed studies, experiments, or historical events</li>
+          </ul>
+
+          <div class="warning">
+            <span class="label">Inconsistent</span>
+            The author argues that social media was harmful to teenagers and explains why it affects mental health.
+          </div>
+
+          <div class="example">
+            <span class="label">Revised</span>
+            The author argues that social media is harmful to teenagers and explains why it affects mental health.
+          </div>
+
+          <p>
+            Tense shifts may be appropriate when quoting a source, describing historical events, or moving between analysis and summary. The shift should be intentional.
+          </p>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Consistent verb tense helps readers focus on ideas instead of sentence mechanics.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Subject-Verb Agreement</summary>
+        <div class="detail-body">
+          <p>Subjects and verbs must agree in number.</p>
+
+          <div class="example">
+            <ul>
+              <li>The student writes carefully.</li>
+              <li>The students write carefully.</li>
+            </ul>
+          </div>
+
+          <h3>Common Challenges</h3>
+          <ul>
+            <li><strong>Interrupting words:</strong> The list of required readings <em>is</em> long.</li>
+            <li><strong>Subjects joined by and:</strong> The professor and the advisor <em>agree</em>.</li>
+            <li><strong>Subjects joined by or/nor:</strong> The verb agrees with the closest subject.</li>
+            <li><strong>Indefinite pronouns:</strong> Everyone <em>needs</em> to submit the assignment.</li>
+          </ul>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Identify the true subject before choosing the verb.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Pronoun-Antecedent Clarity</summary>
+        <div class="detail-body">
+          <p>
+            An antecedent is the noun a pronoun refers to. Readers should be able to identify that noun clearly.
+          </p>
+
+          <div class="example">
+            The student submitted the essay because she wanted feedback.
+          </div>
+
+          <div class="warning">
+            <span class="label">Unclear</span>
+            When the students met with the professor, they were frustrated.
+          </div>
+
+          <div class="example">
+            <span class="label">Clear</span>
+            When the students met with the professor, the students were frustrated.
+          </div>
+
+          <h3>Agreement and Revision</h3>
+          <p>Pronouns should match their antecedents in number.</p>
+          <div class="example">
+            <ul>
+              <li>Each student must submit his or her assignment.</li>
+              <li>Students must submit their assignments.</li>
+            </ul>
+          </div>
+
+          <h3>Avoid Vague Pronouns</h3>
+          <div class="warning">
+            <span class="label">Unclear</span>
+            This shows why the policy failed.
+          </div>
+
+          <div class="example">
+            <span class="label">Clear</span>
+            This result shows why the policy failed.
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Pronoun clarity matters more than grammatical shortcuts.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="apostrophes">
+      <div class="section-heading">
+        <div class="section-number">5</div>
+        <div>
+          <h2>Small Marks, Big Difference</h2>
+          <p>Apostrophes have two jobs: possession and contractions.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Apostrophes for Possession</summary>
+        <div class="detail-body">
+          <p>Apostrophes show that one thing belongs to another.</p>
+
+          <h3>Singular Possession</h3>
+          <p>Add <strong>'s</strong> to singular nouns.</p>
+          <div class="example">
+            <ul>
+              <li>the student's essay</li>
+              <li>the dog's leash</li>
+              <li>James's notebook</li>
+            </ul>
+          </div>
+
+          <h3>Plural Possession</h3>
+          <p>Add an apostrophe after the <strong>s</strong> if the plural noun already ends in <strong>s</strong>.</p>
+          <div class="example">
+            <ul>
+              <li>the students' essays</li>
+              <li>the teachers' lounge</li>
+            </ul>
+          </div>
+
+          <p>If the plural noun does not end in <strong>s</strong>, add <strong>'s</strong>.</p>
+          <div class="example">
+            <ul>
+              <li>children's books</li>
+              <li>people's opinions</li>
+            </ul>
+          </div>
+
+          <div class="strategy">
+            <span class="label">How to Check</span>
+            Ask: Who owns what?
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Apostrophes show ownership, not quantity.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Apostrophes for Contractions</summary>
+        <div class="detail-body">
+          <p>Apostrophes in contractions show where letters have been removed.</p>
+
+          <div class="example">
+            <ul>
+              <li>do not → don't</li>
+              <li>it is → it's</li>
+              <li>they are → they're</li>
+              <li>cannot → can't</li>
+            </ul>
+          </div>
+
+          <h3>Its vs. It's</h3>
+          <ul>
+            <li><strong>it's</strong> = it is</li>
+            <li><strong>its</strong> = possessive</li>
+          </ul>
+
+          <div class="example">
+            <ul>
+              <li>It's important to proofread your essay.</li>
+              <li>The company changed its policy.</li>
+            </ul>
+          </div>
+
+          <div class="warning">
+            <span class="label">Apostrophes Do Not Make Nouns Plural</span>
+            <ul>
+              <li><strong>Incorrect:</strong> apple's</li>
+              <li><strong>Correct:</strong> apples</li>
+              <li><strong>Incorrect:</strong> student's need to submit essays</li>
+              <li><strong>Correct:</strong> students need to submit essays</li>
+            </ul>
+          </div>
+
+          <div class="strategy">
+            <span class="label">Quick Test</span>
+            Try expanding the word into a contraction. If it does not make sense, you probably do not need an apostrophe.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="polish">
+      <div class="section-heading">
+        <div class="section-number">6</div>
+        <div>
+          <h2>Polish Your Writing</h2>
+          <p>These are revision choices rather than simple right-or-wrong grammar rules.</p>
+        </div>
+      </div>
+
+      <details>
+        <summary>Active and Passive Voice</summary>
+        <div class="detail-body">
+          <p>
+            Active and passive voice both have legitimate uses, but academic writing strongly prefers active voice because it is clearer and more direct.
+          </p>
+
+          <h3>Active Voice</h3>
+          <p>The subject performs the action.</p>
+          <div class="example">The researcher analyzed the data.</div>
+
+          <h3>Passive Voice</h3>
+          <p>The subject receives the action.</p>
+          <div class="example">The data was analyzed.</div>
+
+          <p>Passive voice may be useful when the actor is unknown or irrelevant, when the result deserves emphasis, or when disciplinary conventions allow it.</p>
+
+          <div class="strategy">
+            <span class="label">Revision Strategy</span>
+            <ol>
+              <li>Who is performing the action?</li>
+              <li>Can that actor be named?</li>
+              <li>Would the sentence be clearer in active voice?</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Concision</summary>
+        <div class="detail-body">
+          <p>
+            Concision means expressing ideas clearly and efficiently. It removes unnecessary words that hide meaning.
+          </p>
+
+          <h3>Common Causes of Wordiness</h3>
+          <ul>
+            <li>Redundant phrases</li>
+            <li>Inflated expressions</li>
+            <li>Unnecessary qualifiers</li>
+          </ul>
+
+          <div class="example">
+            <p><strong>Wordy:</strong> Due to the fact that</p>
+            <p><strong>Concise:</strong> Because</p>
+          </div>
+
+          <div class="example">
+            <p><strong>Redundant:</strong> basic fundamentals</p>
+            <p><strong>Redundant:</strong> past history</p>
+          </div>
+
+          <div class="strategy">
+            <span class="label">Revision Questions</span>
+            <ul>
+              <li>Can this idea be stated more directly?</li>
+              <li>Are any words repeating the same meaning?</li>
+              <li>Would removing words change the meaning?</li>
+            </ul>
+          </div>
+
+          <div class="key-takeaway">
+            <span class="label">Key Takeaway</span>
+            Concision sharpens ideas. It does not weaken them.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Sentence Variety</summary>
+        <div class="detail-body">
+          <p>Sentence variety uses different sentence lengths and structures to keep writing clear and engaging.</p>
+
+          <ul>
+            <li>Too many short sentences feel choppy and flatten emphasis.</li>
+            <li>Too many long sentences blur ideas and overwhelm readers.</li>
+          </ul>
+
+          <h3>Ways to Create Variety</h3>
+          <ul>
+            <li>Combine related ideas.</li>
+            <li>Vary sentence openings.</li>
+            <li>Mix simple, compound, and complex sentences.</li>
+          </ul>
+
+          <div class="warning">
+            <span class="label">Monotonous</span>
+            The study was conducted last year. The results were surprising. The data was incomplete.
+          </div>
+
+          <div class="example">
+            <span class="label">Revised</span>
+            The study was conducted last year, and although the results were surprising, the data was incomplete.
+          </div>
+        </div>
+      </details>
+
+      <details>
+        <summary>Parallelism</summary>
+        <div class="detail-body">
+          <p>
+            Parallel structure uses the same grammatical pattern to show that ideas are equal in importance.
+          </p>
+
+          <h3>Common Parallel Structures</h3>
+          <ul>
+            <li>Items in a list</li>
+            <li>Paired ideas</li>
+            <li>Comparisons</li>
+          </ul>
+
+          <div class="example">
+            <span class="label">Parallel</span>
+            She enjoys reading, writing, and researching.
+          </div>
+
+          <div class="warning">
+            <span class="label">Not Parallel</span>
+            She enjoys reading, writing, and to research.
+          </div>
+
+          <div class="strategy">
+            <span class="label">Revision Strategy</span>
+            When ideas are connected, check that they use the same grammatical form and maintain a consistent structure.
+          </div>
+        </div>
+      </details>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <section class="topic-section" id="quick-reference">
+      <div class="section-heading">
+        <div class="section-number">7</div>
+        <div>
+          <h2>Quick Reference</h2>
+          <p>Use these resources when you need clarification, not as lists to memorize.</p>
+        </div>
+      </div>
+
+      <div class="reference-grid">
+        <article class="reference-card">
+          <h3>Capitalization</h3>
+          <p><strong>Capitalize:</strong></p>
+          <ul>
+            <li>Proper nouns</li>
+            <li>Specific titles used with names</li>
+            <li>Major words in titles of works</li>
+          </ul>
+          <p><strong>Do not capitalize:</strong></p>
+          <ul>
+            <li>Common nouns</li>
+            <li>General directions</li>
+            <li>Seasons</li>
+            <li>Academic subjects, except languages</li>
+          </ul>
+          <p><strong>Key takeaway:</strong> Capitalize specific names, not general categories.</p>
+        </article>
+
+        <article class="reference-card">
+          <h3>Italics vs. Quotation Marks</h3>
+          <p><strong>Use italics for long or standalone works:</strong></p>
+          <ul>
+            <li>Books</li>
+            <li>Movies</li>
+            <li>TV series</li>
+            <li>Journals and newspapers</li>
+            <li>Albums</li>
+          </ul>
+          <p><strong>Use quotation marks for shorter works:</strong></p>
+          <ul>
+            <li>Articles and essays</li>
+            <li>Short stories and poems</li>
+            <li>TV episodes</li>
+            <li>Songs</li>
+          </ul>
+        </article>
+
+        <article class="reference-card">
+          <h3>Commonly Confused Words</h3>
+          <ul>
+            <li><strong>affect</strong> = verb; <strong>effect</strong> = noun</li>
+            <li><strong>its</strong> = possessive; <strong>it's</strong> = it is</li>
+            <li>there / their / they're</li>
+            <li>your / you're</li>
+            <li>then / than</li>
+          </ul>
+          <p><strong>Quick check:</strong></p>
+          <ol>
+            <li>Substitute the meaning.</li>
+            <li>Read the sentence aloud.</li>
+            <li>Look it up. There is no penalty for checking.</li>
+          </ol>
+        </article>
+      </div>
+
+      <a class="back-to-top" href="#top">Back to top ↑</a>
+    </section>
+
+    <aside class="transparency">
+      <strong>Transparency Note:</strong> This page was formatted with the assistance of AI.
+      The instructional content, explanations, and examples are drawn from Brittany Seay's
+      FOE handouts and lecture materials. AI support was used to help organize and format
+      the information for clarity and accessibility.
+    </aside>
+  </main>
+</body>
+</html>
