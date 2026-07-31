@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Essay Types | Mrs. Seay's Writing Center</title>
+
+  <meta
+    name="description"
+    content="Composition I guidance for rhetorical analysis, annotated bibliographies, argumentative essays, rhetorical fallacies, and general essay quality."
+  >
+
+  <style>
+    :root {
+      --lavender-dark: #4f4168;
+      --lavender: #75638f;
+      --lavender-medium: #a89abb;
+      --lavender-light: #eee9f4;
+      --lavender-pale: #f8f5fb;
+      --cream: #fffdf8;
+      --white: #ffffff;
+      --text: #302c35;
+      --muted: #625c69;
+      --border: #d8cfdf;
+      --tip: #fff7df;
+      --tip-border: #d9b85f;
+      --example: #edf5f3;
+      --example-border: #6d9a91;
+      --general: #eef3f8;
+      --general-border: #6d829c;
+      --danger-light: #fff1ef;
+      --danger-border: #b5655c;
+      --shadow: 0 6px 18px rgba(65, 49, 83, 0.08);
+      --radius: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--lavender-dark);
+    }
+
+    a:hover,
+    a:focus {
+      color: #2f2540;
+    }
+
+    header {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(79, 65, 104, 0.96),
+          rgba(117, 99, 143, 0.92)
+        );
+      color: var(--white);
+      padding: 34px 20px 28px;
+    }
+
+    .header-inner {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .site-logo {
+      width: 104px;
+      height: 104px;
+      flex: 0 0 104px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--white);
+      border: 4px solid rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow);
+    }
+
+    .site-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .site-subtitle {
+      margin: 10px 0 0;
+      font-size: 1.08rem;
+      color: #f3eef8;
+    }
+
+    nav {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(65, 49, 83, 0.06);
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    nav a {
+      display: block;
+      padding: 14px 12px;
+      color: var(--lavender-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus,
+    nav a[aria-current="page"] {
+      background: var(--lavender-pale);
+      border-bottom-color: var(--lavender);
+    }
+
+    main {
+      width: min(var(--max-width), calc(100% - 34px));
+      margin: 38px auto 70px;
+    }
+
+    .page-introduction {
+      max-width: 880px;
+      margin-bottom: 28px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--lavender-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+    }
+
+    h3 {
+      margin-top: 32px;
+      font-size: 1.45rem;
+    }
+
+    h4 {
+      margin: 24px 0 8px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .table-of-contents {
+      margin: 28px 0 34px;
+      padding: 24px;
+      background: var(--lavender-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .table-of-contents h2 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .jump-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .jump-grid a {
+      display: block;
+      padding: 11px 13px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .jump-grid a:hover,
+    .jump-grid a:focus {
+      background: var(--lavender-pale);
+    }
+
+    .connection-box,
+    .why-box,
+    .tip-box,
+    .example-box,
+    .general-box,
+    .warning-box,
+    .sample-prompt {
+      margin: 22px 0;
+      padding: 19px 21px;
+      border-radius: 10px;
+    }
+
+    .connection-box,
+    .why-box {
+      background: var(--lavender-light);
+      border-left: 7px solid var(--lavender);
+    }
+
+    .tip-box {
+      background: var(--tip);
+      border-left: 7px solid var(--tip-border);
+    }
+
+    .example-box {
+      background: var(--example);
+      border-left: 7px solid var(--example-border);
+    }
+
+    .general-box {
+      background: var(--general);
+      border-left: 7px solid var(--general-border);
+    }
+
+    .warning-box {
+      background: var(--danger-light);
+      border-left: 7px solid var(--danger-border);
+    }
+
+    .sample-prompt {
+      background: var(--lavender-pale);
+      border: 2px solid var(--lavender-medium);
+    }
+
+    .connection-box h2,
+    .why-box h3,
+    .tip-box h3,
+    .example-box h3,
+    .general-box h3,
+    .warning-box h3,
+    .sample-prompt h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .essay-section {
+      margin: 38px 0;
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      margin-bottom: 9px;
+      color: var(--lavender);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .requirements {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .requirement-card {
+      padding: 17px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .requirement-card h3 {
+      margin: 0 0 7px;
+      font-size: 1.08rem;
+    }
+
+    .requirement-card p {
+      margin: 0;
+    }
+
+    .triangle-grid,
+    .appeal-grid,
+    .quality-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .concept-card,
+    .appeal-card,
+    .quality-card {
+      padding: 18px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .concept-card h4,
+    .appeal-card h4,
+    .quality-card h3 {
+      margin: 0 0 8px;
+    }
+
+    .quality-card ul {
+      margin-bottom: 0;
+    }
+
+    .mlk-example {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--lavender-medium);
+      font-size: 0.95rem;
+    }
+
+    .mlk-example strong {
+      color: var(--lavender-dark);
+    }
+
+    details {
+      margin: 17px 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 16px 18px;
+      background: var(--lavender-light);
+      color: var(--lavender-dark);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    summary:hover,
+    summary:focus {
+      background: #e4dced;
+    }
+
+    .details-content {
+      padding: 20px;
+    }
+
+    .mini-toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 17px 0 25px;
+    }
+
+    .mini-toc a {
+      padding: 8px 11px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .entry-structure {
+      margin: 20px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: entry-step;
+    }
+
+    .entry-structure li {
+      position: relative;
+      margin: 0 0 14px;
+      padding: 16px 16px 16px 58px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      counter-increment: entry-step;
+    }
+
+    .entry-structure li::before {
+      content: counter(entry-step);
+      position: absolute;
+      top: 15px;
+      left: 16px;
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      background: var(--lavender);
+      color: var(--white);
+      border-radius: 50%;
+      font-weight: 800;
+    }
+
+    .student-example {
+      padding: 24px;
+      background: #fffefa;
+      border: 1px solid #cfc7b8;
+      border-radius: 8px;
+      font-family: "Times New Roman", Times, serif;
+      line-height: 2;
+    }
+
+    .student-example .citation {
+      margin-left: 2em;
+      text-indent: -2em;
+    }
+
+    .student-example p:last-child {
+      margin-bottom: 0;
+    }
+
+    .outline-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .outline-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.8fr) minmax(0, 2fr);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .outline-label {
+      padding: 13px;
+      background: var(--lavender-light);
+      color: var(--lavender-dark);
+      font-weight: 800;
+    }
+
+    .outline-text {
+      padding: 13px;
+      background: var(--white);
+    }
+
+    .fallacy-intro {
+      max-width: 930px;
+    }
+
+    .fallacy-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .fallacy-category {
+      padding: 17px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--lavender-pale);
+    }
+
+    .fallacy-category h4 {
+      margin-top: 0;
+    }
+
+    .fallacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .fallacy-card {
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--lavender);
+      border-radius: 9px;
+    }
+
+    .fallacy-card h4 {
+      margin-top: 0;
+    }
+
+    .fallacy-card p {
+      margin-bottom: 9px;
+    }
+
+    .fallacy-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .example-label {
+      color: var(--lavender-dark);
+      font-weight: 800;
+    }
+
+    .back-to-top {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .back-to-top a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 26px 20px;
+      background: var(--lavender-dark);
+      color: #eee8f3;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .site-logo {
+        width: 88px;
+        height: 88px;
+        flex-basis: 88px;
+      }
+
+      nav a {
+        padding: 12px 9px;
+        font-size: 0.85rem;
+      }
+
+      main {
+        width: min(100% - 22px, var(--max-width));
+        margin-top: 24px;
+      }
+
+      .essay-section {
+        padding: 21px 17px;
+      }
+
+      .outline-row {
+        grid-template-columns: 1fr;
+      }
+
+      .outline-label {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .student-example {
+        padding: 17px;
+        line-height: 1.75;
+      }
+    }
+
+    @media print {
+      nav,
+      .back-to-top {
+        display: none;
+      }
+
+      body {
+        background: var(--white);
+      }
+
+      .essay-section {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      details {
+        display: block;
+      }
+
+      details > * {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="header-inner">
+      <!-- Change the image filename below if your logo uses a different name. -->
+      <img
+        class="site-logo"
+        src="finch-logo.png"
+        alt="Finch reading a book, the logo for Mrs. Seay's Writing Center"
+      >
+
+      <div>
+        <p class="site-title">Mrs. Seay's Writing Center</p>
+        <p class="site-subtitle">
+          Composition I essay guidance, examples, and supporting material
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="general-writing.html">General Writing</a>
+      <a href="essay-types.html" aria-current="page">Essay Types</a>
+      <a href="mla.html">MLA</a>
+      <a href="apa.html">APA</a>
+      <a href="grammar.html">Grammar</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-introduction">
+      <div class="section-label">Composition I</div>
+      <h1>Essay Types</h1>
+
+      <p>
+        Different essays ask writers to practice different parts of academic
+        reading, research, analysis, and argumentation. Use this page to review
+        the purpose, expectations, and supporting skills associated with three
+        common Composition I assignments.
+      </p>
+    </div>
+
+    <aside class="connection-box">
+      <h2>How These Essays Connect</h2>
+      <p>
+        The skills used in these essays build on one another. Learning to
+        analyze, summarize, evaluate, and support ideas with evidence will
+        strengthen your writing across every assignment in Composition I.
+      </p>
+    </aside>
+
+    <nav class="table-of-contents" aria-label="Page contents">
+      <h2>On This Page</h2>
+
+      <div class="jump-grid">
+        <a href="#rhetorical-analysis">Rhetorical Analysis</a>
+        <a href="#annotated-bibliography">Annotated Bibliography</a>
+        <a href="#argumentative-essay">Argumentative Essay</a>
+        <a href="#fallacies">Rhetorical Fallacies</a>
+        <a href="#essay-quality">Understanding Essay Quality</a>
+      </div>
+    </nav>
+
+    <!-- RHETORICAL ANALYSIS -->
+
+    <section class="essay-section" id="rhetorical-analysis">
+      <div class="section-label">Analyzing Communication</div>
+      <h2>Rhetorical Analysis</h2>
+
+      <p>
+        Every interaction within society is an open line of communication.
+        Writers and speakers communicate within a specific context, for a
+        specific purpose, and to a specific audience. Articles, books, movies,
+        news reports, speeches, advertisements, and other texts all participate
+        in these conversations.
+      </p>
+
+      <p>
+        A rhetorical analysis examines how a text communicates. The goal is not
+        to decide whether you agree with the author. Instead, you analyze how
+        the author attempts to achieve a purpose for an intended audience.
+      </p>
+
+      <aside class="why-box">
+        <h3>Why This Matters</h3>
+        <p>
+          Learning to recognize and analyze communication strategies can help
+          you grow as a writer, reader, and critical thinker. It can also help
+          you communicate more effectively across social, economic, and
+          cultural boundaries.
+        </p>
+      </aside>
+
+      <div class="mini-toc" aria-label="Rhetorical analysis topics">
+        <a href="#rhetorical-triangle">Rhetorical Triangle</a>
+        <a href="#rhetorical-appeals">Rhetorical Appeals</a>
+        <a href="#multimodal-questions">Multimodal Questions</a>
+        <a href="#sample-ra-prompt">Sample Course Prompt</a>
+      </div>
+
+      <section id="rhetorical-triangle">
+        <h3>The Rhetorical Triangle</h3>
+
+        <p>
+          A text's purpose is shaped by the relationship among the author,
+          audience, and context or content. These elements should not be treated
+          as isolated pieces. They work together to form the complete
+          rhetorical situation.
+        </p>
+
+        <div class="triangle-grid">
+          <article class="concept-card">
+            <h4>Author</h4>
+            <p>
+              Who created the text? Consider the author's experience,
+              perspective, position, reputation, and relationship to the topic.
+            </p>
+
+            <div class="mlk-example">
+              <strong>Example:</strong> Martin Luther King Jr. was a Baptist
+              minister, civil rights leader, and advocate for racial justice.
+            </div>
+          </article>
+
+          <article class="concept-card">
+            <h4>Audience</h4>
+            <p>
+              Who is the communication meant to reach? Consider what the
+              audience already knows, believes, values, fears, or expects.
+            </p>
+
+            <div class="mlk-example">
+              <strong>Example:</strong> The immediate audience for “I Have a
+              Dream” included those attending the March on Washington. The
+              broader audience included the American public, especially white
+              Americans.
+            </div>
+          </article>
+
+          <article class="concept-card">
+            <h4>Context and Content</h4>
+            <p>
+              What is happening around the text, and what ideas does the text
+              address? Historical, cultural, social, and political
+              circumstances can shape how a message is created and received.
+            </p>
+
+            <div class="mlk-example">
+              <strong>Example:</strong> King delivered the speech on August 28,
+              1963, during the March on Washington. The speech references the
+              Constitution and the Emancipation Proclamation.
+            </div>
+          </article>
+
+          <article class="concept-card">
+            <h4>Purpose</h4>
+            <p>
+              What does the author want the audience to understand, believe,
+              feel, or do after encountering the text?
+            </p>
+
+            <div class="mlk-example">
+              <strong>Example:</strong> King sought to convince the white
+              community and broader American public to join the Civil Rights
+              Movement by exposing injustice and inspiring hope.
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="rhetorical-appeals">
+        <h3>Ethos, Logos, and Pathos</h3>
+
+        <p>
+          Writers and speakers may use multiple rhetorical appeals at the same
+          time. A rhetorical analysis should explain not only where an appeal
+          appears, but also how it supports the author's purpose and affects the
+          intended audience.
+        </p>
+
+        <div class="appeal-grid">
+          <article class="appeal-card">
+            <h4>Ethos</h4>
+            <p>
+              Ethos concerns credibility and trust. Consider how the author
+              establishes authority, knowledge, fairness, experience, or good
+              character.
+            </p>
+          </article>
+
+          <article class="appeal-card">
+            <h4>Logos</h4>
+            <p>
+              Logos concerns logic and reason. Consider how the author uses
+              facts, examples, evidence, explanations, comparisons, or chains
+              of reasoning.
+            </p>
+          </article>
+
+          <article class="appeal-card">
+            <h4>Pathos</h4>
+            <p>
+              Pathos concerns emotion. Consider what the audience may feel and
+              how that emotional response helps the author move toward the
+              text's purpose.
+            </p>
+          </article>
+        </div>
+
+        <aside class="tip-box">
+          <h3>Quick Tip</h3>
+          <p>
+            Identifying an appeal is only the beginning. Explain how the appeal
+            would influence this particular audience and help the author
+            achieve this particular purpose.
+          </p>
+        </aside>
+      </section>
+
+      <section id="multimodal-questions">
+        <h3>Questions for Analyzing a Multimodal Text</h3>
+
+        <p>
+          These questions may be used when analyzing a commercial, meme, short
+          video, or another text that combines modes such as words, images,
+          movement, and sound.
+        </p>
+
+        <ol>
+          <li>
+            <strong>Summary:</strong> What is happening in the text? What do
+            you see, hear, or read?
+          </li>
+
+          <li>
+            <strong>Audience:</strong> Who is this text aimed at? How do you
+            know?
+          </li>
+
+          <li>
+            <strong>Ethos:</strong> How does the text establish credibility or
+            trust?
+          </li>
+
+          <li>
+            <strong>Logos:</strong> How does the text use logic or reason?
+          </li>
+
+          <li>
+            <strong>Pathos:</strong> How does the text appeal to emotion?
+          </li>
+
+          <li>
+            <strong>Evaluation:</strong> Is the text persuasive? Why or why
+            not? How might the appeals convince the intended audience to
+            believe, buy, or invest in the idea or product?
+          </li>
+
+          <li>
+            <strong>Source Information:</strong> Where did you find the
+            commercial, meme, or video?
+          </li>
+        </ol>
+      </section>
+
+      <section class="sample-prompt" id="sample-ra-prompt">
+        <h3>Sample Prompt from Mrs. Seay's Course</h3>
+
+        <p>
+          The following requirements represent one sample Rhetorical Analysis
+          assignment. Always follow the instructions for your current course
+          and assignment.
+        </p>
+
+        <div class="requirements">
+          <article class="requirement-card">
+            <h3>Length</h3>
+            <p>
+              At least five well-developed paragraphs of approximately 8–10
+              sentences each.
+            </p>
+          </article>
+
+          <article class="requirement-card">
+            <h3>Format</h3>
+            <p>
+              MLA style, double-spaced, 12-point Times New Roman font, and
+              one-inch margins.
+            </p>
+          </article>
+
+          <article class="requirement-card">
+            <h3>Evidence</h3>
+            <p>
+              At least six direct quotations: two supporting the analysis of
+              ethos, two for logos, and two for pathos.
+            </p>
+          </article>
+
+          <article class="requirement-card">
+            <h3>Citations</h3>
+            <p>
+              Standard MLA in-text citations and a Works Cited page, even when
+              the essay analyzes only one source.
+            </p>
+          </article>
+        </div>
+
+        <h4>What You Would Do</h4>
+
+        <ol>
+          <li>Choose an assigned speech or article.</li>
+
+          <li>
+            Determine the author's purpose by reading and analyzing the text.
+          </li>
+
+          <li>
+            Analyze how the author uses ethos, logos, and pathos to support that
+            purpose for the intended audience.
+          </li>
+
+          <li>
+            Use direct quotations and MLA citations to support the analysis.
+          </li>
+        </ol>
+
+        <div class="warning-box">
+          <h3>Important Notes</h3>
+          <ul>
+            <li>Do not use first person or second person.</li>
+
+            <li>
+              Do not shift into arguing whether you agree with the author's
+              position.
+            </li>
+
+            <li>
+              Focus on how the speech or article attempts to achieve its purpose
+              through rhetorical strategies.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- ANNOTATED BIBLIOGRAPHY -->
+
+    <section class="essay-section" id="annotated-bibliography">
+      <div class="section-label">Understanding the Conversation</div>
+      <h2>Annotated Bibliography</h2>
+
+      <p>
+        An annotated bibliography helps you investigate a research topic before
+        forming your argument. You research what scholars are already saying,
+        summarize their ideas fairly, evaluate their credibility, and determine
+        how each source contributes to your understanding of the larger
+        conversation.
+      </p>
+
+      <aside class="why-box">
+        <h3>Why This Matters</h3>
+        <p>
+          A strong argument begins with understanding the existing
+          conversation. The annotated bibliography gives you time to read,
+          compare, summarize, and evaluate your sources before deciding exactly
+          how your own argument will enter that conversation.
+        </p>
+      </aside>
+
+      <div class="requirements">
+        <article class="requirement-card">
+          <h3>Entry Length</h3>
+          <p>
+            Each entry should contain one well-developed paragraph of
+            approximately 6–10 sentences.
+          </p>
+        </article>
+
+        <article class="requirement-card">
+          <h3>Format</h3>
+          <p>
+            MLA style, double-spaced, 12-point Times New Roman font, and
+            one-inch margins.
+          </p>
+        </article>
+
+        <article class="requirement-card">
+          <h3>Sources</h3>
+          <p>
+            One sample course assignment requires at least five peer-reviewed
+            journal articles, including one source that presents an opposing
+            viewpoint.
+          </p>
+        </article>
+      </div>
+
+      <h3>What an Annotated Bibliography Helps You Do</h3>
+
+      <ul>
+        <li>
+          <strong>Investigate your idea:</strong> Read about the topic and
+          discover what scholars are already saying.
+        </li>
+
+        <li>
+          <strong>Evaluate the evidence:</strong> Pay attention to purpose,
+          audience, context, and credibility.
+        </li>
+
+        <li>
+          <strong>Understand the conversation:</strong> Summarize what has
+          already been said instead of immediately giving your personal
+          opinion.
+        </li>
+
+        <li>
+          <strong>Stay neutral:</strong> Present the source's information
+          clearly, accurately, and logically.
+        </li>
+
+        <li>
+          <strong>Choose a workable topic:</strong> Select an idea with enough
+          scholarly research and room for a reasonable argument.
+        </li>
+
+        <li>
+          <strong>Practice academic reading and writing:</strong> Examine how
+          information is presented, how arguments are built, and whether a
+          source is trustworthy.
+        </li>
+      </ul>
+
+      <h3>Structure of One Entry</h3>
+
+      <ol class="entry-structure">
+        <li>
+          <strong>MLA citation:</strong> Begin with the complete MLA Works Cited
+          entry for the source.
+        </li>
+
+        <li>
+          <strong>Summary:</strong> Use approximately 5–8 sentences to identify
+          the source's thesis, main points, organization, and purpose.
+        </li>
+
+        <li>
+          <strong>Evaluation:</strong> Use approximately 1–2 sentences to
+          explain why the source is credible and how it helps you understand or
+          research the topic.
+        </li>
+      </ol>
+
+      <aside class="tip-box">
+        <h3>Quick Tip</h3>
+        <p>
+          A complete annotated bibliography repeats this structure for every
+          required source. Each source receives its own citation, summary, and
+          evaluation.
+        </p>
+      </aside>
+
+      <details id="summary-guidance">
+        <summary>Summary Guidance</summary>
+
+        <div class="details-content">
+          <p>
+            A pure summary is a restatement of the author's ideas. It should
+            represent the source accurately, fairly, and without adding your
+            personal opinion.
+          </p>
+
+          <ol>
+            <li>
+              Present the source's main and supporting ideas. Leave out minor
+              evidence, anecdotes, and counterarguments unless they are
+              essential to understanding the text.
+            </li>
+
+            <li>Use clear, neutral language.</li>
+
+            <li>
+              Use a variety of signal verbs rather than repeatedly writing
+              “the author states” or “the author discusses.”
+            </li>
+
+            <li>
+              When discussing written texts, avoid verbs that refer primarily
+              to audible speech, such as <em>say</em>, <em>speak</em>, and
+              <em>talk</em>.
+            </li>
+
+            <li>
+              Show how the source develops by using phrases such as:
+              “She begins her article by claiming,” “She goes on to argue,”
+              “Immediately following this claim, she demonstrates,” or
+              “Before concluding, she indicates.”
+            </li>
+
+            <li>
+              Clearly connect each source-based idea to the author by using the
+              author's name, a pronoun, “the author,” or “the authors.”
+            </li>
+
+            <li>
+              Include all important points without accidentally emphasizing
+              only the parts you personally understand or find interesting.
+            </li>
+
+            <li>Do not include direct quotations in a summary.</li>
+
+            <li>
+              Proofread for grammar, clarity, and sentence structure.
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details id="evaluation-guidance">
+        <summary>Evaluation Guidance</summary>
+
+        <div class="details-content">
+          <ol>
+            <li>
+              Explain how the source is valid for your research.
+            </li>
+
+            <li>
+              Include a brief rhetorical analysis of how the author uses ethos,
+              logos, and/or pathos to convey a purpose to an audience.
+            </li>
+
+            <li>
+              Explain specifically how the source will be useful for the
+              upcoming research project. Go beyond statements such as “I liked
+              the source” or “It was interesting.”
+            </li>
+
+            <li>Do not include direct quotations in an evaluation.</li>
+
+            <li>
+              Proofread for grammar, clarity, and sentence structure.
+            </li>
+          </ol>
+        </div>
+      </details>
+
+      <details>
+        <summary>Student Example: Mental Health Stigma</summary>
+
+        <div class="details-content">
+          <p>
+            This sample shows one citation followed by a combined summary and
+            evaluation paragraph. The student's wording has been preserved as
+            an example of student work.
+          </p>
+
+          <div class="student-example">
+            <p class="citation">
+              Bradbury, Andrew. “Mental Health Stigma: The Impact of Age and
+              Gender on Attitudes.” <em>Community Mental Health Journal</em>,
+              vol. 56, no. 5, 2020, pp. 933–938,
+              https://doi.org/10.1007/s10597-020-00559-x.
+            </p>
+
+            <p>
+              Bradbury's purpose in this article was to discuss and evaluate
+              the difference in the stigma around different types of mental
+              disorders and how age groups view stigma differently. For this
+              specific article, he chose to compare the stigma surrounding
+              generalized anxiety disorder (GAD) and schizophrenia: those two
+              disorders are different in perception. The author hypothesized
+              that the younger audience was less likely to have any negative
+              stigma towards persons with mental illness. He also stated that
+              those of the female gender are more sympathetic towards persons
+              with mental illness, whether dangerous or not. Slightly, the
+              author's discussion is focused on the campaigns that are in place
+              in the UK to help educated people about stigma and the effects
+              that it has on someone's self-stigma and how they see their own
+              mental illness. This study specifically covered the factors that
+              age and gender play in how people see stigma or stigmatize
+              different mental illnesses. While he did note that age does not
+              affect the way that people contribute to stigma, he also found
+              that the female gender is more sympathetic toward persons with
+              mental illnesses. The author is well established in this field of
+              research and provides a large amount of data to support his
+              discussion and findings. I will use this in my paper to show that
+              age does not make a difference when someone is experiencing or
+              contributing to the negative stigma surrounding mental health
+              disorders.
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- ARGUMENTATIVE ESSAY -->
+
+    <section class="essay-section" id="argumentative-essay">
+      <div class="section-label">Entering the Conversation</div>
+      <h2>Argumentative Essay</h2>
+
+      <p>
+        In an annotated bibliography, you explore a topic by researching what
+        scholars are already saying. In an argumentative essay, you build on
+        that research by taking a position and supporting it with logical
+        reasoning and credible evidence.
+      </p>
+
+      <p>
+        College-level argumentation may require writers to address complex or
+        controversial issues. An effective argument depends on understanding
+        multiple viewpoints and representing them fairly, even when the writer
+        ultimately disagrees with them.
+      </p>
+
+      <aside class="why-box">
+        <h3>Why This Matters</h3>
+        <p>
+          An argumentative essay is not simply about winning or attacking the
+          other side. It is an opportunity to enter an academic conversation
+          with evidence, reasoning, ethical source use, and respect for the
+          audience.
+        </p>
+      </aside>
+
+      <div class="requirements">
+        <article class="requirement-card">
+          <h3>Length</h3>
+          <p>
+            One sample Composition I assignment requires 6–8 well-developed
+            paragraphs, with approximately 8–10 sentences per paragraph not
+            including quoted evidence.
+          </p>
+        </article>
+
+        <article class="requirement-card">
+          <h3>Format</h3>
+          <p>
+            MLA style, double-spaced, 12-point Times New Roman font, one-inch
+            margins, MLA header, title, and page numbers.
+          </p>
+        </article>
+
+        <article class="requirement-card">
+          <h3>Sources</h3>
+          <p>
+            One sample course assignment requires 5–7 peer-reviewed journal
+            articles. At least one should complicate, challenge, or oppose the
+            writer's position.
+          </p>
+        </article>
+
+        <article class="requirement-card">
+          <h3>Documentation</h3>
+          <p>
+            Each source used in the essay must appear in an MLA in-text citation
+            and on the Works Cited page.
+          </p>
+        </article>
+      </div>
+
+      <h3>Building the Argument</h3>
+
+      <ol>
+        <li>
+          <strong>Choose your claim.</strong> Decide where you stand after
+          researching the topic. State that position clearly in the thesis and
+          preview the main reasons supporting it.
+        </li>
+
+        <li>
+          <strong>Develop your support.</strong> Use peer-reviewed sources to
+          support the stance. Sources from the annotated bibliography may be
+          reused.
+        </li>
+
+        <li>
+          <strong>Plan for the audience.</strong> Write with readers who may
+          disagree with you in mind. Use ethos, logos, and pathos strategically
+          and remain professional.
+        </li>
+
+        <li>
+          <strong>Address another viewpoint.</strong> Include at least one
+          opposing or complicating source and respond through a rebuttal or
+          acknowledgment paragraph.
+        </li>
+
+        <li>
+          <strong>Integrate and cite sources.</strong> Represent every source
+          fairly and accurately. Connect evidence directly to your own claims
+          and reasoning.
+        </li>
+
+        <li>
+          <strong>Compose and revise.</strong> Revise for focus, organization,
+          clarity, development, tone, grammar, and MLA accuracy.
+        </li>
+      </ol>
+
+      <aside class="warning-box">
+        <h3>Important Notes</h3>
+        <ul>
+          <li>
+            Use the same approved topic researched for the annotated
+            bibliography when the assignments are connected.
+          </li>
+
+          <li>
+            Write to persuade rather than attack. Avoid insults, exaggerations,
+            and emotional attacks.
+          </li>
+
+          <li>Represent sources fairly and accurately.</li>
+
+          <li>
+            Always follow the requirements and AI-use policy given for your
+            current course and assignment.
+          </li>
+        </ul>
+      </aside>
+
+      <details>
+        <summary>Student Body Paragraph Example and Outline</summary>
+
+        <div class="details-content">
+          <p>
+            This student example demonstrates a repeated paragraph pattern:
+            claim, explanation, evidence, discussion, additional evidence,
+            further discussion, and a concluding transition.
+          </p>
+
+          <div class="student-example">
+            <p>
+              Discussion forums can be used to better help students learn
+              collaboratively online than other instant messaging apps by
+              encouraging students to engage and interact with certain topics
+              in their small groups and by its structure of being knowledge
+              constructed. Discussion forums function by letting students begin
+              a discussion which they are encouraged to further elaborate in
+              their small groups. According to Sun et al., “discussion
+              forum[s] resulted in more communication aimed at knowledge
+              construction” while “mobile instant-messaging app[s] resulted in
+              more social interactions” (248). Sun et al. supported this claim
+              by performing three studies which resulted with discussion forums
+              having “2.8, 5.3 and 1.8%” socialization while instant messaging
+              apps resulted with “42.5, 26 and 85.1%” socialization (255). Sun
+              et al. clarify that socializing is good for students when
+              beginning a course to help “facilitate team building” (258).
+              That is why they recommend that once students “are familiar with
+              each other, use discussion forums for knowledge construction”
+              (Sun et al. 258). Discussion forums can be used to better help
+              students learn collaboratively online because they provide less
+              opportunities for students to veer off topic and socialize. With
+              less opportunities for socializing, discussion forums can help
+              students stay focused on the academic discussion presented within
+              their small groups.
+            </p>
+          </div>
+
+          <div class="outline-list">
+            <div class="outline-row">
+              <div class="outline-label">Sub-Claim / Topic Sentence</div>
+
+              <div class="outline-text">
+                Discussion forums can be used to better help students learn
+                collaboratively online than other instant messaging apps by
+                encouraging students to engage and interact with certain topics
+                in their small groups and by its structure of being knowledge
+                constructed.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Explanation</div>
+
+              <div class="outline-text">
+                Discussion forums function by letting students begin a
+                discussion which they are encouraged to further elaborate in
+                their small groups.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Evidence 1</div>
+
+              <div class="outline-text">
+                According to Sun et al., “discussion forum[s] resulted in more
+                communication aimed at knowledge construction” while “mobile
+                instant-messaging app[s] resulted in more social interactions”
+                (248).
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Double-Down / Discussion of Evidence 1
+              </div>
+
+              <div class="outline-text">
+                Sun et al. supported this claim by performing three studies
+                which resulted with discussion forums having “2.8, 5.3 and
+                1.8%” socialization while instant messaging apps resulted with
+                “42.5, 26 and 85.1%” socialization (255).
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Evidence 2</div>
+
+              <div class="outline-text">
+                Sun et al. clarify that socializing is good for students when
+                beginning a course to help “facilitate team building” (258).
+                That is why they recommend that once students “are familiar
+                with each other, use discussion forums for knowledge
+                construction” (Sun et al. 258).
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Double-Down / Discussion of Evidence 2
+              </div>
+
+              <div class="outline-text">
+                Discussion forums can be used to better help students learn
+                collaboratively online because they provide less opportunities
+                for students to veer off topic and socialize.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Wrap-Up Sentence / Transition
+              </div>
+
+              <div class="outline-text">
+                With less opportunities for socializing, discussion forums can
+                help students stay focused on the academic discussion presented
+                within their small groups.
+              </div>
+            </div>
+          </div>
+
+          <aside class="tip-box">
+            <h3>Paragraph Rhythm</h3>
+            <p>
+              Claim → Explain → Prove → Analyze → Conclude
+            </p>
+
+            <p>
+              This rhythm helps balance the writer's argument with source
+              evidence rather than stacking quotations together.
+            </p>
+          </aside>
+        </div>
+      </details>
+
+      <details>
+        <summary>Student Rebuttal Paragraph Example and Outline</summary>
+
+        <div class="details-content">
+          <p>
+            This example acknowledges an alternative viewpoint, presents
+            evidence supporting it, and then responds with a counterpoint and
+            additional evidence.
+          </p>
+
+          <div class="student-example">
+            <p>
+              Some counter this stance with their own argument that animals in
+              all forms of captivity are treated better than wild animals. The
+              UK's Farm Animal Council believes that animals in captivity
+              receive better treatment than animals in the wild therefore,
+              animals in captivity are better off. Browning and Veit mention
+              that “there are a number of ways in which captive animals can be
+              free and in which wild animals can be constrained” (4). They go
+              on to list the many experiences of “freedom that animals in the
+              wild do not have such as freedom from hunger, thirst, pain,
+              injury, disease, discomfort, fear, distress, and freedom to
+              perform natural behaviors” (Browing and Veit 4). Although, an
+              agreement can be made that farm animals are treated better in
+              captivity than in the wild, zoo and aquatic animals are not
+              pampered like farm animals are. Farm animals are considered a
+              food source that must get fed well, watered often, and medically
+              supported because they will eventually become a meal on a plate.
+              Meanwhile, zoo and aquarium animals are used for entertainment
+              and to promote conservation. They get fed a normal diet, get
+              watered like they would “normally” receive in the wild, and only
+              receive medical attention in case of an emergency. This treatment
+              is highlighted in the documentary <em>Blackfish</em>. Boissat et
+              al. who are established biologists states that “Blackfish
+              highlights the negative impacts of captivity on orcas, including
+              a reduction in life spans, the collapse of male orcas' dorsal
+              fins, aggression, toothaches and the separation of calves from
+              their mothers” (1). It is true that a knowledgeable, experienced
+              farmer can provide domesticated farm animals with the proper care
+              they need to thrive without ever suffering. But at this time,
+              there is no amount of training and knowledge that is going to
+              allow an aquarium to provide for an orca the way the wild,
+              because neglect and abuse are going to occur for no other reason
+              than they are too large and too intelligent to be placed in a
+              glass bowl to promote conservation. Conservation efforts cannot
+              be achieved if the animals are suffering.
+            </p>
+          </div>
+
+          <div class="outline-list">
+            <div class="outline-row">
+              <div class="outline-label">
+                Topic Sentence: Introduce the Alternative Viewpoint
+              </div>
+
+              <div class="outline-text">
+                Some counter this stance with their own argument that animals in
+                all forms of captivity are treated better than wild animals.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Explanation</div>
+
+              <div class="outline-text">
+                The UK's Farm Animal Council believes that animals in captivity
+                receive better treatment than animals in the wild therefore,
+                animals in captivity are better off.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Evidence Supporting the Opposing View
+              </div>
+
+              <div class="outline-text">
+                Browning and Veit mention that “there are a number of ways in
+                which captive animals can be free and in which wild animals can
+                be constrained” (4). They go on to list the many experiences
+                of “freedom that animals in the wild do not have such as
+                freedom from hunger, thirst, pain, injury, disease, discomfort,
+                fear, distress, and freedom to perform natural behaviors”
+                (Browing and Veit 4).
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Discussion of the Opposing View
+              </div>
+
+              <div class="outline-text">
+                Although, an agreement can be made that farm animals are treated
+                better in captivity than in the wild, zoo and aquatic animals
+                are not pampered like farm animals are. Farm animals are
+                considered a food source that must get fed well, watered often,
+                and medically supported because they will eventually become a
+                meal on a plate.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Pivot to the Rebuttal</div>
+
+              <div class="outline-text">
+                Meanwhile, zoo and aquarium animals are used for entertainment
+                and to promote conservation.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">Rebuttal Claim</div>
+
+              <div class="outline-text">
+                They get fed a normal diet, get watered like they would
+                “normally” receive in the wild, and only receive medical
+                attention in case of an emergency. This treatment is
+                highlighted in the documentary <em>Blackfish</em>.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Evidence Supporting the Rebuttal
+              </div>
+
+              <div class="outline-text">
+                Boissat et al. who are established biologists states that
+                “Blackfish highlights the negative impacts of captivity on
+                orcas, including a reduction in life spans, the collapse of
+                male orcas' dorsal fins, aggression, toothaches and the
+                separation of calves from their mothers” (1).
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Discussion of the Rebuttal Evidence
+              </div>
+
+              <div class="outline-text">
+                It is true that a knowledgeable, experienced farmer can provide
+                domesticated farm animals with the proper care they need to
+                thrive without ever suffering. But at this time, there is no
+                amount of training and knowledge that is going to allow an
+                aquarium to provide for an orca the way the wild, because
+                neglect and abuse are going to occur for no other reason than
+                they are too large and too intelligent to be placed in a glass
+                bowl to promote conservation.
+              </div>
+            </div>
+
+            <div class="outline-row">
+              <div class="outline-label">
+                Wrap-Up Sentence / Transition
+              </div>
+
+              <div class="outline-text">
+                Conservation efforts cannot be achieved if the animals are
+                suffering.
+              </div>
+            </div>
+          </div>
+
+          <aside class="tip-box">
+            <h3>Writing Tip</h3>
+            <p>
+              A rebuttal should model balance and fairness. Acknowledge the
+              opposing side, provide credible support for it, and then respond
+              with stronger logic and evidence. The wrap-up should connect the
+              paragraph back to the essay's overall position.
+            </p>
+          </aside>
+        </div>
+      </details>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- FALLACIES -->
+
+    <section class="essay-section" id="fallacies">
+      <div class="section-label">Evaluating Reasoning</div>
+      <h2>Rhetorical and Logical Fallacies</h2>
+
+      <div class="fallacy-intro">
+        <p>
+          A rhetorical fallacy is a flaw in reasoning. Rhetorical fallacies are
+          tricks or illusions of thought, and writers, speakers, and media may
+          use them to fool or manipulate an audience. They are not always easy
+          to spot, and people may also commit them accidentally.
+        </p>
+
+        <p>
+          Rhetorical fallacies do not allow for the open, two-way exchange of
+          ideas upon which meaningful conversations depend. Instead of relying
+          on sound reasoning, they distract the audience through various
+          techniques.
+        </p>
+      </div>
+
+      <div class="fallacy-categories">
+        <article class="fallacy-category">
+          <h4>Emotional Fallacies</h4>
+          <p>Unfairly appeal to the audience's emotions.</p>
+        </article>
+
+        <article class="fallacy-category">
+          <h4>Ethical Fallacies</h4>
+          <p>
+            Unreasonably advance the writer's own authority or character.
+          </p>
+        </article>
+
+        <article class="fallacy-category">
+          <h4>Logical Fallacies</h4>
+          <p>Depend on faulty logic to support a claim.</p>
+        </article>
+      </div>
+
+      <p>
+        These categories can overlap. Recognizing fallacies in your own work and
+        in the arguments of others can strengthen your analytical abilities and
+        help you build clearer, fairer, and better-supported arguments.
+      </p>
+
+      <details open>
+        <summary>Common Logical Fallacies</summary>
+
+        <div class="details-content">
+          <div class="fallacy-grid">
+            <article class="fallacy-card">
+              <h4>Ad Hominem</h4>
+              <p>
+                This Latin phrase means “against the person.” The writer attacks
+                a person's character rather than addressing the person's
+                argument.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> During the debate,
+                the candidate attacks the opponent's personal traits rather
+                than discussing the topic.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Ad Populum / Bandwagon</h4>
+              <p>
+                This fallacy encourages the audience to accept a claim because
+                it is popular or supported by the majority.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Facebook is used by
+                millions of people to stay connected worldwide. Therefore,
+                everyone should use Facebook.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Appeal to Authority</h4>
+              <p>
+                The writer relies on an authority who is not credible or
+                qualified for the situation being discussed.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Citing a children's
+                book author as an expert on raising children when the author has
+                never raised children.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Appeal to Ignorance</h4>
+              <p>
+                The audience is encouraged to believe a claim that lacks
+                conclusive evidence simply because the claim has not been
+                disproven.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Treating
+                stereotypes about Democrats or Republicans as true because no
+                evidence has been presented to disprove a particular
+                stereotype.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Appeal to Tradition</h4>
+              <p>
+                A claim is treated as valid simply because it follows a
+                tradition or reflects what has been done before.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Senator Bill wants
+                to pass a new law, but it differs from what my grandfather did,
+                so the law must be wrong.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Appeal to Pity</h4>
+              <p>
+                The writer attempts to replace relevant reasoning with an
+                emotional appeal for sympathy.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> A student argues
+                that a professor should give a higher grade because a family
+                funeral prevented the student from completing an assignment on
+                time.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Begging the Question</h4>
+              <p>
+                The writer expects the audience to accept the argument without
+                providing adequate supporting evidence.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> People who use a
+                Fitbit will become healthy.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Cherry Picking / Card Stacking</h4>
+              <p>
+                The writer presents only the data that supports one position
+                while ignoring evidence that conflicts with it.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Evidence A supports
+                Person 1 and Evidence B supports Person 2. Person 1 presents
+                only Evidence A to the audience.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Equivocation</h4>
+              <p>
+                The argument relies on a word or phrase that has multiple
+                meanings and shifts between those meanings.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Comedians may use
+                double meanings deliberately to misdirect an audience and
+                create humor.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>False Dichotomy / Black-and-White / Either-Or</h4>
+              <p>
+                The writer presents only one or two choices as the available
+                alternatives even though more options exist.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Claiming universal
+                healthcare is the only possible way to give everyone access to
+                healthcare.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Guilt by Association</h4>
+              <p>
+                A person or idea is judged true or false because it is
+                associated with another person or idea.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Billy enjoys
+                vandalizing. Suzy spends time with Billy on Fridays. Therefore,
+                Suzy must also vandalize things.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Hasty or Sweeping Generalization</h4>
+              <p>
+                The writer reaches a broad conclusion based on an inadequate
+                amount of evidence.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Four out of five
+                professors prefer blue pens, so professors generally prefer
+                blue pens. The conclusion is weak because only five professors
+                were asked.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Missing the Point</h4>
+              <p>
+                The conclusion does not logically relate to the main point of
+                the original argument or evidence.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Car thefts and
+                student enrollment both increased during the same three months.
+                Therefore, increased enrollment caused the car thefts.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Post Hoc / False Cause</h4>
+              <p>
+                The writer assumes that because one event happened before or
+                near another, the first event caused the second.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Walmart reduced
+                employee wages, and unemployment later increased. Therefore,
+                Walmart caused the increase in unemployment.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Red Herring</h4>
+              <p>
+                The writer introduces an unrelated issue to distract the
+                audience from the main topic.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> A parent asks a
+                child about declining grades, and the child quickly changes the
+                subject.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Slippery Slope</h4>
+              <p>
+                The writer claims that one action will inevitably produce a
+                chain of increasingly extreme consequences.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> Continued smoking
+                will increase health problems, which will increase medical
+                costs, which will then increase taxes.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Straw Man</h4>
+              <p>
+                The writer misrepresents an opponent's argument so the weakened
+                version is easier to attack.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> A politician uses
+                an exaggerated or outlandish version of an opponent's position
+                to undermine it.
+              </p>
+            </article>
+
+            <article class="fallacy-card">
+              <h4>Weak or False Analogy</h4>
+              <p>
+                The argument depends on a comparison between ideas or
+                situations that are not meaningfully alike.
+              </p>
+              <p>
+                <span class="example-label">Example:</span> An apple and a
+                tomato are both red fruits, so they must taste alike, even
+                though one is sweet and the other is savory.
+              </p>
+            </article>
+          </div>
+        </div>
+      </details>
+
+      <aside class="general-box">
+        <h3>Finding a Fallacy Does Not End the Conversation</h3>
+        <p>
+          The presence of a logical fallacy does not necessarily mean that an
+          entire argument is invalid. It means that a particular piece of
+          reasoning is flawed or inadequately supported. Finding and correcting
+          that flaw can make the argument stronger and easier to accept.
+        </p>
+      </aside>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- ESSAY QUALITY -->
+
+    <section class="essay-section" id="essay-quality">
+      <div class="section-label">General Knowledge</div>
+      <h2>Understanding Essay Quality</h2>
+
+      <aside class="general-box">
+        <h3>General Guidance, Not an Assignment-Specific Rubric</h3>
+        <p>
+          These descriptions provide a broad overview of characteristics that
+          commonly distinguish different levels of academic writing. They do
+          not replace the rubric or instructions for a particular assignment.
+        </p>
+      </aside>
+
+      <div class="quality-grid">
+        <article class="quality-card">
+          <h3>A-Level: Excellent Work</h3>
+          <ul>
+            <li>
+              Demonstrates insightful, original, and precise argumentation.
+            </li>
+
+            <li>
+              Presents a clear, specific, and arguable thesis that directs the
+              paper from beginning to end.
+            </li>
+
+            <li>
+              Fully supports claims with logical reasoning and relevant,
+              well-integrated evidence.
+            </li>
+
+            <li>
+              Includes a thoughtful rebuttal that addresses other views
+              respectfully and persuasively.
+            </li>
+
+            <li>
+              Uses strong transitions and clear paragraph structure.
+            </li>
+
+            <li>
+              Demonstrates strong control of formatting, tone, and grammar.
+            </li>
+
+            <li>
+              Leaves the reader convinced, informed, and impressed by the
+              writing's maturity and control.
+            </li>
+          </ul>
+        </article>
+
+        <article class="quality-card">
+          <h3>B-Level: Strong Work</h3>
+          <ul>
+            <li>
+              Contains a clear, arguable thesis and solid organization.
+            </li>
+
+            <li>
+              Uses generally strong reasoning, although some explanations or
+              transitions may need further development.
+            </li>
+
+            <li>
+              Selects and integrates evidence effectively in most places.
+            </li>
+
+            <li>
+              Includes an accurate rebuttal that may not fully explore every
+              implication or counterpoint.
+            </li>
+
+            <li>
+              Contains only minor issues with formatting, tone, or grammar.
+            </li>
+
+            <li>
+              Persuades the reader and establishes credibility, although some
+              points could be stronger.
+            </li>
+          </ul>
+        </article>
+
+        <article class="quality-card">
+          <h3>C-Level: Average or Competent Work</h3>
+          <ul>
+            <li>
+              Meets basic assignment requirements and demonstrates general
+              understanding.
+            </li>
+
+            <li>
+              Includes a clear thesis that may be too broad, obvious, or
+              underdeveloped.
+            </li>
+
+            <li>
+              Contains reasoning that may feel rushed or incomplete.
+            </li>
+
+            <li>
+              Uses evidence unevenly or connects it loosely to the writer's
+              claims.
+            </li>
+
+            <li>
+              Includes a rebuttal that may be limited, unclear, or formulaic.
+            </li>
+
+            <li>
+              Contains noticeable errors that do not prevent comprehension.
+            </li>
+
+            <li>
+              Allows the reader to understand the argument but may not fully
+              persuade the reader.
+            </li>
+          </ul>
+        </article>
+
+        <article class="quality-card">
+          <h3>D-Level: Developing Work</h3>
+          <ul>
+            <li>
+              Struggles with thesis clarity, focus, or argumentative direction.
+            </li>
+
+            <li>
+              Uses inconsistent or confusing organization.
+            </li>
+
+            <li>
+              Relies on weak, repetitive, or irrelevant evidence.
+            </li>
+
+            <li>Includes an ineffective rebuttal or no rebuttal.</li>
+
+            <li>
+              Contains formatting and grammar problems that distract from the
+              meaning.
+            </li>
+
+            <li>
+              Leaves the reader unsure of the argument's purpose or main point.
+            </li>
+          </ul>
+        </article>
+
+        <article class="quality-card">
+          <h3>F-Level: Unacceptable Work</h3>
+          <ul>
+            <li>
+              Is missing key required components such as evidence, rebuttal, or
+              a Works Cited page.
+            </li>
+
+            <li>
+              Is off-topic, plagiarized, or generated through prohibited AI
+              use.
+            </li>
+
+            <li>
+              Lacks a coherent argument or understanding of the assignment.
+            </li>
+
+            <li>
+              Contains severe grammar, formatting, or tone problems that
+              prevent comprehension.
+            </li>
+
+            <li>
+              Does not allow the reader to identify a clear claim, argument, or
+              purpose.
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mrs. Seay's Writing Center | Writing is a process.</p>
+  </footer>
+
+</body>
+</html>
