@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Essay Types | Mrs. Seay's Writing Center</title>
+  <title>Major Assignments | Mrs. Seay's Writing Center</title>
 
   <meta
     name="description"
-    content="Composition I guidance for rhetorical analysis, annotated bibliographies, argumentative essays, rhetorical fallacies, and general essay quality."
+    content="Composition I guidance for major assignments, including rhetorical analysis, annotated bibliographies, argumentative essays, rhetorical fallacies, and general essay quality."
   >
 
   <style>
@@ -549,7 +549,24 @@
     }
 
     footer p {
-      margin: 0;
+      margin: 3px 0;
+    }
+
+    .related-resources {
+      margin: 38px 0 0;
+      padding: 24px 26px;
+      background: var(--lavender-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .related-resources h2 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .related-resources ul {
+      margin-bottom: 0;
     }
 
     @media (max-width: 720px) {
@@ -623,11 +640,13 @@
   <header>
     <div class="header-inner">
       <!-- Change the image filename below if your logo uses a different name. -->
-      <img
-        class="site-logo"
-        src="finch-logo.png"
-        alt="Finch reading a book, the logo for Mrs. Seay's Writing Center"
-      >
+      <a href="index.html" aria-label="Return to the Writing Center home page">
+        <img
+          class="site-logo"
+          src="finch-logo.png"
+          alt="Finch reading a book, the logo for Mrs. Seay's Writing Center"
+        >
+      </a>
 
       <div>
         <p class="site-title">Mrs. Seay's Writing Center</p>
@@ -642,18 +661,16 @@
     <div class="nav-inner">
       <a href="index.html">Home</a>
       <a href="general-writing.html">General Writing</a>
-      <a href="essay-types.html" aria-current="page">Essay Types</a>
-      <a href="mla.html">MLA</a>
-      <a href="apa.html">APA</a>
+      <a href="essay-types.html" aria-current="page">Major Assignments</a>
       <a href="grammar.html">Grammar</a>
-      <a href="faq.html">FAQ</a>
+      <a href="mla.html">MLA</a>
     </div>
   </nav>
 
   <main>
     <div class="page-introduction">
       <div class="section-label">Composition I</div>
-      <h1>Essay Types</h1>
+      <h1>Major Assignments</h1>
 
       <p>
         Different essays ask writers to practice different parts of academic
@@ -2152,10 +2169,34 @@
 
       <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
     </section>
+
+    <aside class="related-resources">
+      <h2>Related Resources</h2>
+
+      <ul>
+        <li>
+          Need help with introductions, conclusions, summaries, transitions,
+          or general academic writing? Visit the
+          <a href="general-writing.html">General Writing page</a>.
+        </li>
+
+        <li>
+          Need help with sentence structure, punctuation, or revision?
+          Visit the <a href="grammar.html">Grammar page</a>.
+        </li>
+
+        <li>
+          Need help formatting the paper, integrating quotations, or creating
+          citations? Visit the <a href="mla.html">MLA page</a>.
+        </li>
+      </ul>
+    </aside>
   </main>
 
   <footer>
-    <p>Mrs. Seay's Writing Center | Writing is a process.</p>
+    <p><strong>Mrs. Seay's Writing Center</strong></p>
+    <p>Created by Brittany Seay</p>
+    <p>Version 1.0 • August 2026</p>
   </footer>
 
 </body>
