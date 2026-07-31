@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Faculty Feedback Reference</title>
+
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta
+    name="description"
+    content="Internal faculty feedback reference used to guide writing support and coaching."
+  >
+
+  <style>
+    :root {
+      --deep-plum: #43235f;
+      --plum: #684080;
+      --lavender: #b99ad0;
+      --soft-lavender: #eee4f3;
+      --pale-lavender: #f8f2fa;
+      --warm-white: #fffdfb;
+      --text: #25212a;
+      --muted-text: #625b68;
+      --border: #dbcbe4;
+      --note: #fff7df;
+      --note-border: #d3aa45;
+      --good: #edf7ef;
+      --good-border: #6d9a76;
+      --warning: #fff1ef;
+      --warning-border: #b5655c;
+      --shadow: 0 8px 24px rgba(67, 35, 95, 0.08);
+      --radius: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--warm-white);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--deep-plum);
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 44px 20px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(67, 35, 95, 0.98),
+          rgba(104, 64, 128, 0.94)
+        );
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.1;
+    }
+
+    header p {
+      max-width: 860px;
+      margin: 14px 0 0;
+      font-size: 1.08rem;
+      color: #f2eaf6;
+    }
+
+    main {
+      padding: 38px 0 70px;
+    }
+
+    .internal-note,
+    .section-card,
+    .quick-nav,
+    .coaching-box,
+    .positive-box,
+    .warning-box {
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .internal-note {
+      margin-bottom: 28px;
+      padding: 20px 22px;
+      background: var(--note);
+      border-left: 7px solid var(--note-border);
+    }
+
+    .internal-note h2 {
+      margin: 0 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-plum);
+    }
+
+    .quick-nav {
+      margin-bottom: 32px;
+      padding: 22px;
+      background: var(--pale-lavender);
+      border: 1px solid var(--border);
+    }
+
+    .quick-nav h2 {
+      margin: 0 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-plum);
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 10px;
+    }
+
+    .nav-grid a {
+      display: block;
+      padding: 11px 13px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .section-card {
+      margin: 34px 0;
+      padding: 28px;
+      background: white;
+      border: 1px solid var(--border);
+      scroll-margin-top: 20px;
+    }
+
+    .section-label {
+      margin-bottom: 8px;
+      color: var(--plum);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-card h2,
+    .section-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep-plum);
+    }
+
+    .section-card h2 {
+      margin-top: 0;
+      font-size: clamp(1.7rem, 3vw, 2.35rem);
+    }
+
+    .section-card h3 {
+      margin-top: 26px;
+      font-size: 1.28rem;
+    }
+
+    .feedback-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .feedback-list li {
+      margin-bottom: 12px;
+    }
+
+    .coaching-box,
+    .positive-box,
+    .warning-box {
+      margin: 18px 0;
+      padding: 18px 20px;
+    }
+
+    .coaching-box {
+      background: var(--pale-lavender);
+      border-left: 7px solid var(--plum);
+    }
+
+    .positive-box {
+      background: var(--good);
+      border-left: 7px solid var(--good-border);
+    }
+
+    .warning-box {
+      background: var(--warning);
+      border-left: 7px solid var(--warning-border);
+    }
+
+    .coaching-box h3,
+    .positive-box h3,
+    .warning-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .prompt-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .prompt-list li {
+      margin-bottom: 11px;
+      padding-left: 25px;
+      position: relative;
+    }
+
+    .prompt-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--plum);
+      font-weight: 800;
+    }
+
+    details {
+      margin: 14px 0;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 14px 16px;
+      background: var(--soft-lavender);
+      color: var(--deep-plum);
+      font-weight: 800;
+    }
+
+    .details-content {
+      padding: 18px;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 24px 20px;
+      background: var(--deep-plum);
+      color: #eee8f3;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .section-card {
+        padding: 21px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <div class="container">
+      <h1>Faculty Feedback Reference</h1>
+      <p>
+        Internal coaching language used to guide writing support for Composition I.
+        This page is intentionally unlinked from the student-facing Writing Center.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <aside class="internal-note">
+        <h2>Use of This Reference</h2>
+        <p>
+          Use these notes to mirror Mrs. Seay's coaching language, expectations,
+          and questioning style. Do not assign grades, claim that a specific error
+          exists unless it appears in the student's writing, or treat this page as
+          a replacement for an assignment prompt or instructor feedback.
+        </p>
+      </aside>
+
+      <nav class="quick-nav" aria-label="Faculty feedback reference contents">
+        <h2>Reference Sections</h2>
+
+        <div class="nav-grid">
+          <a href="#process">Writing Process &amp; Mindset</a>
+          <a href="#tone">Academic Tone &amp; Conventions</a>
+          <a href="#introductions">Introductions &amp; Conclusions</a>
+          <a href="#claims">Thesis, Claims &amp; Focus</a>
+          <a href="#organization">Organization &amp; Transitions</a>
+          <a href="#evidence">Evidence &amp; Quote Integration</a>
+          <a href="#analysis">Reasoning &amp; Analysis</a>
+          <a href="#ra">Rhetorical Analysis Feedback</a>
+          <a href="#ab">Annotated Bibliography Feedback</a>
+          <a href="#argument">Argumentative Essay Feedback</a>
+          <a href="#grammar">Grammar &amp; Sentence Clarity</a>
+          <a href="#mla">MLA &amp; Source Use</a>
+          <a href="#revision">Revision Coaching Questions</a>
+          <a href="#positive">Positive Feedback Language</a>
+        </div>
+      </nav>
+
+      <section class="section-card" id="process">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Writing Process &amp; Mindset</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Academic writing is a process of constant learning. The goal of feedback
+            is to help you identify what is working, what is unclear, and what needs
+            further development.
+          </li>
+
+          <li>
+            You have the foundation of the idea, but you trust too heavily that readers
+            will be able to parse out your logic because it feels simple to you.
+          </li>
+
+          <li>
+            This class is about teaching you the skills of academic writing so that
+            when you reach more complicated arguments and logic, you already know how
+            to break down and discuss ideas because you practiced with the simpler
+            material first.
+          </li>
+
+          <li>
+            The conversation here is a little informal, but the ideas are solid and
+            there is a clear presence of critical thinking being applied.
+          </li>
+
+          <li>
+            Marks that do not have attached comments mean the concern has been explained
+            elsewhere in the paper.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Coaching Direction</h3>
+          <p>
+            Encourage students to slow down, identify the exact problem, and revise
+            the idea rather than merely editing the sentence.
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="tone">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Academic Tone &amp; Conventions</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Do not use second person in academic writing. It is informal and often
+            accusatory in nature.
+          </li>
+
+          <li>
+            First person is appropriate in reflections, but avoid first-person personal
+            and collective pronouns in other forms of academic writing.
+          </li>
+
+          <li>
+            Do not use first-person collective pronouns such as <em>our, us,</em> and
+            <em>we</em>. You cannot speak for an undefined group of people.
+          </li>
+
+          <li>
+            Do not use contractions in academic writing.
+          </li>
+
+          <li>
+            We do not ask questions in academic writing because readers are unable to
+            answer. Instead of asking a question, present the answer you want your
+            audience to give.
+          </li>
+
+          <li>
+            Avoid collective or all-inclusive phrasing such as <em>always, never,
+            everyone,</em> and <em>no one</em>. It is difficult or impossible to prove
+            those claims within the scope of a paper.
+          </li>
+
+          <li>
+            Avoid weak modifiers such as <em>very, really, a lot,</em> and
+            <em>just</em>. Most of the time, you can remove the word or replace it with
+            a stronger, clearer choice.
+          </li>
+
+          <li>
+            Modifiers are often overused and add nothing of value to the sentence.
+            Removing unnecessary modifiers can create a stronger tone and improve clarity.
+          </li>
+
+          <li>
+            Avoid clichés, colloquialisms, and phrasing that sounds conversational rather
+            than academic.
+          </li>
+
+          <li>
+            We do not refer to authors by their first names in academic writing. Use the
+            author's first and last name at first mention, then the last name only.
+          </li>
+
+          <li>
+            Avoid using verbs such as <em>talk, say,</em> and <em>speak</em> when discussing
+            written text.
+          </li>
+
+          <li>
+            Authors can focus, discuss, claim, explain, and argue. Articles and sources
+            are inanimate objects, so connect those actions to the author.
+          </li>
+
+          <li>
+            Avoid metadiscourse. There is no need to tell readers what you are about to do,
+            what you are currently doing, or what you have already done in the paper.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="introductions">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Introductions &amp; Conclusions</h2>
+
+        <h3>Introductions</h3>
+
+        <ul class="feedback-list">
+          <li>
+            Open with a discussion that is slightly broader than the thesis so you have
+            space to develop the necessary contextual material without creating a jarring
+            opening.
+          </li>
+
+          <li>
+            The introduction should move from broad to narrow, include the context readers
+            need, and end with the thesis.
+          </li>
+
+          <li>
+            Too much summary in the introduction bogs down the section and takes away from
+            the context, which should be the focus.
+          </li>
+
+          <li>
+            The introduction is underdeveloped. You have the broad-to-narrow concept, but
+            the contextual discussion before the thesis needs more development.
+          </li>
+
+          <li>
+            The introduction includes the required components, but they are not organized
+            in a way that creates an effective introductory conversation.
+          </li>
+
+          <li>
+            A complete academic paragraph is typically 8–10 sentences. A two- or
+            three-sentence introduction is not developed enough to create an effective
+            opening.
+          </li>
+        </ul>
+
+        <h3>Conclusions</h3>
+
+        <ul class="feedback-list">
+          <li>
+            Begin the conclusion with a reference back to the thesis.
+          </li>
+
+          <li>
+            Do not merely repeat what the body paragraphs already discussed.
+          </li>
+
+          <li>
+            Show how the ideas or appeals came together to create the paper's larger point.
+          </li>
+
+          <li>
+            End by connecting the discussion to the broader academic conversation or the
+            larger significance of the topic.
+          </li>
+
+          <li>
+            The conclusion is too summative and needs more development in the wrap-up and
+            the “why this matters” side of the topic.
+          </li>
+
+          <li>
+            Do not introduce new evidence or direct quotations in the conclusion.
+          </li>
+
+          <li>
+            A two- or three-sentence conclusion is not developed enough to complete the
+            paper effectively.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="claims">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Thesis, Claims &amp; Focus</h2>
+
+        <ul class="feedback-list">
+          <li>
+            The thesis should follow the structure explained in the course material and
+            preview the main direction of the paper.
+          </li>
+
+          <li>
+            Each body paragraph should begin with a clear claim that identifies the focus
+            of that section.
+          </li>
+
+          <li>
+            Do not begin the paragraph with someone else's idea. Begin with your claim,
+            then use evidence to support it.
+          </li>
+
+          <li>
+            You have strong claims, but you double up on them in the same paragraph.
+            Readers are not sure which claim the paragraph is going to prove.
+          </li>
+
+          <li>
+            You have good claims, but the paragraphs do not build into one cohesive paper.
+            This makes the overall goal or argument difficult to follow.
+          </li>
+
+          <li>
+            The key sentence should identify not only the topic but the specific point the
+            paragraph will prove.
+          </li>
+
+          <li>
+            To what end? What is the author or writer trying to accomplish at the heart of
+            this discussion?
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="organization">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Organization &amp; Transitions</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Internal transition needed. These sentences are not inherently connected,
+            which makes the points difficult to follow.
+          </li>
+
+          <li>
+            These ideas do not logically follow one another. There is a gap, and you need
+            a phrase or sentence that effectively connects the thoughts.
+          </li>
+
+          <li>
+            Do not repeat evidence or reasoning. Each new sentence should add significance
+            to the paragraph rather than restate what has already been said.
+          </li>
+
+          <li>
+            Several simple sentences are stacked on top of one another and follow the same
+            organization. This creates a choppy rhythm.
+          </li>
+
+          <li>
+            Vary sentence type and organization from sentence to sentence when writing
+            academically.
+          </li>
+
+          <li>
+            Streamline these thoughts. They can be combined and revised to express the same
+            information more clearly and concisely.
+          </li>
+
+          <li>
+            Clunky phrasing or organization is making this idea harder to read than it
+            needs to be.
+          </li>
+
+          <li>
+            Revise for concision. The same point can be made in fewer words, which will
+            improve clarity.
+          </li>
+
+          <li>
+            Avoid opening every sentence with the same structure. Repeated sentence
+            patterns make the paragraph feel rigid and choppy.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="evidence">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Evidence &amp; Quote Integration</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Every direct quotation must have a citation so readers know where the
+            information came from.
+          </li>
+
+          <li>
+            This is a drop quote. Connect the quotation to your own writing by tagging it
+            or blending it into the sentence.
+          </li>
+
+          <li>
+            Tagging at the end of the sentence can feel awkward and clunky. As a general
+            rule, it is better to tag at the beginning.
+          </li>
+
+          <li>
+            Use a comma when the quotation flows directly after a verb of expression such
+            as <em>said, commented, wrote,</em> or <em>noted</em>.
+          </li>
+
+          <li>
+            Do not use a comma when you use <em>that</em> to blend the quote into your own
+            sentence.
+          </li>
+
+          <li>
+            When quoted material already contains quotation marks, place that material in
+            single quotation marks inside your quotation.
+          </li>
+
+          <li>
+            Do not use ellipses at the beginning or end of quotations. The quotation marks
+            already show where the direct quotation begins and ends.
+          </li>
+
+          <li>
+            Work with evidence in smaller chunks so readers can follow the discussion.
+          </li>
+
+          <li>
+            Evidence should support your ideas, not overshadow or replace them.
+          </li>
+
+          <li>
+            The evidence is about the topic, but it does not function as proof of the claim
+            under discussion.
+          </li>
+
+          <li>
+            Evidence that merely repeats the claim does not prove the claim. It only shows
+            that someone else is saying the same thing.
+          </li>
+
+          <li>
+            The evidence needs to be smoothly integrated and clearly connected to the claim
+            it is meant to support.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>The Double Down Rule</h3>
+          <p>
+            After you quote, double down. If you have one line of quoted evidence, you
+            should generally have at least two sentences afterward in which you explain,
+            expound upon, break down, or build on the evidence in your own words.
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="analysis">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Reasoning &amp; Analysis</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Explain how. You have the foundation of the argument, but you trust too heavily
+            that readers will automatically parse out your logic.
+          </li>
+
+          <li>
+            Your reasoning should explain why the claim is true or worth seriously
+            considering.
+          </li>
+
+          <li>
+            The reasoning is underdeveloped. You cut the conversation short before fully
+            breaking down why you believe what you do.
+          </li>
+
+          <li>
+            The reasoning should link the claim and evidence together in a way that proves
+            the point.
+          </li>
+
+          <li>
+            Do not simply repeat the evidence after presenting it. Explain its significance.
+          </li>
+
+          <li>
+            Avoid looping phrases such as “this shows,” “this sentence gives evidence,”
+            or “this supports the thesis.” Move directly into the reasoning instead.
+          </li>
+
+          <li>
+            Before moving on from this example, explain why it functions the way you claim
+            it does and why it matters.
+          </li>
+
+          <li>
+            The discussion following the evidence must prove how the evidence functions in
+            the way identified in the topic sentence.
+          </li>
+
+          <li>
+            The information is too vague to show readers what the source or point is
+            actually about. Break it down specifically enough for the logic to make sense.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="ra">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Rhetorical Analysis Feedback</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Each body paragraph should identify the appeal under review, provide an example
+            of the appeal in use, explain why the evidence functions as that appeal, and
+            discuss how using the appeal in that way helped the author reach the audience.
+          </li>
+
+          <li>
+            The first sentence of each body paragraph should identify the appeal and how the
+            author used it.
+          </li>
+
+          <li>
+            You discuss the appeal, but the topic sentence does not clearly establish the
+            appeal or explain how the author used it.
+          </li>
+
+          <li>
+            After each piece of evidence, explain why the quotation functions as the appeal
+            you connected it to.
+          </li>
+
+          <li>
+            You identified the appeal and included evidence, but the discussion does not
+            explain how or why the author used the appeal in that way.
+          </li>
+
+          <li>
+            Having a specific audience identification makes the discussion about why the
+            author used the appeal more developed.
+          </li>
+
+          <li>
+            Add why the appeal would have worked for the audience. Without the answer to
+            that question, the rhetorical analysis is not fully connected to audience or
+            purpose.
+          </li>
+
+          <li>
+            For pathos, identify the specific emotion the author wanted the audience to
+            feel. Without naming the emotion, the discussion cannot fully explain how or
+            why the appeal works.
+          </li>
+
+          <li>
+            You shift into discussing the topic of the article instead of analyzing how and
+            why the author used the appeal. This creates a summative analysis rather than a
+            rhetorical analysis.
+          </li>
+
+          <li>
+            The conclusion should examine how the appeals worked together to create a
+            successful argument.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Questions to Prompt Stronger Rhetorical Analysis</h3>
+          <ul class="prompt-list">
+            <li>Why does this quotation function as ethos, logos, or pathos?</li>
+            <li>What specific audience is the author trying to reach?</li>
+            <li>Why would this appeal work for that audience?</li>
+            <li>How does the appeal help the author achieve the purpose?</li>
+            <li>What specific emotion is the author trying to create?</li>
+            <li>How do the appeals build on one another?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="ab">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Annotated Bibliography Feedback</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Each entry should contain one paragraph that begins with 5–8 sentences of pure
+            summary, followed by one evaluation sentence and one sentence explaining how
+            the source will be used in the upcoming paper.
+          </li>
+
+          <li>
+            All summary sentences should be clearly connected to the author by name,
+            pronoun, or phrase so readers can distinguish the author's ideas from your own
+            evaluation.
+          </li>
+
+          <li>
+            The summary reads more like a description of the topic than a summary of the
+            author's ideas.
+          </li>
+
+          <li>
+            A description tells readers what the article is about. A summary shows what the
+            author argues, explains, and concludes.
+          </li>
+
+          <li>
+            Focus on what the author says rather than merely describing what the author did.
+          </li>
+
+          <li>
+            The summary is too vague to show what the author actually discussed.
+          </li>
+
+          <li>
+            The summary feels like a data dump. Focus on the author's overall point and how
+            the author supports it rather than including every fact or statistic.
+          </li>
+
+          <li>
+            The first evaluation sentence should address the quality of the source based on
+            the author's credentials or the significance of the findings within the larger
+            academic conversation.
+          </li>
+
+          <li>
+            The final sentence should explain a specific plan for how the source will be
+            used in the argumentative essay.
+          </li>
+
+          <li>
+            The evaluation is too vague. Explain specifically how the author used ethos,
+            logos, or pathos and why that use supports the source's credibility.
+          </li>
+        </ul>
+
+        <div class="warning-box">
+          <h3>Summaries and Source Wording</h3>
+          <p>
+            Summaries cannot include word-for-word pulls from the source. Changing a few
+            words is paraphrasing, not summarizing. In a pure summary, the ideas remain the
+            author's, but the wording, sentence structure, and phrasing should be entirely
+            your own. Word-for-word source language functions as a direct quotation and
+            becomes a citation problem when it is not formatted and documented as one.
+          </p>
+        </div>
+
+        <div class="coaching-box">
+          <h3>Description vs. Summary</h3>
+          <p>
+            <strong>Description:</strong> “This article talks about how social media affects
+            teenagers.”
+          </p>
+          <p>
+            <strong>Summary:</strong> “The author argues that social media increases anxiety
+            among teenagers by encouraging constant comparison, drawing on survey data from
+            over 2,000 students.”
+          </p>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="argument">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Argumentative Essay Feedback</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Begin each body paragraph with a clear claim that supports the thesis.
+          </li>
+
+          <li>
+            Reasons should explain why the claim should be seriously considered by readers.
+          </li>
+
+          <li>
+            Evidence should prove the claim rather than merely repeat it.
+          </li>
+
+          <li>
+            Use specific evidence that bolsters the argument without overshadowing it or
+            replacing your voice.
+          </li>
+
+          <li>
+            Double down after every piece of evidence so the paragraph does not become dense
+            with data.
+          </li>
+
+          <li>
+            The rebuttal should acknowledge the opposing idea, provide evidence supporting
+            that view, present your response, and support your response with evidence.
+          </li>
+
+          <li>
+            A rebuttal is underdeveloped when it merely mentions an opposing idea without
+            fully explaining or responding to it.
+          </li>
+
+          <li>
+            The response to the opposing view must address the same issue raised by the
+            opposing source.
+          </li>
+
+          <li>
+            A rebuttal without evidence is unsupported and does not function academically.
+          </li>
+
+          <li>
+            The conclusion should refer back to the thesis, wrap up the argument without
+            becoming repetitive, and connect the discussion to a larger academic
+            conversation.
+          </li>
+        </ul>
+
+        <div class="coaching-box">
+          <h3>Questions to Prompt Stronger Argumentation</h3>
+          <ul class="prompt-list">
+            <li>What exactly is the claim in this paragraph?</li>
+            <li>Why should a skeptical reader accept that claim?</li>
+            <li>How does the evidence prove the claim rather than repeat it?</li>
+            <li>What does the opposing view actually argue?</li>
+            <li>Does the response address the same issue?</li>
+            <li>Why does this argument matter beyond the paper?</li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="grammar">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Grammar &amp; Sentence Clarity</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Introductory comma here. When a sentence or second clause opens with a
+            dependent clause, phrase, or word, set it apart from the independent clause
+            with a comma.
+          </li>
+
+          <li>
+            No comma is usually needed when the dependent clause or phrase appears at the
+            end of the sentence.
+          </li>
+
+          <li>
+            Use a comma before a coordinating conjunction when it joins two complete
+            sentences.
+          </li>
+
+          <li>
+            Do not use a comma with the coordinating conjunction when it creates only a
+            compound subject or compound predicate.
+          </li>
+
+          <li>
+            A comma splice occurs when two complete sentences are joined with only a comma.
+            Correct it with a period, semicolon, comma plus coordinating conjunction, or by
+            making one clause dependent.
+          </li>
+
+          <li>
+            A run-on occurs when two complete sentences are connected with nothing. Use a
+            comma plus coordinating conjunction, semicolon, period, or dependent clause
+            structure.
+          </li>
+
+          <li>
+            A fragment is a phrase or dependent clause attempting to stand alone as a
+            complete sentence.
+          </li>
+
+          <li>
+            When joining two independent clauses with a conjunctive adverb, use a semicolon
+            before the conjunctive adverb and a comma after it.
+          </li>
+
+          <li>
+            Subjects and verbs should match in number and person.
+          </li>
+
+          <li>
+            This pronoun has an unclear antecedent and could refer to more than one noun.
+            Revise so readers know exactly what the pronoun refers to.
+          </li>
+
+          <li>
+            Maintain one verb tense as much as possible to improve readability and flow.
+          </li>
+
+          <li>
+            Use simple verb tenses when possible. Overcomplicated or conditional verb
+            constructions can bog down clarity.
+          </li>
+
+          <li>
+            Parallel ideas should be expressed in parallel form. Similar ideas and functions
+            should use similar grammatical structures.
+          </li>
+
+          <li>
+            Passive voice hides the actor and weakens clarity. Name who or what is
+            performing the action when possible.
+          </li>
+
+          <li>
+            The only time a noun is possessive is when it owns a noun that follows it.
+            Nouns do not own verbs.
+          </li>
+
+          <li>
+            We generally avoid ending sentences in prepositions in academic writing, though
+            this convention is becoming less strict.
+          </li>
+
+          <li>
+            This preposition does not convey the correct relationship between the noun or
+            verb and the prepositional phrase.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="mla">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>MLA &amp; Source Use</h2>
+
+        <ul class="feedback-list">
+          <li>
+            Every in-text citation must match the first element of the Works Cited entry.
+          </li>
+
+          <li>
+            Every quote needs a citation unless the author's name is clearly included in a
+            tag phrase and the citation requirements are otherwise satisfied.
+          </li>
+
+          <li>
+            Use the author's last name in academic writing and in parenthetical citations.
+          </li>
+
+          <li>
+            A Works Cited page begins on a separate page after the essay.
+          </li>
+
+          <li>
+            Entries should use hanging indents, be double-spaced, and not include extra
+            spacing between entries.
+          </li>
+
+          <li>
+            Include a DOI for online academic sources when available. If no DOI is
+            available, include the URL.
+          </li>
+
+          <li>
+            Use title case: capitalize the first word, last word, and all major words in
+            between.
+          </li>
+
+          <li>
+            Short works such as articles use quotation marks. Journals, books, and other
+            containers use italics.
+          </li>
+
+          <li>
+            For three or more authors, use the first author's name followed by
+            <em>et al.</em> For two authors, include both authors.
+          </li>
+
+          <li>
+            Do not add extra spacing between paragraphs or Works Cited entries.
+          </li>
+
+          <li>
+            An acronym should be written out and followed by the acronym in parentheses the
+            first time it appears. The acronym may be used by itself after that.
+          </li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="revision">
+        <div class="section-label">Questions I Use to Push the Thinking</div>
+        <h2>Revision Coaching Questions</h2>
+
+        <ul class="prompt-list">
+          <li>How so?</li>
+          <li>Why does this matter?</li>
+          <li>To what end?</li>
+          <li>What is the author trying to accomplish at the heart of this?</li>
+          <li>What specific audience is being addressed?</li>
+          <li>Why would this appeal work for that audience?</li>
+          <li>What specific emotion is the author trying to create?</li>
+          <li>How does this evidence prove the claim?</li>
+          <li>What does the quotation add that the claim does not already say?</li>
+          <li>What logical step are you asking the reader to make?</li>
+          <li>Can this be stated more directly?</li>
+          <li>Are these two sentences logically connected?</li>
+          <li>What belongs between these ideas so readers can follow the movement?</li>
+          <li>Is this describing the topic, or summarizing the author's ideas?</li>
+          <li>Are you explaining what the author said, or merely what the author did?</li>
+          <li>What makes this source credible beyond simply being peer reviewed?</li>
+          <li>How will this source specifically be used in the upcoming paper?</li>
+          <li>Does the rebuttal respond to the same issue raised by the opposing source?</li>
+          <li>How do the ideas or appeals work together?</li>
+          <li>How does the conclusion connect the paper to a broader academic conversation?</li>
+        </ul>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+      <section class="section-card" id="positive">
+        <div class="section-label">Common Feedback I Leave</div>
+        <h2>Positive Feedback Language</h2>
+
+        <div class="positive-box">
+          <h3>General</h3>
+          <ul class="feedback-list">
+            <li>Great content here. You included all the needed components and organized them effectively.</li>
+            <li>Your overall tone is professional and appropriate for this type of paper.</li>
+            <li>No conventions were broken, and the tone was appropriate for this level of writing.</li>
+            <li>The ideas are solid, and there is a clear presence of critical thinking.</li>
+            <li>You have a solid foundation of writing skills.</li>
+          </ul>
+        </div>
+
+        <div class="positive-box">
+          <h3>Rhetorical Analysis</h3>
+          <ul class="feedback-list">
+            <li>
+              You have clear and fully developed discussions showing how the author used
+              each appeal to connect to the audience.
+            </li>
+            <li>
+              Your discussion connecting the appeal to the success of the author's purpose
+              was well done.
+            </li>
+            <li>
+              All key sentences are present, identify the appeal, and appear at the beginning
+              of the paragraph.
+            </li>
+          </ul>
+        </div>
+
+        <div class="positive-box">
+          <h3>Argumentative Writing</h3>
+          <ul class="feedback-list">
+            <li>
+              Strong, clear claims throughout support the thesis and focus each paragraph.
+            </li>
+            <li>
+              Clear reasoning is logically connected to the claims, and there are no gaps in
+              the logic.
+            </li>
+            <li>
+              The evidence supports the claims and furthers the discussion without becoming
+              repetitive.
+            </li>
+            <li>
+              You chose specific evidence that bolstered the argument without overshadowing
+              it or replacing your voice.
+            </li>
+            <li>
+              Really solid rebuttal. It is balanced, complete, and includes the needed
+              components on both sides of the conversation.
+            </li>
+            <li>
+              The conclusion includes the key components and avoids becoming entirely
+              summative.
+            </li>
+          </ul>
+        </div>
+
+        <a class="back-to-top" href="#top">Back to top ↑</a>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Internal faculty reference for Mrs. Seay's Writing Center</p>
+  </footer>
+</body>
+</html>
