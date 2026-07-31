@@ -9,24 +9,31 @@
     content="A student-friendly grammar guide focused on sentence structure, punctuation, consistency, revision, and quick-reference topics."
   />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <style>
     :root {
-      --lavender-50: #faf8ff;
-      --lavender-100: #f1ebff;
-      --lavender-200: #e4d8ff;
-      --lavender-500: #7d61b3;
-      --lavender-700: #563b88;
-      --lavender-900: #352451;
-      --orange: #cb6015;
-      --ink: #24222a;
-      --muted: #625e6a;
-      --line: #ded8e8;
-      --white: #ffffff;
-      --success: #eef8f0;
-      --warning: #fff8e8;
-      --danger: #fff1f1;
-      --shadow: 0 10px 30px rgba(53, 36, 81, 0.08);
-      --radius: 18px;
+      --deep-plum: #43235f;
+      --plum: #684080;
+      --lavender: #b99ad0;
+      --soft-lavender: #eee4f3;
+      --pale-lavender: #f8f2fa;
+      --warm-white: #fffdfb;
+      --text: #25212a;
+      --muted-text: #625b68;
+      --border: #dbcbe4;
+      --good-example: #edf8ed;
+      --good-border: #79a979;
+      --bad-example: #f6f2f2;
+      --bad-border: #a98787;
+      --tip: #fff7df;
+      --tip-border: #d3aa45;
+      --shadow: 0 6px 18px rgba(67, 35, 95, 0.08);
+      --radius: 14px;
       --max-width: 1120px;
     }
 
@@ -36,136 +43,209 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 24px;
     }
 
     body {
       margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top right, rgba(203, 96, 21, 0.08), transparent 26rem),
-        linear-gradient(180deg, var(--lavender-50), #ffffff 34rem);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.65;
+      color: var(--text);
+      background: var(--warm-white);
+      font-family: "Inter", Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
 
     a {
-      color: var(--lavender-700);
+      color: var(--deep-plum);
     }
 
     a:hover,
     a:focus {
-      color: var(--orange);
+      color: var(--plum);
     }
 
-    .page-shell {
-      width: min(100% - 2rem, var(--max-width));
+    .container {
+      width: min(92%, var(--max-width));
       margin: 0 auto;
-      padding: 2rem 0 4rem;
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 2.4rem;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--lavender-900), var(--lavender-700));
-      color: var(--white);
+    header.site-header {
+      background: rgba(255, 253, 251, 0.98);
+      border-bottom: 7px solid var(--lavender);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 22px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      min-width: max-content;
+    }
+
+    .brand-logo {
+      width: 76px;
+      height: 76px;
+      object-fit: cover;
       border-radius: 24px;
-      box-shadow: var(--shadow);
     }
 
-    .hero::after {
+    .brand-text h1 {
+      margin: 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(1.25rem, 2.2vw, 2rem);
+      color: var(--deep-plum);
+      line-height: 1.15;
+    }
+
+    .brand-text p {
+      margin: 5px 0 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      color: var(--plum);
+      font-size: 1rem;
+    }
+
+    .main-nav ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-nav a {
+      position: relative;
+      text-decoration: none;
+      color: var(--deep-plum);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.92rem;
+      padding: 8px 0;
+    }
+
+    .main-nav a::after {
       content: "";
       position: absolute;
-      width: 14rem;
-      height: 14rem;
-      right: -4rem;
-      bottom: -6rem;
-      border: 2rem solid rgba(255,255,255,0.08);
-      border-radius: 50%;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: var(--lavender);
+      transition: width 0.2s ease;
     }
 
-    .eyebrow {
-      margin: 0 0 0.35rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #f4d7c2;
-      font-size: 0.82rem;
+    .main-nav a:hover::after,
+    .main-nav a[aria-current="page"]::after {
+      width: 100%;
     }
 
-    .hero h1 {
+    .page-heading {
+      background: linear-gradient(
+        135deg,
+        #fbf4fc 0%,
+        #eee0f3 52%,
+        #f8eef9 100%
+      );
+      text-align: center;
+      padding: 62px 20px;
+    }
+
+    .page-heading h2 {
       margin: 0;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      line-height: 1.05;
+      font-family: "Libre Baskerville", Georgia, serif;
+      color: var(--deep-plum);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.2;
     }
 
-    .hero p {
-      max-width: 760px;
-      margin: 1rem 0 0;
-      font-size: 1.08rem;
+    .page-heading p {
+      max-width: 850px;
+      margin: 14px auto 0;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-style: italic;
+      color: var(--plum);
+      font-size: 1.15rem;
+    }
+
+    main {
+      padding: 46px 0 70px;
     }
 
     .intro-card,
     .quick-nav,
-    .callout,
-    .reference-card {
-      background: var(--white);
-      border: 1px solid var(--line);
+    .reference-card,
+    .related-resources,
+    .transparency {
+      background: var(--white, #ffffff);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .intro-card {
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-left: 8px solid var(--orange);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      background: var(--pale-lavender);
+      border-left: 7px solid var(--plum);
     }
 
     .intro-card h2,
     .quick-nav h2,
-    .section-heading h2 {
+    .section-heading h2,
+    .related-resources h2 {
       margin-top: 0;
-      color: var(--lavender-900);
+      font-family: "Libre Baskerville", Georgia, serif;
+      color: var(--deep-plum);
     }
 
     .quick-nav {
-      padding: 1.25rem;
-      margin-bottom: 2rem;
+      padding: 26px 28px;
+      margin-bottom: 42px;
+      background: var(--pale-lavender);
     }
 
     .nav-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.8rem;
+      gap: 10px;
     }
 
     .nav-grid a {
       display: block;
-      padding: 0.9rem 1rem;
+      padding: 11px 13px;
       text-decoration: none;
-      background: var(--lavender-50);
-      border: 1px solid var(--lavender-200);
-      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
       font-weight: 700;
     }
 
     .nav-grid a:hover,
     .nav-grid a:focus {
-      background: var(--lavender-100);
-      transform: translateY(-1px);
+      background: var(--soft-lavender);
     }
 
     .topic-section {
-      margin: 2.4rem 0;
-      scroll-margin-top: 1rem;
+      margin: 0 0 60px;
+      scroll-margin-top: 30px;
     }
 
     .section-heading {
       display: flex;
       align-items: flex-start;
-      gap: 0.85rem;
-      margin-bottom: 1rem;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--lavender);
     }
 
     .section-number {
@@ -174,34 +254,39 @@
       height: 2.4rem;
       display: grid;
       place-items: center;
-      color: var(--white);
-      background: var(--orange);
+      color: #ffffff;
+      background: var(--plum);
       border-radius: 50%;
       font-weight: 800;
     }
 
+    .section-heading h2 {
+      margin-bottom: 3px;
+      font-size: clamp(1.8rem, 3vw, 2.45rem);
+    }
+
     .section-heading p {
-      margin: 0.25rem 0 0;
-      color: var(--muted);
+      margin: 0;
+      color: var(--muted-text);
     }
 
     details {
-      margin: 0.85rem 0;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: 0 6px 20px rgba(53, 36, 81, 0.05);
+      margin: 14px 0;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
       overflow: hidden;
+      box-shadow: 0 4px 14px rgba(67, 35, 95, 0.05);
     }
 
     summary {
       cursor: pointer;
       list-style: none;
-      padding: 1.1rem 1.25rem;
-      font-size: 1.05rem;
+      padding: 16px 18px;
       font-weight: 800;
-      color: var(--lavender-900);
-      background: linear-gradient(90deg, var(--lavender-50), #ffffff);
+      color: var(--deep-plum);
+      background: var(--soft-lavender);
+      font-family: "Libre Baskerville", Georgia, serif;
     }
 
     summary::-webkit-details-marker {
@@ -211,8 +296,8 @@
     summary::after {
       content: "+";
       float: right;
-      color: var(--orange);
-      font-size: 1.35rem;
+      color: var(--plum);
+      font-size: 1.3rem;
       line-height: 1;
     }
 
@@ -221,209 +306,217 @@
     }
 
     .detail-body {
-      padding: 0.2rem 1.25rem 1.3rem;
+      padding: 18px 20px 22px;
     }
 
     .detail-body h3 {
-      color: var(--lavender-700);
-      margin-bottom: 0.35rem;
+      color: var(--plum);
+      font-family: "Libre Baskerville", Georgia, serif;
+      margin: 24px 0 8px;
     }
 
     .detail-body ul,
     .detail-body ol {
-      padding-left: 1.4rem;
+      padding-left: 26px;
     }
 
     .example,
     .key-takeaway,
     .warning,
     .strategy {
-      margin: 1rem 0;
-      padding: 1rem 1.1rem;
-      border-radius: 12px;
+      margin: 16px 0;
+      padding: 16px 18px;
+      border-radius: 10px;
     }
 
     .example {
-      background: var(--lavender-50);
-      border-left: 5px solid var(--lavender-500);
+      background: var(--pale-lavender);
+      border-left: 7px solid var(--plum);
     }
 
     .key-takeaway {
-      background: var(--success);
-      border-left: 5px solid #4d8c5f;
+      background: var(--good-example);
+      border-left: 7px solid var(--good-border);
     }
 
     .warning {
-      background: var(--danger);
-      border-left: 5px solid #b65353;
+      background: var(--bad-example);
+      border-left: 7px solid var(--bad-border);
     }
 
     .strategy {
-      background: var(--warning);
-      border-left: 5px solid var(--orange);
+      background: var(--tip);
+      border-left: 7px solid var(--tip-border);
     }
 
     .label {
       display: block;
-      margin-bottom: 0.25rem;
+      margin-bottom: 5px;
       font-weight: 800;
-      color: var(--lavender-900);
+      color: var(--deep-plum);
     }
 
     .two-column {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 16px;
     }
 
     .reference-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1rem;
+      gap: 16px;
     }
 
     .reference-card {
-      padding: 1.2rem;
+      padding: 20px;
+      background: #ffffff;
     }
 
     .reference-card h3 {
       margin-top: 0;
-      color: var(--lavender-900);
+      color: var(--deep-plum);
+      font-family: "Libre Baskerville", Georgia, serif;
     }
 
     .transparency {
-      margin-top: 2.5rem;
-      padding: 1rem 1.2rem;
-      background: var(--lavender-50);
-      border: 1px solid var(--lavender-200);
-      border-radius: 14px;
-      color: var(--muted);
+      margin-top: 34px;
+      padding: 18px 20px;
+      background: var(--pale-lavender);
+      color: var(--muted-text);
       font-size: 0.95rem;
+    }
+
+    .related-resources {
+      margin-top: 30px;
+      padding: 24px 28px;
+      background: var(--pale-lavender);
+    }
+
+    .related-resources ul {
+      padding-left: 24px;
+      margin-bottom: 0;
     }
 
     .back-to-top {
       display: inline-block;
-      margin-top: 0.75rem;
+      margin-top: 12px;
       font-weight: 700;
       text-decoration: none;
     }
 
-    .site-nav {
-      background: var(--white);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 2px 10px rgba(53, 36, 81, 0.06);
-    }
-
-    .site-nav-inner {
-      width: min(100% - 2rem, var(--max-width));
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.25rem;
-    }
-
-    .site-nav a {
-      display: block;
-      padding: 0.9rem 0.8rem;
-      color: var(--lavender-900);
-      border-bottom: 3px solid transparent;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .site-nav a:hover,
-    .site-nav a:focus,
-    .site-nav a[aria-current="page"] {
-      background: var(--lavender-50);
-      border-bottom-color: var(--lavender-500);
-      color: var(--lavender-900);
-    }
-
-    .home-link {
-      display: inline-block;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .related-resources {
-      margin-top: 2.5rem;
-      padding: 1.25rem 1.4rem;
-      background: var(--lavender-50);
-      border: 1px solid var(--lavender-200);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .related-resources h2 {
-      margin-top: 0;
-      color: var(--lavender-900);
-    }
-
-    .site-footer {
-      padding: 1.4rem 1rem;
-      background: var(--lavender-900);
-      color: #f3eef8;
+    footer {
+      padding: 22px 20px;
+      background: linear-gradient(
+        90deg,
+        #d9c1e5,
+        #ead9ef,
+        #d9c1e5
+      );
+      color: var(--deep-plum);
       text-align: center;
+      border-top: 1px solid var(--lavender);
     }
 
-    .site-footer p {
-      margin: 0.2rem 0;
+    footer p {
+      font-size: 0.95rem;
+      margin: 3px 0;
     }
 
-    @media (max-width: 760px) {
-      .page-shell {
-        width: min(100% - 1rem, var(--max-width));
+    @media (max-width: 1100px) {
+      .header-inner {
+        flex-direction: column;
       }
 
-      .hero {
-        padding: 1.5rem;
+      .main-nav ul {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .brand {
+        min-width: 0;
+      }
+
+      .brand-logo {
+        width: 62px;
+        height: 62px;
+        border-radius: 19px;
+      }
+
+      .main-nav ul {
+        gap: 12px 18px;
+      }
+
+      .main-nav a {
+        font-size: 0.87rem;
+      }
+
+      .page-heading {
+        padding: 48px 18px;
       }
 
       .two-column {
         grid-template-columns: 1fr;
       }
 
-      summary {
-        padding-right: 1rem;
-      }
-
-      .site-nav-inner {
-        width: min(100% - 1rem, var(--max-width));
-      }
-
-      .site-nav a {
-        padding: 0.75rem 0.55rem;
-        font-size: 0.88rem;
+      .quick-nav,
+      .intro-card,
+      .related-resources {
+        padding: 22px;
       }
     }
   </style>
 </head>
 
-<body>
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="site-nav-inner">
-      <a href="index.html">Home</a>
-      <a href="general-writing.html">General Writing</a>
-      <a href="essay-types.html">Major Assignments</a>
-      <a href="grammar.html" aria-current="page">Grammar</a>
-      <a href="mla.html">MLA</a>
-    </div>
-  </nav>
+<body id="top">
 
-  <main class="page-shell" id="top">
-    <header class="hero">
-      <p class="eyebrow"><a class="home-link" href="index.html">Mrs. Seay's Writing Center</a></p>
-      <h1>Grammar</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html">
+        <img
+          class="brand-logo"
+          src="finch-logo.png"
+          alt="A finch sitting on an open book"
+        >
+
+        <div class="brand-text">
+          <h1>Mrs. Seay's Writing Center</h1>
+          <p>Writing is a process.</p>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="general-writing.html">General Writing</a></li>
+          <li><a href="essay-types.html">Major Assignments</a></li>
+          <li><a href="grammar.html" aria-current="page">Grammar</a></li>
+          <li><a href="mla.html">MLA</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <section class="page-heading">
+    <h2>Grammar</h2>
+    <p>
+      Sentence structure first, punctuation second
+    </p>
+  </section>
+
+  <main>
+    <div class="container">
+
+    <section class="intro-card">
+      <h2>Sentence Structure First, Punctuation Second</h2>
       <p>
         Grammar becomes easier when you stop treating it as a pile of unrelated rules.
         Sentences are built from clauses. Once you understand that structure, punctuation,
         sentence boundaries, consistency, and revision begin to fit together.
       </p>
-    </header>
-
-    <section class="intro-card">
-      <h2>Sentence Structure First, Punctuation Second</h2>
       <p>
         Most sentence-level grammar errors are really sentence boundary problems. This guide
         begins with clauses, subjects, and predicates, then moves into fragments, run-ons,
@@ -1333,29 +1426,35 @@
 
     <aside class="related-resources">
       <h2>Related Resources</h2>
+
       <ul>
         <li>
           Need help with introductions, summaries, transitions, conclusions,
           or general academic writing? Visit the
           <a href="general-writing.html">General Writing page</a>.
         </li>
+
         <li>
           Working on a rhetorical analysis, annotated bibliography, or
           argumentative essay? Visit the
           <a href="essay-types.html">Major Assignments page</a>.
         </li>
+
         <li>
           Need help formatting your paper, integrating quotations, or creating
           citations? Visit the <a href="mla.html">MLA page</a>.
         </li>
       </ul>
     </aside>
+
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <p><strong>Mrs. Seay's Writing Center</strong></p>
     <p>Created by Brittany Seay</p>
     <p>Version 1.0 • August 2026</p>
   </footer>
+
 </body>
 </html>
