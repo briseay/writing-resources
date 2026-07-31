@@ -135,9 +135,22 @@
             overflow: hidden;
             text-align: center;
             background:
-                radial-gradient(circle at 15% 25%, rgba(185, 154, 208, 0.28), transparent 28%),
-                radial-gradient(circle at 85% 70%, rgba(216, 191, 230, 0.32), transparent 30%),
-                linear-gradient(135deg, #fbf4fc 0%, #eee0f3 52%, #f8eef9 100%);
+                radial-gradient(
+                    circle at 15% 25%,
+                    rgba(185, 154, 208, 0.28),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(216, 191, 230, 0.32),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fbf4fc 0%,
+                    #eee0f3 52%,
+                    #f8eef9 100%
+                );
             padding: 82px 20px 74px;
         }
 
@@ -242,8 +255,8 @@
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(6, minmax(0, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
             align-items: stretch;
         }
 
@@ -282,13 +295,6 @@
             font-size: 2.8rem;
         }
 
-        .card-icon img {
-            width: 76px;
-            height: 76px;
-            object-fit: cover;
-            border-radius: 22px;
-        }
-
         .card h3 {
             font-family: "Libre Baskerville", serif;
             color: var(--deep-plum);
@@ -312,7 +318,12 @@
         footer {
             margin-top: 26px;
             padding: 22px 20px;
-            background: linear-gradient(90deg, #d9c1e5, #ead9ef, #d9c1e5);
+            background: linear-gradient(
+                90deg,
+                #d9c1e5,
+                #ead9ef,
+                #d9c1e5
+            );
             color: var(--deep-plum);
             text-align: center;
             border-top: 1px solid var(--lavender);
@@ -320,6 +331,7 @@
 
         footer p {
             font-size: 0.95rem;
+            margin: 3px 0;
         }
 
         @media (max-width: 1250px) {
@@ -332,7 +344,7 @@
             }
 
             .cards {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
 
@@ -395,15 +407,35 @@
 
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="#">General Writing</a></li>
-                    <li><a href="#">Rhetorical Analysis</a></li>
-                    <li><a href="#">Annotated Bibliography</a></li>
-                    <li><a href="#">Argumentative Essay</a></li>
-                    <li><a href="#">MLA</a></li>
-                    <li><a href="#">APA</a></li>
-                    <li><a href="#">Grammar</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li>
+                        <a class="active" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="general-writing.html">
+                            General Writing
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="essay-types.html">
+                            Major Assignments
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="grammar.html">
+                            Grammar
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mla.html">
+                            MLA
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
@@ -421,14 +453,15 @@
                     <span>🪶</span>
                 </div>
 
-                <p class="tagline">Writing is a process.</p>
+                <p class="tagline">
+                    Writing is a process.
+                </p>
 
                 <p class="welcome">
                     Welcome! Whether you're brainstorming your first idea,
                     organizing your essay, polishing a final draft, or figuring
-                    out how to cite a source, this Writing Center is here to
-                    help. Every resource on this site is designed to guide you
-                    through the writing process one step at a time while
+                    out how to cite a source, these resources are designed to
+                    guide you through each stage of the writing process while
                     helping you become a stronger, more confident writer.
                 </p>
 
@@ -440,79 +473,102 @@
 
                 <div class="resources-heading">
                     <span aria-hidden="true">❦</span>
-                    <h2>Where would you like to start?</h2>
+
+                    <h2>
+                        Where would you like to start?
+                    </h2>
+
                     <span aria-hidden="true">❧</span>
                 </div>
 
                 <div class="cards">
 
-                    <a class="card" href="#">
-                        <div class="card-icon" aria-hidden="true">✒</div>
-                        <h3>General Writing</h3>
-                        <div class="card-rule"></div>
-                        <p>
-                            Learn the foundations of effective writing,
-                            including planning, drafting, revising,
-                            organization, audience, and purpose.
-                        </p>
-                    </a>
-
-                    <a class="card" href="#">
-                        <div class="card-icon" aria-hidden="true">📖</div>
-                        <h3>Essay Types</h3>
-                        <div class="card-rule"></div>
-                        <p>
-                            Find resources designed for rhetorical analysis,
-                            argumentative essays, annotated bibliographies,
-                            and additional writing assignments.
-                        </p>
-                    </a>
-
-                    <a class="card" href="#">
-                        <div class="card-icon" aria-hidden="true">❞</div>
-                        <h3>MLA &amp; APA</h3>
-                        <div class="card-rule"></div>
-                        <p>
-                            Access citation guides, formatting examples,
-                            in-text citations, reference pages, and common
-                            documentation questions.
-                        </p>
-                    </a>
-
-                    <a class="card" href="#">
-                        <div class="card-icon" aria-hidden="true">✎</div>
-                        <h3>Grammar</h3>
-                        <div class="card-rule"></div>
-                        <p>
-                            Review common grammar concerns, punctuation,
-                            sentence structure, clarity, style, and
-                            proofreading strategies.
-                        </p>
-                    </a>
-
-                    <a class="card" href="#">
-                        <div class="card-icon" aria-hidden="true">?</div>
-                        <h3>FAQ</h3>
-                        <div class="card-rule"></div>
-                        <p>
-                            Find quick answers to the questions students ask
-                            most often throughout the writing process.
-                        </p>
-                    </a>
-
-                    <a class="card" href="#">
-                        <div class="card-icon">
-                            <img
-                                src="finch-logo.png"
-                                alt=""
-                            >
+                    <a
+                        class="card"
+                        href="general-writing.html"
+                    >
+                        <div
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ✒
                         </div>
-                        <h3>RA Finch<br>Writing Coach</h3>
+
+                        <h3>General Writing</h3>
+
                         <div class="card-rule"></div>
+
                         <p>
-                            Use the AI Writing Coach alongside these resources
-                            for guided feedback that reflects the materials
-                            found throughout this Writing Center.
+                            Learn the foundations of effective academic
+                            writing, including introductions, summaries,
+                            transitions, conclusions, clarity, and revision
+                            strategies.
+                        </p>
+                    </a>
+
+                    <a
+                        class="card"
+                        href="essay-types.html"
+                    >
+                        <div
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            📖
+                        </div>
+
+                        <h3>Major Assignments</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Explore resources for rhetorical analysis,
+                            annotated bibliographies, argumentative essays,
+                            and the writing skills these assignments build on.
+                        </p>
+                    </a>
+
+                    <a
+                        class="card"
+                        href="grammar.html"
+                    >
+                        <div
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ✎
+                        </div>
+
+                        <h3>Grammar</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Build stronger sentences by learning grammar
+                            through clause structure, punctuation, sentence
+                            boundaries, style, and revision.
+                        </p>
+                    </a>
+
+                    <a
+                        class="card"
+                        href="mla.html"
+                    >
+                        <div
+                            class="card-icon"
+                            aria-hidden="true"
+                        >
+                            ❞
+                        </div>
+
+                        <h3>MLA</h3>
+
+                        <div class="card-rule"></div>
+
+                        <p>
+                            Learn MLA formatting, in-text citations, Works
+                            Cited entries, quotation integration, and common
+                            documentation questions.
                         </p>
                     </a>
 
@@ -523,7 +579,17 @@
     </main>
 
     <footer>
-        <p>Created by Brittany Seay • Mrs. Seay's Writing Center</p>
+        <p>
+            <strong>Mrs. Seay's Writing Center</strong>
+        </p>
+
+        <p>
+            Created by Brittany Seay
+        </p>
+
+        <p>
+            Version 1.0 • July 2026
+        </p>
     </footer>
 
 </body>
