@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>MLA | Mrs. Seay's Writing Center</title>
+
+  <meta
+    name="description"
+    content="Composition I guidance for MLA paper formatting, in-text citations, quotation integration, and Works Cited pages."
+  >
+
+  <style>
+    :root {
+      --lavender-dark: #4f4168;
+      --lavender: #75638f;
+      --lavender-medium: #a89abb;
+      --lavender-light: #eee9f4;
+      --lavender-pale: #f8f5fb;
+      --cream: #fffdf8;
+      --white: #ffffff;
+      --text: #302c35;
+      --muted: #625c69;
+      --border: #d8cfdf;
+      --tip: #fff7df;
+      --tip-border: #d9b85f;
+      --example: #edf5f3;
+      --example-border: #6d9a91;
+      --general: #eef3f8;
+      --general-border: #6d829c;
+      --warning: #fff1ef;
+      --warning-border: #b5655c;
+      --shadow: 0 6px 18px rgba(65, 49, 83, 0.08);
+      --radius: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--lavender-dark);
+    }
+
+    a:hover,
+    a:focus {
+      color: #2f2540;
+    }
+
+    header {
+      padding: 34px 20px 28px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(79, 65, 104, 0.96),
+          rgba(117, 99, 143, 0.92)
+        );
+      color: var(--white);
+    }
+
+    .header-inner {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .site-logo {
+      width: 104px;
+      height: 104px;
+      flex: 0 0 104px;
+      border: 4px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      background: var(--white);
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .site-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+    }
+
+    .site-subtitle {
+      margin: 10px 0 0;
+      color: #f3eef8;
+      font-size: 1.08rem;
+    }
+
+    nav.main-navigation {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(65, 49, 83, 0.06);
+    }
+
+    .nav-inner {
+      width: min(var(--max-width), 100%);
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .main-navigation a {
+      display: block;
+      padding: 14px 12px;
+      color: var(--lavender-dark);
+      border-bottom: 3px solid transparent;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .main-navigation a:hover,
+    .main-navigation a:focus,
+    .main-navigation a[aria-current="page"] {
+      background: var(--lavender-pale);
+      border-bottom-color: var(--lavender);
+    }
+
+    main {
+      width: min(var(--max-width), calc(100% - 34px));
+      margin: 38px auto 70px;
+    }
+
+    .page-introduction {
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      color: var(--lavender-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.65rem, 4vw, 2.3rem);
+    }
+
+    h3 {
+      margin-top: 30px;
+      font-size: 1.4rem;
+    }
+
+    h4 {
+      margin: 22px 0 8px;
+      font-size: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul,
+    ol {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      padding: 2px 6px;
+      background: var(--lavender-light);
+      border-radius: 4px;
+      font-size: 0.94em;
+    }
+
+    .section-label {
+      margin-bottom: 9px;
+      color: var(--lavender);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .table-of-contents {
+      margin: 28px 0 34px;
+      padding: 24px;
+      background: var(--lavender-light);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .table-of-contents h2 {
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .jump-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .jump-grid a {
+      display: block;
+      padding: 11px 13px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .jump-grid a:hover,
+    .jump-grid a:focus {
+      background: var(--lavender-pale);
+    }
+
+    .content-section {
+      margin: 38px 0;
+      padding: 30px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .walkthrough-box,
+    .why-box,
+    .tip-box,
+    .example-box,
+    .general-box,
+    .warning-box,
+    .double-down-box {
+      margin: 22px 0;
+      padding: 19px 21px;
+      border-radius: 10px;
+    }
+
+    .walkthrough-box,
+    .why-box {
+      background: var(--lavender-light);
+      border-left: 7px solid var(--lavender);
+    }
+
+    .tip-box {
+      background: var(--tip);
+      border-left: 7px solid var(--tip-border);
+    }
+
+    .example-box {
+      background: var(--example);
+      border-left: 7px solid var(--example-border);
+    }
+
+    .general-box {
+      background: var(--general);
+      border-left: 7px solid var(--general-border);
+    }
+
+    .warning-box {
+      background: var(--warning);
+      border-left: 7px solid var(--warning-border);
+    }
+
+    .double-down-box {
+      background: #f5effa;
+      border: 2px solid var(--lavender-medium);
+    }
+
+    .walkthrough-box h2,
+    .why-box h3,
+    .tip-box h3,
+    .example-box h3,
+    .general-box h3,
+    .warning-box h3,
+    .double-down-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .walkthrough-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .walkthrough-link {
+      display: block;
+      padding: 17px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .walkthrough-link strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--lavender-dark);
+    }
+
+    .walkthrough-link span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .walkthrough-link:hover,
+    .walkthrough-link:focus {
+      background: var(--lavender-pale);
+      border-color: var(--lavender-medium);
+    }
+
+    .format-grid,
+    .citation-grid,
+    .mistake-grid,
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .format-card,
+    .citation-card,
+    .mistake-card,
+    .checklist-card {
+      padding: 18px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .format-card h3,
+    .citation-card h3,
+    .mistake-card h3,
+    .checklist-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+    }
+
+    .citation-pattern {
+      display: block;
+      margin: 9px 0;
+      padding: 10px 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.95rem;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 16px;
+      margin: 18px 0;
+    }
+
+    .bad-example,
+    .good-example {
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .bad-example {
+      background: var(--warning);
+      border: 1px solid #deb8b3;
+    }
+
+    .good-example {
+      background: var(--example);
+      border: 1px solid #b9d2cc;
+    }
+
+    .bad-example h4,
+    .good-example h4 {
+      margin-top: 0;
+    }
+
+    .mla-sample {
+      margin: 18px 0;
+      padding: 22px;
+      background: #fffefa;
+      border: 1px solid #cfc7b8;
+      border-radius: 8px;
+      font-family: "Times New Roman", Times, serif;
+      line-height: 2;
+    }
+
+    .mla-sample p:last-child {
+      margin-bottom: 0;
+    }
+
+    .works-cited-entry {
+      margin-left: 2em;
+      text-indent: -2em;
+    }
+
+    .element-list {
+      margin: 20px 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: element-step;
+    }
+
+    .element-list li {
+      position: relative;
+      margin: 0 0 12px;
+      padding: 15px 15px 15px 57px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      counter-increment: element-step;
+    }
+
+    .element-list li::before {
+      content: counter(element-step);
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      background: var(--lavender);
+      color: var(--white);
+      border-radius: 50%;
+      font-weight: 800;
+    }
+
+    .author-table {
+      width: 100%;
+      margin: 20px 0;
+      border-collapse: collapse;
+    }
+
+    .author-table th,
+    .author-table td {
+      padding: 13px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .author-table th {
+      background: var(--lavender-light);
+      color: var(--lavender-dark);
+    }
+
+    .entry-breakdown {
+      margin: 20px 0;
+      padding: 20px;
+      background: var(--lavender-pale);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .entry-part {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.55fr) minmax(0, 1.8fr);
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .entry-part:last-child {
+      border-bottom: 0;
+    }
+
+    .entry-part strong {
+      color: var(--lavender-dark);
+    }
+
+    details {
+      margin: 17px 0;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    summary {
+      padding: 16px 18px;
+      background: var(--lavender-light);
+      color: var(--lavender-dark);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    summary:hover,
+    summary:focus {
+      background: #e4dced;
+    }
+
+    .details-content {
+      padding: 20px;
+    }
+
+    .checklist {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 31px;
+    }
+
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--lavender-dark);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .back-to-top {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .back-to-top a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 26px 20px;
+      background: var(--lavender-dark);
+      color: #eee8f3;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .site-logo {
+        width: 88px;
+        height: 88px;
+        flex-basis: 88px;
+      }
+
+      .main-navigation a {
+        padding: 12px 9px;
+        font-size: 0.85rem;
+      }
+
+      main {
+        width: min(100% - 22px, var(--max-width));
+        margin-top: 24px;
+      }
+
+      .content-section {
+        padding: 21px 17px;
+      }
+
+      .entry-part {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
+
+      .author-table,
+      .author-table thead,
+      .author-table tbody,
+      .author-table th,
+      .author-table td,
+      .author-table tr {
+        display: block;
+      }
+
+      .author-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+
+      .author-table tr {
+        margin-bottom: 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .author-table td {
+        border: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .author-table td:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media print {
+      nav,
+      .back-to-top,
+      .walkthrough-box {
+        display: none;
+      }
+
+      body {
+        background: var(--white);
+      }
+
+      .content-section {
+        box-shadow: none;
+      }
+
+      details {
+        display: block;
+      }
+
+      details > * {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="header-inner">
+      <!-- Change the filename below if your logo uses a different name. -->
+      <img
+        class="site-logo"
+        src="finch-logo.png"
+        alt="Finch reading a book, the logo for Mrs. Seay's Writing Center"
+      >
+
+      <div>
+        <p class="site-title">Mrs. Seay's Writing Center</p>
+
+        <p class="site-subtitle">
+          MLA formatting, citations, quotations, and Works Cited guidance
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="general-writing.html">General Writing</a>
+      <a href="essay-types.html">Essay Types</a>
+      <a href="mla.html" aria-current="page">MLA</a>
+      <a href="grammar.html">Grammar</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="page-introduction">
+      <div class="section-label">Composition I</div>
+
+      <h1>MLA Style</h1>
+
+      <p>
+        MLA style provides a consistent system for formatting academic papers,
+        crediting source material in the body of an essay, and identifying
+        sources on a Works Cited page.
+      </p>
+
+      <p>
+        Use this page to review common MLA requirements, find citation
+        patterns, integrate quotations, and check your paper before submitting
+        it.
+      </p>
+    </div>
+
+    <aside class="walkthrough-box">
+      <h2>Need a Visual Walkthrough?</h2>
+
+      <p>
+        These Scribe guides show the formatting process step by step in
+        Microsoft Word.
+      </p>
+
+      <div class="walkthrough-links">
+        <a
+          class="walkthrough-link"
+          href="https://scribehow.com/o/St7HNhboTnep498c_jsrJA/viewer/MLA_Formatting_Guide__HhTLD32cTIiPi8pjYWr7hw?referrer=workspace"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>MLA Paper Formatting Guide</strong>
+          <span>View the step-by-step Scribe guide.</span>
+        </a>
+
+        <a
+          class="walkthrough-link"
+          href="https://scribehow.com/o/St7HNhboTnep498c_jsrJA/viewer/How_to_Format_a_MLA_Works_Cited_Entry__Kru_CKCsT8mydV3aH0QEPA?referrer=workspace"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Formatting an MLA Works Cited Entry</strong>
+          <span>View the step-by-step Scribe guide.</span>
+        </a>
+      </div>
+    </aside>
+
+    <nav class="table-of-contents" aria-label="Page contents">
+      <h2>I'm Looking For...</h2>
+
+      <div class="jump-grid">
+        <a href="#formatting">How to format my paper</a>
+        <a href="#in-text-citations">How to cite source information</a>
+        <a href="#quotations">How to use a quotation</a>
+        <a href="#works-cited">How to build a Works Cited page</a>
+        <a href="#mistakes">Common MLA mistakes</a>
+        <a href="#checklist">A final MLA checklist</a>
+      </div>
+    </nav>
+
+    <!-- FORMATTING -->
+
+    <section class="content-section" id="formatting">
+      <div class="section-label">Setting Up the Document</div>
+
+      <h2>Formatting Your Paper</h2>
+
+      <p>
+        MLA formatting creates a consistent, readable document. Unless your
+        assignment instructions say otherwise, use the following basic
+        requirements.
+      </p>
+
+      <div class="format-grid">
+        <article class="format-card">
+          <h3>Font and Spacing</h3>
+          <p>
+            Use 12-point Times New Roman font and double-space the entire
+            document.
+          </p>
+        </article>
+
+        <article class="format-card">
+          <h3>Margins</h3>
+          <p>
+            Use one-inch margins on all sides of the document.
+          </p>
+        </article>
+
+        <article class="format-card">
+          <h3>Paragraphs</h3>
+          <p>
+            Indent the first line of each paragraph. Do not add extra spaces
+            before or after paragraphs.
+          </p>
+        </article>
+
+        <article class="format-card">
+          <h3>Page Numbers</h3>
+          <p>
+            Include your last name and the page number in the upper-right
+            corner.
+          </p>
+        </article>
+
+        <article class="format-card">
+          <h3>Paper Information</h3>
+          <p>
+            Include your name, professor's name, course title, and assignment
+            due date at the beginning of the paper.
+          </p>
+        </article>
+
+        <article class="format-card">
+          <h3>Title</h3>
+          <p>
+            Center the paper title. Do not automatically bold, underline, or
+            enlarge it.
+          </p>
+        </article>
+      </div>
+
+      <aside class="general-box">
+        <h3>Writing Process Reminder</h3>
+
+        <p>
+          <strong>Editing</strong> and <strong>revising</strong> are not the
+          same task.
+        </p>
+
+        <p>
+          Editing addresses local, mechanical concerns such as typos, word
+          choice, commas, semicolons, run-ons, and fragments.
+        </p>
+
+        <p>
+          Revising addresses the content of the paper, including clarity,
+          concision, evidence, logic, and organization.
+        </p>
+      </aside>
+
+      <aside class="tip-box">
+        <h3>Quick Tip</h3>
+
+        <p>
+          Formatting should be completed before submission, but formatting
+          alone cannot repair an underdeveloped essay. Revise the content first,
+          then complete the final editing and MLA check.
+        </p>
+      </aside>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- IN-TEXT CITATIONS -->
+
+    <section class="content-section" id="in-text-citations">
+      <div class="section-label">Crediting Sources in the Essay</div>
+
+      <h2>In-Text Citations</h2>
+
+      <p>
+        When you use a source's ideas, summaries, paraphrases, or direct
+        quotations, MLA format requires you to credit the source in the body of
+        the paper.
+      </p>
+
+      <p>
+        The information in the in-text citation should match the first element
+        of the source's Works Cited entry. This is usually the author's last
+        name.
+      </p>
+
+      <aside class="why-box">
+        <h3>Why This Matters</h3>
+
+        <p>
+          In-text citations show readers where source-based information begins
+          and help them locate the complete publication information on the
+          Works Cited page.
+        </p>
+      </aside>
+
+      <div class="citation-grid">
+        <article class="citation-card">
+          <h3>One Author</h3>
+
+          <span class="citation-pattern">
+            (Author's Last Name page number)
+          </span>
+
+          <p>
+            Many students struggle to balance full-time jobs with college
+            coursework (Lopez 14).
+          </p>
+
+          <p>
+            Lopez argues that “students need stronger financial support” (14).
+          </p>
+        </article>
+
+        <article class="citation-card">
+          <h3>Two Authors</h3>
+
+          <span class="citation-pattern">
+            (First Author and Second Author page number)
+          </span>
+
+          <p>
+            Studies show a link between screen time and anxiety (Jenkins and
+            Moore 245).
+          </p>
+
+          <p>
+            Jenkins and Moore found that “digital overuse correlates with
+            decreased well-being” (245).
+          </p>
+        </article>
+
+        <article class="citation-card">
+          <h3>Three or More Authors</h3>
+
+          <span class="citation-pattern">
+            (First Author et al. page number)
+          </span>
+
+          <p>
+            Collaborative learning increases motivation in online classes
+            (Nguyen et al. 78).
+          </p>
+
+          <p>
+            Nguyen et al. found that “peer feedback strengthens confidence”
+            (78).
+          </p>
+        </article>
+
+        <article class="citation-card">
+          <h3>No Page Number</h3>
+
+          <span class="citation-pattern">
+            (Author's Last Name)
+          </span>
+
+          <p>
+            When an online source does not provide page numbers, use the
+            author's last name only.
+          </p>
+
+          <p>
+            When paragraph or section numbers are provided, those may be used,
+            such as <code>(par. 4)</code>.
+          </p>
+        </article>
+      </div>
+
+      <aside class="tip-box">
+        <h3>Quick Reminders</h3>
+
+        <ul>
+          <li>
+            Do not place a comma between the author's name and page number.
+          </li>
+
+          <li>
+            Do not use <strong>p.</strong> or <strong>pg.</strong> before the
+            page number.
+          </li>
+
+          <li>
+            If the author's name appears in your sentence, do not repeat it in
+            parentheses.
+          </li>
+
+          <li>
+            Do not include the author's first name in the parenthetical
+            citation.
+          </li>
+
+          <li>
+            Place the citation before the sentence period.
+          </li>
+
+          <li>
+            Every in-text citation must match a Works Cited entry.
+          </li>
+        </ul>
+      </aside>
+
+      <details>
+        <summary>Compare the Two Citation Patterns</summary>
+
+        <div class="details-content">
+          <h3>Author Named in the Sentence</h3>
+
+          <div class="mla-sample">
+            <p>
+              According to Brown, “Native American women who live on
+              reservations experience sexual assault at a higher rate than
+              women who do not live on reservations” (93).
+            </p>
+          </div>
+
+          <p>
+            Because Brown is named in the sentence, only the page number
+            appears in parentheses.
+          </p>
+
+          <h3>Author Not Named in the Sentence</h3>
+
+          <div class="mla-sample">
+            <p>
+              Due to federal and state regulations, “Native American women who
+              live on reservations experience sexual assault at a higher rate
+              than women who do not live on reservations” (Brown 93).
+            </p>
+          </div>
+
+          <p>
+            Because Brown is not named in the sentence, both the author's last
+            name and page number appear in parentheses.
+          </p>
+        </div>
+      </details>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- QUOTATIONS -->
+
+    <section class="content-section" id="quotations">
+      <div class="section-label">Integrating Source Evidence</div>
+
+      <h2>Using Quotes Effectively</h2>
+
+      <p>
+        Quoting brings another writer's exact words into your paper. The quote
+        should support your own idea, not take over the paragraph.
+      </p>
+
+      <h3>When to Use a Quote</h3>
+
+      <ul>
+        <li>The wording is powerful or memorable.</li>
+        <li>The author expresses the idea especially effectively.</li>
+        <li>
+          You want to add authority and evidence to support your point.
+        </li>
+      </ul>
+
+      <aside class="warning-box">
+        <h3>Avoid Drop Quotes</h3>
+
+        <p>
+          A quotation should never appear by itself as a complete sentence in
+          your paragraph. Connect it grammatically to your own writing by
+          tagging or blending it.
+        </p>
+      </aside>
+
+      <div class="comparison-grid">
+        <article class="bad-example">
+          <h4>Drop Quote</h4>
+
+          <p>
+            “Native American women who live on reservations experience sexual
+            assault at a higher rate than women who do not live on
+            reservations” (Brown 93).
+          </p>
+        </article>
+
+        <article class="good-example">
+          <h4>Integrated Quote</h4>
+
+          <p>
+            According to Brown, “Native American women who live on reservations
+            experience sexual assault at a higher rate than women who do not
+            live on reservations” (93).
+          </p>
+        </article>
+      </div>
+
+      <h3>Two Ways to Set Up a Quote</h3>
+
+      <div class="citation-grid">
+        <article class="citation-card">
+          <h3>Tagging</h3>
+
+          <p>
+            Introduce the author before the quotation.
+          </p>
+
+          <div class="mla-sample">
+            <p>
+              According to Brown, “Native American women who live on
+              reservations experience sexual assault at a higher rate than
+              women who do not live on reservations” (93).
+            </p>
+          </div>
+        </article>
+
+        <article class="citation-card">
+          <h3>Blending</h3>
+
+          <p>
+            Introduce the information first and blend the quotation into your
+            own sentence.
+          </p>
+
+          <div class="mla-sample">
+            <p>
+              Due to federal and state regulations, “Native American women who
+              live on reservations experience sexual assault at a higher rate
+              than women who do not live on reservations” (Brown 93).
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="tip-box">
+        <h3>Grammar Check</h3>
+
+        <p>
+          Your sentence should remain grammatically correct when the quotation
+          is inserted. A partial quotation must fit smoothly into the grammar
+          of your sentence.
+        </p>
+      </aside>
+
+      <details>
+        <summary>Using Ellipses and Brackets</summary>
+
+        <div class="details-content">
+          <h3>Ellipsis</h3>
+
+          <p>
+            Use an ellipsis to show that words have been removed from the
+            middle of a quotation.
+          </p>
+
+          <div class="mla-sample">
+            <p>
+              Green claims that “bombs in Central Europe were completely unreal
+              to us…because our place was too fair for us to accept something
+              like that” (23).
+            </p>
+          </div>
+
+          <h3>Brackets</h3>
+
+          <p>
+            Use brackets to make a small grammatical change, such as adjusting
+            a pronoun or verb tense. Do not change the original meaning.
+          </p>
+
+          <div class="mla-sample">
+            <p>
+              Green claims that “bombs in Central Europe were completely unreal
+              to [them]…because [their] place was too fair for [them] to accept
+              something like that” (23).
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <aside class="double-down-box">
+        <h3>The Double Down Rule</h3>
+
+        <p>
+          Think of a quote like a guest at your table. You have to respond to
+          it, not just sit in silence.
+        </p>
+
+        <p>
+          If your quotation is one sentence long, write at least two sentences
+          explaining, analyzing, or connecting it to your argument.
+        </p>
+
+        <p>
+          Your voice should always be louder than the source's voice. The quote
+          provides evidence and credibility, but your explanation shows that
+          you understand the topic.
+        </p>
+      </aside>
+
+      <aside class="why-box">
+        <h3>Why This Matters</h3>
+
+        <p>
+          Quotations should support your ideas rather than replace them. A
+          paragraph filled with quotations may sound like a collection of other
+          people's ideas instead of your own argument.
+        </p>
+      </aside>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- WORKS CITED -->
+
+    <section class="content-section" id="works-cited">
+      <div class="section-label">Documenting Sources</div>
+
+      <h2>Building a Works Cited Page</h2>
+
+      <p>
+        The Works Cited page lists every source used in the essay. It gives
+        readers the publication information needed to locate each source and
+        increases the writer's credibility.
+      </p>
+
+      <p>
+        If a source is not cited in the essay, do not include it on the Works
+        Cited page. Every in-text citation should match an entry on this page.
+      </p>
+
+      <aside class="warning-box">
+        <h3>Credibility Matters</h3>
+
+        <p>
+          A complete and accurate Works Cited page strengthens your credibility.
+          An incomplete or error-filled Works Cited page can damage it.
+        </p>
+      </aside>
+
+      <h3>Core Elements of an MLA Entry</h3>
+
+      <p>
+        MLA entries generally follow this order. Include the elements that are
+        available for your source.
+      </p>
+
+      <ol class="element-list">
+        <li><strong>Author.</strong></li>
+
+        <li>
+          <strong>“Title of Source.”</strong> This may be an article, essay, web
+          page, poem, short story, or another shorter work.
+        </li>
+
+        <li>
+          <strong><em>Title of Container,</em></strong> such as the book,
+          journal, magazine, database, or website containing the source.
+        </li>
+
+        <li>
+          <strong>Other Contributors,</strong> such as editors or translators,
+          when applicable.
+        </li>
+
+        <li>
+          <strong>Version,</strong> such as an edition or version number.
+        </li>
+
+        <li>
+          <strong>Number,</strong> such as a volume or issue number.
+        </li>
+
+        <li><strong>Publisher,</strong> when applicable.</li>
+
+        <li><strong>Publication Date,</strong></li>
+
+        <li>
+          <strong>Location.</strong> This may include a page range, DOI, or URL.
+        </li>
+      </ol>
+
+      <aside class="tip-box">
+        <h3>Online Sources</h3>
+
+        <p>
+          Include a DOI for a source found online when one is available. If no
+          DOI is available, include the URL.
+        </p>
+      </aside>
+
+      <h3>Journal Article Pattern</h3>
+
+      <div class="mla-sample">
+        <p class="works-cited-entry">
+          Last Name, First Name. “Title of the Article in Title Case.”
+          <em>Title of the Journal</em>, vol. #, no. #, year, pp. range,
+          DOI or URL.
+        </p>
+      </div>
+
+      <h3>Journal Article Example</h3>
+
+      <div class="mla-sample">
+        <p class="works-cited-entry">
+          Davis, Deena S. “Advance Directives and Alzheimer's Disease.”
+          <em>Journal of Law, Medicine, &amp; Ethics</em>, vol. 46, no. 3,
+          2018, pp. 744-748,
+          https://doi.org/10.1177/1073110518804235.
+        </p>
+      </div>
+
+      <div class="entry-breakdown">
+        <h3>Breaking Down the Entry</h3>
+
+        <div class="entry-part">
+          <strong>Author</strong>
+
+          <span>Davis, Deena S.</span>
+        </div>
+
+        <div class="entry-part">
+          <strong>Article Title</strong>
+
+          <span>“Advance Directives and Alzheimer's Disease.”</span>
+        </div>
+
+        <div class="entry-part">
+          <strong>Journal Title</strong>
+
+          <span><em>Journal of Law, Medicine, &amp; Ethics</em>,</span>
+        </div>
+
+        <div class="entry-part">
+          <strong>Publication Information</strong>
+
+          <span>vol. 46, no. 3, 2018, pp. 744-748,</span>
+        </div>
+
+        <div class="entry-part">
+          <strong>DOI</strong>
+
+          <span>https://doi.org/10.1177/1073110518804235.</span>
+        </div>
+      </div>
+
+      <h3>Formatting Authors' Names</h3>
+
+      <table class="author-table">
+        <thead>
+          <tr>
+            <th scope="col">Situation</th>
+            <th scope="col">Rule</th>
+            <th scope="col">Example</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><strong>One Author</strong></td>
+
+            <td>Write the last name first, followed by the first name.</td>
+
+            <td>Smith, John.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Two Authors</strong></td>
+
+            <td>
+              Reverse only the first author's name and connect the names with
+              “and.”
+            </td>
+
+            <td>Smith, John, and Mary Johnson.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Three or More Authors</strong></td>
+
+            <td>
+              Write the first author's name followed by <em>et al.</em>
+            </td>
+
+            <td>Smith, John, et al.</td>
+          </tr>
+
+          <tr>
+            <td><strong>Middle Names</strong></td>
+
+            <td>
+              Spell out the first and last names. Use initials for middle names
+              when provided.
+            </td>
+
+            <td>Smith, John R.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Titles and Punctuation</h3>
+
+      <ul>
+        <li>
+          Put quotation marks around shorter works, such as articles, essays,
+          poems, web pages, and short stories.
+        </li>
+
+        <li>
+          Italicize longer works and containers, such as books, journals,
+          magazines, databases, and websites.
+        </li>
+
+        <li>Capitalize the major words in titles.</li>
+      </ul>
+
+      <div class="example-box">
+        <h3>Example</h3>
+
+        <p>
+          “Education and Inequality.”
+          <em>Journal of Social Research</em>,
+        </p>
+      </div>
+
+      <h3>Formatting the Page</h3>
+
+      <ul>
+        <li>Begin the Works Cited page on a new page.</li>
+
+        <li>Center the heading <strong>Works Cited</strong>.</li>
+
+        <li>
+          List entries alphabetically by the first author's last name.
+        </li>
+
+        <li>Do not rearrange the authors within a source.</li>
+
+        <li>Double-space the entire page.</li>
+
+        <li>Do not add extra spacing between entries.</li>
+
+        <li>
+          Use a half-inch hanging indent for every line after the first line of
+          each entry.
+        </li>
+      </ul>
+
+      <aside class="tip-box">
+        <h3>Hanging Indent</h3>
+
+        <p>
+          The first line of a Works Cited entry begins at the left margin. Every
+          additional line in that same entry is indented one-half inch.
+        </p>
+      </aside>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- COMMON MISTAKES -->
+
+    <section class="content-section" id="mistakes">
+      <div class="section-label">Troubleshooting</div>
+
+      <h2>Common MLA Mistakes</h2>
+
+      <div class="mistake-grid">
+        <article class="mistake-card">
+          <h3>Using p. or pg.</h3>
+
+          <p>
+            MLA in-text citations use the page number without
+            <strong>p.</strong> or <strong>pg.</strong>
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Putting the Citation After the Period</h3>
+
+          <p>
+            The citation normally appears before the sentence period.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Repeating the Author</h3>
+
+          <p>
+            When the author's name is already in the sentence, include only the
+            page number in parentheses.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Using the Author's First Name</h3>
+
+          <p>
+            Parenthetical citations use the author's last name, not the first
+            name.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Dropping a Quote</h3>
+
+          <p>
+            Blend or tag the quotation so it becomes part of your own
+            grammatically complete sentence.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Skipping the Explanation</h3>
+
+          <p>
+            Use the Double Down Rule to explain how the quotation supports your
+            claim.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Mismatched Citations</h3>
+
+          <p>
+            The in-text citation must match the first element of the Works Cited
+            entry.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Including Unused Sources</h3>
+
+          <p>
+            Only list sources that are actually cited in the essay.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Extra Paragraph Spacing</h3>
+
+          <p>
+            Double-space the paper, but do not add extra blank space between
+            paragraphs or Works Cited entries.
+          </p>
+        </article>
+
+        <article class="mistake-card">
+          <h3>Missing the Hanging Indent</h3>
+
+          <p>
+            Indent all lines after the first line of each Works Cited entry.
+          </p>
+        </article>
+      </div>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+
+    <!-- CHECKLIST -->
+
+    <section class="content-section" id="checklist">
+      <div class="section-label">Before You Submit</div>
+
+      <h2>Final MLA Checklist</h2>
+
+      <p>
+        Use this checklist after revising and editing your paper.
+      </p>
+
+      <div class="checklist-grid">
+        <article class="checklist-card">
+          <h3>Paper Formatting</h3>
+
+          <ul class="checklist">
+            <li>My paper uses 12-point Times New Roman font.</li>
+
+            <li>My entire paper is double-spaced.</li>
+
+            <li>My paper has one-inch margins.</li>
+
+            <li>I removed extra spacing between paragraphs.</li>
+
+            <li>Each paragraph begins with an indentation.</li>
+
+            <li>
+              My last name and page number appear in the upper-right corner.
+            </li>
+
+            <li>
+              My name, professor, course, and due date appear at the beginning.
+            </li>
+
+            <li>My title is centered.</li>
+          </ul>
+        </article>
+
+        <article class="checklist-card">
+          <h3>In-Text Citations</h3>
+
+          <ul class="checklist">
+            <li>I cited all summaries, paraphrases, and direct quotations.</li>
+
+            <li>
+              My citations use the author's last name and page number when
+              available.
+            </li>
+
+            <li>I did not use a comma between the name and page number.</li>
+
+            <li>I did not use p. or pg. before page numbers.</li>
+
+            <li>My citations appear before the sentence period.</li>
+
+            <li>
+              I did not repeat the author's name in parentheses when it already
+              appears in the sentence.
+            </li>
+          </ul>
+        </article>
+
+        <article class="checklist-card">
+          <h3>Quotation Integration</h3>
+
+          <ul class="checklist">
+            <li>I did not use any drop quotes.</li>
+
+            <li>Each quotation fits grammatically into my sentence.</li>
+
+            <li>
+              I used brackets or ellipses only when needed and did not change
+              the source's meaning.
+            </li>
+
+            <li>
+              I explained how each quotation supports my own idea.
+            </li>
+
+            <li>
+              My own analysis is more prominent than the source quotations.
+            </li>
+          </ul>
+        </article>
+
+        <article class="checklist-card">
+          <h3>Works Cited</h3>
+
+          <ul class="checklist">
+            <li>My Works Cited page begins on a new page.</li>
+
+            <li>The heading Works Cited is centered.</li>
+
+            <li>My entries are in alphabetical order.</li>
+
+            <li>The page is double-spaced.</li>
+
+            <li>I did not add extra spaces between entries.</li>
+
+            <li>Each entry uses a hanging indent.</li>
+
+            <li>Short works use quotation marks.</li>
+
+            <li>Containers and longer works use italics.</li>
+
+            <li>I included a DOI or URL for online sources.</li>
+
+            <li>
+              Every Works Cited entry matches an in-text citation in my essay.
+            </li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="general-box">
+        <h3>Final Reminder</h3>
+
+        <p>
+          Always follow the directions for your current assignment. A course
+          prompt or instructor may include requirements beyond these general MLA
+          guidelines.
+        </p>
+      </aside>
+
+      <p class="back-to-top"><a href="#top">Back to top ↑</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Mrs. Seay's Writing Center | Writing is a process.</p>
+  </footer>
+
+</body>
+</html>
