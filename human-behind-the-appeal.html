@@ -75,14 +75,6 @@
         margin-bottom: 24px;
     }
 
-    .callout {
-        background: #fff8e8;
-        border-left: 6px solid #d89a22;
-        padding: 16px 18px;
-        border-radius: 6px;
-        margin: 20px 0;
-    }
-
     .framework {
         background: #eef5f8;
         border-left: 6px solid #4f8297;
@@ -270,14 +262,6 @@
             <strong>What is the writer banking on about people?</strong>
         </p>
 
-        <div class="callout">
-            <strong>Think-Aloud Reminder:</strong> You should be screen recording while
-            you complete this activity. Talk through your choices as you make them.
-            If you choose an answer that turns out to be wrong, that is okay. Read the
-            feedback, explain what you understand differently, and try again. Your goal
-            is to show your thinking, not to complete the activity without making a mistake.
-        </div>
-
     </div>
 
     <div class="card">
@@ -292,8 +276,6 @@
             medicine for 18 years.
         </div>
 
-
-        <!-- STEP 1 -->
         <div class="step active" id="step1">
 
             <h3>Step 1: Choice</h3>
@@ -302,32 +284,26 @@
                 What rhetorical choice did the speaker make?
             </p>
 
-            <button class="choice" onclick="answer('s1','wrong',
-            'The scenario does not tell us how the speaker personally feels. Look at what information she deliberately gives the audience about herself.')">
+            <button class="choice" data-step="s1" data-answer="wrong-feelings">
                 The speaker shares how she personally feels about childhood nutrition.
             </button>
 
-            <button class="choice" onclick="answer('s1','correct',
-            'Yes. Before we even label this as ethos, we can describe what the writer actually DID: she established that she has substantial medical experience related to the topic.')">
+            <button class="choice" data-step="s1" data-answer="correct">
                 The speaker establishes her relevant medical experience.
             </button>
 
-            <button class="choice" onclick="answer('s1','wrong',
-            'There are no statistics in this statement. Her 18 years of experience describes her background, not numerical evidence about childhood nutrition.')">
+            <button class="choice" data-step="s1" data-answer="wrong-statistics">
                 The speaker provides statistical evidence about childhood nutrition.
             </button>
 
-            <button class="choice" onclick="answer('s1','wrong',
-            'Nothing in this statement is a story. Focus on the specific information the speaker chooses to reveal about herself.')">
+            <button class="choice" data-step="s1" data-answer="wrong-story">
                 The speaker tells a personal story to make the audience emotional.
             </button>
 
-            <div class="feedback" id="s1feedback"></div>
+            <div class="feedback" id="s1feedback" aria-live="polite"></div>
 
         </div>
 
-
-        <!-- STEP 2 -->
         <div class="step" id="step2">
 
             <h3>Step 2: Audience</h3>
@@ -336,32 +312,26 @@
                 Why is this particular information relevant to this particular audience?
             </p>
 
-            <button class="choice" onclick="answer('s2','wrong',
-            'You have correctly named the appeal, but you have not explained why the audience would care. Saying something is ethos only labels the rhetorical choice. Keep going.')">
+            <button class="choice" data-step="s2" data-answer="wrong-label">
                 Because mentioning her experience creates ethos.
             </button>
 
-            <button class="choice" onclick="answer('s2','correct',
-            'Exactly. The credential matters because it connects directly to what this audience needs: reliable information about the health of their children.')">
+            <button class="choice" data-step="s2" data-answer="correct">
                 Because parents may want health advice about their children to come from someone with relevant medical expertise.
             </button>
 
-            <button class="choice" onclick="answer('s2','wrong',
-            'That assumes everyone responds to authority in exactly the same way. Rhetorical analysis should explain why a choice may influence an audience, not claim that it guarantees a response.')">
+            <button class="choice" data-step="s2" data-answer="wrong-guarantee">
                 Because parents will automatically believe anything a doctor says.
             </button>
 
-            <button class="choice" onclick="answer('s2','wrong',
-            'Knowing that she has a job is not what makes this information rhetorically useful. Think about why THIS job matters for THIS topic and THIS audience.')">
+            <button class="choice" data-step="s2" data-answer="wrong-job">
                 Because the audience needs to know that the speaker has a job.
             </button>
 
-            <div class="feedback" id="s2feedback"></div>
+            <div class="feedback" id="s2feedback" aria-live="polite"></div>
 
         </div>
 
-
-        <!-- STEP 3 -->
         <div class="step" id="step3">
 
             <h3>Step 3: Human Response</h3>
@@ -370,32 +340,26 @@
                 What is the speaker banking on about human behavior?
             </p>
 
-            <button class="choice" onclick="answer('s3','wrong',
-            'This goes too far. Expertise can increase credibility, but it does not guarantee that people will believe everything an expert says.')">
+            <button class="choice" data-step="s3" data-answer="wrong-everything">
                 People believe everything they hear from someone with a professional title.
             </button>
 
-            <button class="choice" onclick="answer('s3','correct',
-            'There it is. This is the human behavior underneath the rhetorical choice. When we do not have specialized knowledge ourselves, we often give additional weight to someone who has relevant training and experience.')">
+            <button class="choice" data-step="s3" data-answer="correct">
                 People often place greater trust in information when the speaker has expertise relevant to the subject.
             </button>
 
-            <button class="choice" onclick="answer('s3','wrong',
-            'This still stops at identifying ethos. The question is not what the appeal is called. Ask what the speaker expects PEOPLE to do or feel because of that credibility.')">
+            <button class="choice" data-step="s3" data-answer="wrong-label">
                 People recognize that professional credentials are an example of ethos.
             </button>
 
-            <button class="choice" onclick="answer('s3','wrong',
-            'That might occasionally be true for an individual, but nothing in this rhetorical situation suggests that this is the human tendency the speaker is relying on.')">
+            <button class="choice" data-step="s3" data-answer="wrong-self">
                 People prefer presentations when speakers talk about themselves.
             </button>
 
-            <div class="feedback" id="s3feedback"></div>
+            <div class="feedback" id="s3feedback" aria-live="polite"></div>
 
         </div>
 
-
-        <!-- STEP 4 -->
         <div class="step" id="step4">
 
             <h3>Step 4: Effect</h3>
@@ -404,30 +368,25 @@
                 How could this human response help the speaker accomplish her purpose?
             </p>
 
-            <button class="choice" onclick="answer('s4','correct',
-            'Yes. Notice the careful language: the choice MAY make the parents more willing to trust her later recommendations. Rhetorical choices influence audiences; they do not control them.')">
+            <button class="choice" data-step="s4" data-answer="correct">
                 The parents may be more willing to trust and seriously consider her later recommendations about their children's nutrition.
             </button>
 
-            <button class="choice" onclick="answer('s4','wrong',
-            'Nothing about establishing medical expertise is designed primarily to make this audience sad. Return to the trust created by relevant expertise.')">
+            <button class="choice" data-step="s4" data-answer="wrong-sad">
                 The parents will feel sad about childhood nutrition.
             </button>
 
-            <button class="choice" onclick="answer('s4','wrong',
-            'That moves in the opposite direction from the likely rhetorical purpose of establishing relevant expertise. Think about what credibility might make an audience more willing to do.')">
+            <button class="choice" data-step="s4" data-answer="wrong-question">
                 The parents will question whether the speaker understands medicine.
             </button>
 
-            <button class="choice" onclick="answer('s4','wrong',
-            'Rhetorical analysis should not assume that an audience will automatically respond in an extreme way. Ask what response the speaker could reasonably hope to encourage.')">
+            <button class="choice" data-step="s4" data-answer="wrong-guarantee">
                 The parents will follow every recommendation she gives them.
             </button>
 
-            <div class="feedback" id="s4feedback"></div>
+            <div class="feedback" id="s4feedback" aria-live="polite"></div>
 
         </div>
-
 
         <div class="complete" id="scenarioComplete">
 
@@ -465,105 +424,121 @@
 
 </div>
 
-
 <script>
 
-function answer(step, result, message) {
+const feedbackMessages = {
 
-    const feedback = document.getElementById(step + 'feedback');
+    s1: {
+        "wrong-feelings": "The scenario does not tell us how the speaker personally feels. Look at what information she deliberately gives the audience about herself.",
+        "wrong-statistics": "There are no statistics in this statement. Her 18 years of experience describes her background, not numerical evidence about childhood nutrition.",
+        "wrong-story": "Nothing in this statement is a story. Focus on the specific information the speaker chooses to reveal about herself.",
+        "correct": "Yes. Before we even label this as ethos, we can describe what the speaker actually DID: she established that she has substantial medical experience related to the topic."
+    },
 
-    feedback.style.display = 'block';
+    s2: {
+        "wrong-label": "You have correctly named the appeal, but you have not explained why the audience would care. Saying something is ethos only labels the rhetorical choice. Keep going.",
+        "wrong-guarantee": "That assumes everyone responds to authority in exactly the same way. Rhetorical analysis should explain why a choice may influence an audience, not claim that it guarantees a response.",
+        "wrong-job": "Knowing that she has a job is not what makes this information rhetorically useful. Think about why THIS job matters for THIS topic and THIS audience.",
+        "correct": "Exactly. The credential matters because it connects directly to what this audience needs: reliable information about the health of their children."
+    },
 
-    if (result === 'wrong') {
+    s3: {
+        "wrong-everything": "This goes too far. Expertise can increase credibility, but it does not guarantee that people will believe everything an expert says.",
+        "wrong-label": "This still stops at identifying ethos. The question is not what the appeal is called. Ask what the speaker expects PEOPLE to do or feel because of that credibility.",
+        "wrong-self": "That might occasionally be true for an individual, but nothing in this rhetorical situation suggests that this is the human tendency the speaker is relying on.",
+        "correct": "There it is. This is the human behavior underneath the rhetorical choice. When we do not have specialized knowledge ourselves, we often give additional weight to someone who has relevant training and experience."
+    },
 
-        feedback.className = 'feedback wrong';
-
-        feedback.innerHTML =
-            '<h4>Not quite yet.</h4>' +
-            '<p>' + message + '</p>' +
-            '<p><strong>Talk through what you understand differently, then try again.</strong></p>';
-
-    } else {
-
-        feedback.className = 'feedback correct';
-
-        let nextStep = '';
-
-        if (step === 's1') {
-            nextStep = 'step2';
-        }
-
-        if (step === 's2') {
-            nextStep = 'step3';
-        }
-
-        if (step === 's3') {
-            nextStep = 'step4';
-        }
-
-        feedback.innerHTML =
-            '<h4>Yes. Keep going.</h4>' +
-            '<p>' + message + '</p>' +
-            '<button class="continue-btn" onclick="continueActivity(\'' +
-            nextStep + '\', \'' + step + '\')">Continue &rarr;</button>';
+    s4: {
+        "wrong-sad": "Nothing about establishing medical expertise is designed primarily to make this audience sad. Return to the trust created by relevant expertise.",
+        "wrong-question": "That moves in the opposite direction from the likely rhetorical purpose of establishing relevant expertise. Think about what credibility might make an audience more willing to do.",
+        "wrong-guarantee": "Rhetorical analysis should not assume that an audience will automatically respond in an extreme way. Ask what response the speaker could reasonably hope to encourage.",
+        "correct": "Yes. Relevant expertise may increase this audience's trust, which may make the parents more willing to seriously consider the speaker's recommendations."
     }
-}
+};
 
+const nextSteps = {
+    s1: "step2",
+    s2: "step3",
+    s3: "step4"
+};
 
-function continueActivity(nextStep, currentStep) {
+document.querySelectorAll(".choice").forEach(function(button) {
 
-    const currentFeedback = document.getElementById(currentStep + 'feedback');
+    button.addEventListener("click", function() {
 
-    if (currentStep === 's4') {
-        return;
+        const step = button.dataset.step;
+        const answer = button.dataset.answer;
+        const feedback = document.getElementById(step + "feedback");
+        const message = feedbackMessages[step][answer];
+
+        feedback.style.display = "block";
+
+        if (answer === "correct") {
+
+            feedback.className = "feedback correct";
+
+            if (step === "s4") {
+
+                feedback.innerHTML =
+                    "<h4>Yes. That completes the chain.</h4>" +
+                    "<p>" + message + "</p>" +
+                    '<button class="continue-btn" id="finishButton">See the Full Analysis &rarr;</button>';
+
+                document.getElementById("finishButton").addEventListener("click", finishScenario);
+
+            } else {
+
+                feedback.innerHTML =
+                    "<h4>Yes. Keep going.</h4>" +
+                    "<p>" + message + "</p>" +
+                    '<button class="continue-btn" id="continue-' + step + '">Continue &rarr;</button>';
+
+                document.getElementById("continue-" + step).addEventListener("click", function() {
+                    continueActivity(step);
+                });
+            }
+
+        } else {
+
+            feedback.className = "feedback wrong";
+
+            feedback.innerHTML =
+                "<h4>Not quite yet.</h4>" +
+                "<p>" + message + "</p>" +
+                "<p><strong>Think about the feedback, then try again.</strong></p>";
+        }
+    });
+});
+
+function continueActivity(currentStep) {
+
+    const feedback = document.getElementById(currentStep + "feedback");
+    const button = feedback.querySelector(".continue-btn");
+
+    if (button) {
+        button.style.display = "none";
     }
 
-    currentFeedback.querySelector('.continue-btn').style.display = 'none';
+    const next = document.getElementById(nextSteps[currentStep]);
 
-    const next = document.getElementById(nextStep);
-
-    next.classList.add('active');
+    next.classList.add("active");
 
     next.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start"
     });
 }
 
-
-/* Special handling for the final correct answer */
-
-document.addEventListener('click', function(event) {
-
-    if (
-        event.target.classList.contains('choice') &&
-        event.target.getAttribute('onclick') &&
-        event.target.getAttribute('onclick').includes("'s4','correct'")
-    ) {
-
-        setTimeout(function() {
-
-            const feedback = document.getElementById('s4feedback');
-
-            feedback.innerHTML =
-                '<h4>Yes. That completes the chain.</h4>' +
-                '<p>Relevant expertise may increase this audience\\'s trust, which may make them more willing to seriously consider the speaker\\'s recommendations.</p>' +
-                '<button class="continue-btn" onclick="finishScenario()">See the Full Analysis &rarr;</button>';
-
-        }, 10);
-    }
-});
-
-
 function finishScenario() {
 
-    const complete = document.getElementById('scenarioComplete');
+    const complete = document.getElementById("scenarioComplete");
 
-    complete.style.display = 'block';
+    complete.style.display = "block";
 
     complete.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start"
     });
 }
 
