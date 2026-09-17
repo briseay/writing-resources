@@ -490,7 +490,33 @@
             <div class="feedback" id="s2AudienceFeedback" aria-live="polite"></div>
 
         </div>
+        <div class="step" id="s2step1">
 
+            <h3>Step 1: Choice</h3>
+
+            <p class="step-question">
+                What rhetorical choice did the speaker make?
+            </p>
+
+            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-label">
+                The speaker establishes ethos.
+            </button>
+
+            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="correct">
+                The speaker reveals a personal experience that closely resembles the audience's experience.
+            </button>
+
+            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-advice">
+                The speaker gives the students advice about how to succeed in college.
+            </button>
+
+            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-family">
+                The speaker explains why their family could not help them adjust to college.
+            </button>
+
+            <div class="feedback" id="s2c1feedback" aria-live="polite"></div>
+
+        </div>
     </div>
 </div>
 
@@ -526,7 +552,15 @@ const feedbackMessages = {
         "correct": "Yes. Relevant expertise may increase this audience's trust, which may make the parents more willing to seriously consider the speaker's recommendations."
     }
 };
+const scenario2Feedback = {
 
+    s2c1: {
+        "wrong-label": "Yes, this choice can help establish ethos, but you jumped ahead to labeling the appeal. Before we analyze what a rhetorical choice does, we need to describe what the speaker actually DID. Look at the specific information the speaker chose to share.",
+        "wrong-advice": "The speaker may eventually offer advice, but this particular statement does not give the students advice. Focus only on the rhetorical choice we can actually see in the quoted passage.",
+        "wrong-family": "The speaker mentions that no one in the family had been through college before, but the point of the statement is not to explain or criticize the family. Look at the experience the speaker is revealing and how closely it resembles the audience's experience.",
+        "correct": "Exactly. The speaker deliberately reveals a personal experience that resembles what members of this audience may be experiencing themselves. Now we can begin asking why that choice might matter."
+    }
+};
 const nextSteps = {
     s1: "step2",
     s2: "step3",
@@ -602,10 +636,23 @@ document.querySelectorAll(".audience-choice").forEach(function(button) {
             feedback.className = "feedback correct";
 
             feedback.innerHTML =
-                "<h4>Exactly.</h4>" +
-                "<p>The college graduate is the speaker, and the speaker's family is part of the experience being described. The <strong>first-generation college students</strong> are the specific people the speaker is trying to reach.</p>" +
-                "<p><strong>Keep that audience in mind. Every rhetorical choice we analyze next should eventually connect back to them.</strong></p>";
+    "<h4>Exactly.</h4>" +
+    "<p>The college graduate is the speaker, and the speaker's family is part of the experience being described. The <strong>first-generation college students</strong> are the specific people the speaker is trying to reach.</p>" +
+    "<p><strong>Keep that audience in mind. Every rhetorical choice we analyze next should eventually connect back to them.</strong></p>" +
+    '<button class="continue-btn" id="startScenario2">Begin the Analysis &rarr;</button>';
 
+document.getElementById("startScenario2").addEventListener("click", function() {
+
+    document.getElementById("startScenario2").style.display = "none";
+
+    const step1 = document.getElementById("s2step1");
+    step1.classList.add("active");
+
+    step1.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
         } else {
 
             feedback.className = "feedback wrong";
@@ -631,8 +678,37 @@ document.querySelectorAll(".audience-choice").forEach(function(button) {
         }
     });
 });
-document.querySelectorAll(".choice:not(.audience-choice):not(.scenario2-audience)").forEach(function(button) {
+   document.querySelectorAll(".scenario2-analysis").forEach(function(button) {
 
+    button.addEventListener("click", function() {
+
+        const step = button.dataset.step;
+        const answer = button.dataset.answer;
+        const feedback = document.getElementById(step + "feedback");
+        const message = scenario2Feedback[step][answer];
+
+        feedback.style.display = "block";
+
+        if (answer === "correct") {
+
+            feedback.className = "feedback correct";
+
+            feedback.innerHTML =
+                "<h4>Yes. Keep going.</h4>" +
+                "<p>" + message + "</p>";
+
+        } else {
+
+            feedback.className = "feedback wrong";
+
+            feedback.innerHTML =
+                "<h4>Not quite yet.</h4>" +
+                "<p>" + message + "</p>" +
+                "<p><strong>Think about the feedback, then try again.</strong></p>";
+        }
+    });
+});
+document.querySelectorAll(".choice:not(.audience-choice):not(.scenario2-audience):not(.scenario2-analysis)").forEach(function(button) {
     button.addEventListener("click", function() {
 
         const step = button.dataset.step;
