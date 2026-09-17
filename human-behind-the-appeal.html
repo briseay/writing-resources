@@ -65,6 +65,7 @@
         width: 20%;
         height: 100%;
         background: #9242b4;
+        transition: width .4s ease;
     }
 
     .card {
@@ -86,6 +87,14 @@
         font-size: 1.05rem;
     }
 
+    .callout {
+        background: #fff8e8;
+        border-left: 6px solid #d89a22;
+        padding: 18px;
+        border-radius: 6px;
+        margin: 20px 0;
+    }
+
     .scenario-label {
         color: #5e2875;
         font-weight: bold;
@@ -100,6 +109,14 @@
         border-radius: 6px;
         padding: 20px;
         margin: 14px 0 24px 0;
+    }
+
+    .scenario-card {
+        display: none;
+    }
+
+    .scenario-card.active {
+        display: block;
     }
 
     .step {
@@ -140,7 +157,9 @@
         background: #faf7fb;
     }
 
-    .choice:focus {
+    .choice:focus,
+    .continue-btn:focus,
+    textarea:focus {
         outline: 3px solid #cda8dd;
         outline-offset: 2px;
     }
@@ -169,7 +188,7 @@
     .continue-btn {
         display: inline-block;
         margin-top: 12px;
-        padding: 10px 18px;
+        padding: 11px 18px;
         background: #5e2875;
         color: white;
         border: none;
@@ -191,7 +210,8 @@
         margin-top: 28px;
     }
 
-    .complete h2 {
+    .complete h2,
+    .complete h3 {
         color: #5e2875;
         margin-top: 0;
     }
@@ -201,6 +221,60 @@
         margin: 18px 0;
     }
 
+    .reality-check {
+        display: none;
+        background: #fff;
+        border: 2px solid #9242b4;
+        border-radius: 8px;
+        padding: 26px;
+        margin-bottom: 24px;
+    }
+
+    .reality-check h2 {
+        color: #5e2875;
+        margin-top: 0;
+    }
+
+    .analysis-box {
+        background: #fafafa;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 18px;
+        margin: 18px 0;
+    }
+
+    .analysis-box label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    textarea {
+        width: 100%;
+        min-height: 95px;
+        padding: 12px;
+        border: 2px solid #ccc;
+        border-radius: 6px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        resize: vertical;
+    }
+
+    .final-reflection {
+        display: none;
+        background: #f4edf7;
+        border-left: 8px solid #9242b4;
+        padding: 26px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+    }
+
+    .final-reflection h2 {
+        color: #5e2875;
+        margin-top: 0;
+    }
+
     @media (max-width: 600px) {
         .page {
             width: 95%;
@@ -208,7 +282,9 @@
         }
 
         .header,
-        .card {
+        .card,
+        .reality-check,
+        .final-reflection {
             padding: 18px;
         }
 
@@ -232,13 +308,13 @@
     </div>
 
     <div class="progress-wrap">
-        <div class="progress-label">Scenario 1 of 5</div>
-        <div class="progress-bar">
-            <div class="progress-fill"></div>
+        <div class="progress-label" id="progressLabel">Scenario 1 of 5</div>
+        <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="intro">
 
         <h2>Before You Begin</h2>
 
@@ -262,12 +338,20 @@
             <strong>What is the writer banking on about people?</strong>
         </p>
 
+        <p>
+            Each scenario will begin by asking you to identify the audience. Keep that
+            audience in mind as you work. A rhetorical choice only makes sense when we
+            consider <strong>who is receiving it.</strong>
+        </p>
+
     </div>
 
-    <div class="card">
+
+    <!-- SCENARIO 1 -->
+
+    <div class="card scenario-card active" id="scenario1">
 
         <div class="scenario-label">Scenario 1: Training Wheels</div>
-
         <h2>Relevant Expertise</h2>
 
         <div class="scenario">
@@ -275,162 +359,84 @@
             Early in the presentation, she explains that she has practiced pediatric
             medicine for 18 years.
         </div>
-        <div class="step active" id="audienceCheck">
 
+        <div class="step active" id="sc1-audience">
             <h3>First: Who Is the Audience?</h3>
-
             <p class="step-question">
-                Before analyzing any rhetorical choice, make sure you know who the speaker is trying to reach.
                 Who is the primary audience in this scenario?
             </p>
 
-            <button class="choice audience-choice" data-answer="wrong-doctor">
-                The pediatrician
-            </button>
+            <button class="choice" data-group="sc1a" data-answer="wrong-speaker">The pediatrician</button>
+            <button class="choice" data-group="sc1a" data-answer="correct">The parents</button>
+            <button class="choice" data-group="sc1a" data-answer="wrong-children">The children</button>
+            <button class="choice" data-group="sc1a" data-answer="wrong-general">Anyone interested in nutrition</button>
 
-            <button class="choice audience-choice" data-answer="correct">
-                The parents
-            </button>
-
-            <button class="choice audience-choice" data-answer="wrong-children">
-                The children
-            </button>
-
-            <button class="choice audience-choice" data-answer="wrong-general">
-                Anyone interested in nutrition
-            </button>
-
-            <div class="feedback" id="audienceFeedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc1a-feedback" aria-live="polite"></div>
         </div>
-  <div class="step" id="step1">
 
+        <div class="step" id="sc1-choice">
             <h3>Step 1: Choice</h3>
+            <p class="step-question">What rhetorical choice did the speaker make?</p>
 
-            <p class="step-question">
-                What rhetorical choice did the speaker make?
-            </p>
+            <button class="choice" data-group="sc1c" data-answer="wrong-feelings">The speaker shares how she personally feels about childhood nutrition.</button>
+            <button class="choice" data-group="sc1c" data-answer="correct">The speaker establishes her relevant medical experience.</button>
+            <button class="choice" data-group="sc1c" data-answer="wrong-statistics">The speaker provides statistical evidence about childhood nutrition.</button>
+            <button class="choice" data-group="sc1c" data-answer="wrong-story">The speaker tells a personal story to make the audience emotional.</button>
 
-            <button class="choice" data-step="s1" data-answer="wrong-feelings">
-                The speaker shares how she personally feels about childhood nutrition.
-            </button>
-
-            <button class="choice" data-step="s1" data-answer="correct">
-                The speaker establishes her relevant medical experience.
-            </button>
-
-            <button class="choice" data-step="s1" data-answer="wrong-statistics">
-                The speaker provides statistical evidence about childhood nutrition.
-            </button>
-
-            <button class="choice" data-step="s1" data-answer="wrong-story">
-                The speaker tells a personal story to make the audience emotional.
-            </button>
-
-            <div class="feedback" id="s1feedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc1c-feedback" aria-live="polite"></div>
         </div>
 
-        <div class="step" id="step2">
-
+        <div class="step" id="sc1-relevance">
             <h3>Step 2: Audience</h3>
-
             <p class="step-question">
                 Why is this particular information relevant to this particular audience?
             </p>
 
-            <button class="choice" data-step="s2" data-answer="wrong-label">
-                Because mentioning her experience creates ethos.
-            </button>
+            <button class="choice" data-group="sc1r" data-answer="wrong-label">Because mentioning her experience creates ethos.</button>
+            <button class="choice" data-group="sc1r" data-answer="correct">Because parents may want health advice about their children to come from someone with relevant medical expertise.</button>
+            <button class="choice" data-group="sc1r" data-answer="wrong-guarantee">Because parents will automatically believe anything a doctor says.</button>
+            <button class="choice" data-group="sc1r" data-answer="wrong-job">Because the audience needs to know that the speaker has a job.</button>
 
-            <button class="choice" data-step="s2" data-answer="correct">
-                Because parents may want health advice about their children to come from someone with relevant medical expertise.
-            </button>
-
-            <button class="choice" data-step="s2" data-answer="wrong-guarantee">
-                Because parents will automatically believe anything a doctor says.
-            </button>
-
-            <button class="choice" data-step="s2" data-answer="wrong-job">
-                Because the audience needs to know that the speaker has a job.
-            </button>
-
-            <div class="feedback" id="s2feedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc1r-feedback" aria-live="polite"></div>
         </div>
 
-        <div class="step" id="step3">
-
+        <div class="step" id="sc1-human">
             <h3>Step 3: Human Response</h3>
+            <p class="step-question">What is the speaker banking on about human behavior?</p>
 
-            <p class="step-question">
-                What is the speaker banking on about human behavior?
-            </p>
+            <button class="choice" data-group="sc1h" data-answer="wrong-everything">People believe everything they hear from someone with a professional title.</button>
+            <button class="choice" data-group="sc1h" data-answer="correct">People often place greater trust in information when the speaker has expertise relevant to the subject.</button>
+            <button class="choice" data-group="sc1h" data-answer="wrong-label">People recognize that professional credentials are an example of ethos.</button>
+            <button class="choice" data-group="sc1h" data-answer="wrong-self">People prefer presentations when speakers talk about themselves.</button>
 
-            <button class="choice" data-step="s3" data-answer="wrong-everything">
-                People believe everything they hear from someone with a professional title.
-            </button>
-
-            <button class="choice" data-step="s3" data-answer="correct">
-                People often place greater trust in information when the speaker has expertise relevant to the subject.
-            </button>
-
-            <button class="choice" data-step="s3" data-answer="wrong-label">
-                People recognize that professional credentials are an example of ethos.
-            </button>
-
-            <button class="choice" data-step="s3" data-answer="wrong-self">
-                People prefer presentations when speakers talk about themselves.
-            </button>
-
-            <div class="feedback" id="s3feedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc1h-feedback" aria-live="polite"></div>
         </div>
 
-        <div class="step" id="step4">
-
+        <div class="step" id="sc1-effect">
             <h3>Step 4: Effect</h3>
-
             <p class="step-question">
                 How could this human response help the speaker accomplish her purpose?
             </p>
 
-            <button class="choice" data-step="s4" data-answer="correct">
-                The parents may be more willing to trust and seriously consider her later recommendations about their children's nutrition.
-            </button>
+            <button class="choice" data-group="sc1e" data-answer="correct">The parents may be more willing to trust and seriously consider her later recommendations about their children's nutrition.</button>
+            <button class="choice" data-group="sc1e" data-answer="wrong-sad">The parents will feel sad about childhood nutrition.</button>
+            <button class="choice" data-group="sc1e" data-answer="wrong-question">The parents will question whether the speaker understands medicine.</button>
+            <button class="choice" data-group="sc1e" data-answer="wrong-guarantee">The parents will follow every recommendation she gives them.</button>
 
-            <button class="choice" data-step="s4" data-answer="wrong-sad">
-                The parents will feel sad about childhood nutrition.
-            </button>
-
-            <button class="choice" data-step="s4" data-answer="wrong-question">
-                The parents will question whether the speaker understands medicine.
-            </button>
-
-            <button class="choice" data-step="s4" data-answer="wrong-guarantee">
-                The parents will follow every recommendation she gives them.
-            </button>
-
-            <div class="feedback" id="s4feedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc1e-feedback" aria-live="polite"></div>
         </div>
 
-        <div class="complete" id="scenarioComplete">
-
+        <div class="complete" id="sc1-complete">
             <h2>You Just Moved from Identification to Analysis</h2>
 
             <p>
-                At the beginning, it would have been easy to stop here:
+                It would have been easy to stop with:
                 <strong>"The speaker mentions her medical experience, so this is ethos."</strong>
             </p>
 
-            <p>
-                That is identification. It is not yet rhetorical analysis.
-            </p>
+            <p>That is identification. It is not yet rhetorical analysis.</p>
 
-            <p class="chain">
-                Choice &rarr; Audience &rarr; Human Response &rarr; Effect
-            </p>
+            <p class="chain">Choice &rarr; Audience &rarr; Human Response &rarr; Effect</p>
 
             <p>
                 The speaker establishes her medical experience &rarr;
@@ -441,18 +447,19 @@
                 her recommendations.
             </p>
 
-            <p>
-                <strong>That is the move we are practicing.</strong>
-            </p>
+            <p><strong>That is the move we are practicing.</strong></p>
 
+            <button class="continue-btn" data-next-scenario="2">Continue to Scenario 2 &rarr;</button>
         </div>
 
     </div>
+
+
     <!-- SCENARIO 2 -->
-       <div class="card" id="scenario2">
+
+    <div class="card scenario-card" id="scenario2">
 
         <div class="scenario-label">Scenario 2: Shared Experience</div>
-
         <h2>Connection as Credibility</h2>
 
         <div class="scenario">
@@ -462,116 +469,747 @@
             During my first semester, I felt completely lost too."</strong>
         </div>
 
-        <div class="step active" id="s2AudienceCheck">
-
+        <div class="step active" id="sc2-audience">
             <h3>First: Who Is the Audience?</h3>
+            <p class="step-question">Who is the primary audience in this scenario?</p>
 
-            <p class="step-question">
-                Before analyzing any rhetorical choice, make sure you know who the speaker
-                is trying to reach. Who is the primary audience in this scenario?
-            </p>
+            <button class="choice" data-group="sc2a" data-answer="wrong-speaker">The college graduate</button>
+            <button class="choice" data-group="sc2a" data-answer="correct">First-generation college students</button>
+            <button class="choice" data-group="sc2a" data-answer="wrong-family">The speaker's family</button>
+            <button class="choice" data-group="sc2a" data-answer="wrong-general">All college students</button>
 
-            <button class="choice scenario2-audience" data-answer="wrong-speaker">
-                The college graduate
-            </button>
-
-            <button class="choice scenario2-audience" data-answer="correct">
-                First-generation college students
-            </button>
-
-            <button class="choice scenario2-audience" data-answer="wrong-family">
-                The speaker's family
-            </button>
-
-            <button class="choice scenario2-audience" data-answer="wrong-general">
-                All college students
-            </button>
-
-            <div class="feedback" id="s2AudienceFeedback" aria-live="polite"></div>
-
+            <div class="feedback" id="sc2a-feedback" aria-live="polite"></div>
         </div>
-        <div class="step" id="s2step1">
 
+        <div class="step" id="sc2-choice">
             <h3>Step 1: Choice</h3>
+            <p class="step-question">What rhetorical choice did the speaker make?</p>
 
+            <button class="choice" data-group="sc2c" data-answer="wrong-label">The speaker establishes ethos.</button>
+            <button class="choice" data-group="sc2c" data-answer="correct">The speaker reveals a personal experience that closely resembles the audience's experience.</button>
+            <button class="choice" data-group="sc2c" data-answer="wrong-advice">The speaker gives the students advice about how to succeed in college.</button>
+            <button class="choice" data-group="sc2c" data-answer="wrong-family">The speaker explains why their family could not help them adjust to college.</button>
+
+            <div class="feedback" id="sc2c-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc2-relevance">
+            <h3>Step 2: Audience</h3>
             <p class="step-question">
-                What rhetorical choice did the speaker make?
+                Why might sharing this particular experience matter to this particular audience?
             </p>
 
-            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-label">
-                The speaker establishes ethos.
-            </button>
+            <button class="choice" data-group="sc2r" data-answer="wrong-always">Because personal experiences always make speakers more credible.</button>
+            <button class="choice" data-group="sc2r" data-answer="correct">Because first-generation students may see the speaker as someone who understands an experience similar to their own.</button>
+            <button class="choice" data-group="sc2r" data-answer="wrong-family">Because first-generation students need information about the speaker's family.</button>
+            <button class="choice" data-group="sc2r" data-answer="wrong-sad">Because the speaker wants the students to feel sorry for them.</button>
 
-            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="correct">
-                The speaker reveals a personal experience that closely resembles the audience's experience.
-            </button>
+            <div class="feedback" id="sc2r-feedback" aria-live="polite"></div>
+        </div>
 
-            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-advice">
-                The speaker gives the students advice about how to succeed in college.
-            </button>
+        <div class="step" id="sc2-human">
+            <h3>Step 3: Human Response</h3>
+            <p class="step-question">What is the speaker banking on about human behavior?</p>
 
-            <button class="choice scenario2-analysis" data-step="s2c1" data-answer="wrong-family">
-                The speaker explains why their family could not help them adjust to college.
-            </button>
+            <button class="choice" data-group="sc2h" data-answer="wrong-label">People trust the speaker because this is ethos.</button>
+            <button class="choice" data-group="sc2h" data-answer="correct">People may be more open to someone when they believe that person understands an experience they have personally faced.</button>
+            <button class="choice" data-group="sc2h" data-answer="wrong-same">People only trust speakers who have experienced exactly the same things they have.</button>
+            <button class="choice" data-group="sc2h" data-answer="wrong-pity">People are easiest to persuade when they feel sorry for the speaker.</button>
 
-            <div class="feedback" id="s2c1feedback" aria-live="polite"></div>
+            <div class="feedback" id="sc2h-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc2-effect">
+            <h3>Step 4: Effect</h3>
+            <p class="step-question">
+                How could this response help the speaker accomplish the purpose of helping students adjust to college?
+            </p>
+
+            <button class="choice" data-group="sc2e" data-answer="wrong-guarantee">The students will follow every piece of advice because the speaker was also a first-generation student.</button>
+            <button class="choice" data-group="sc2e" data-answer="correct">The students may become more willing to listen to the speaker's advice because they see the speaker as someone who understands what they are experiencing.</button>
+            <button class="choice" data-group="sc2e" data-answer="wrong-family">The students will want to learn more about the speaker's family.</button>
+            <button class="choice" data-group="sc2e" data-answer="wrong-label">The students will recognize that the speaker has used ethos successfully.</button>
+
+            <div class="feedback" id="sc2e-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="complete" id="sc2-complete">
+            <h2>Ethos Does Not Require a Résumé</h2>
+
+            <p class="chain">Choice &rarr; Audience &rarr; Human Response &rarr; Effect</p>
+
+            <p>
+                The speaker shares an experience of feeling lost as a first-generation
+                college student &rarr; the audience consists of first-generation students
+                adjusting to college &rarr; people may be more receptive to someone they
+                believe understands an experience they have personally faced &rarr; the
+                students may therefore be more willing to listen to the speaker's advice.
+            </p>
+
+            <div class="framework">
+                Notice what happened to ethos here.
+            </div>
+
+            <p>
+                The speaker never gave us a job title, years of professional experience,
+                or a formal credential. Credibility can also develop through
+                <strong>connection</strong>. For this audience, shared experience may help
+                establish the speaker as someone worth listening to.
+            </p>
+
+            <button class="continue-btn" data-next-scenario="3">Continue to Scenario 3 &rarr;</button>
+        </div>
+
+    </div>
+
+
+    <!-- SCENARIO 3 -->
+
+    <div class="card scenario-card" id="scenario3">
+
+        <div class="scenario-label">Scenario 3: Reframing an Emotion</div>
+        <h2>Pathos Is More Than Making Someone Sad</h2>
+
+        <div class="scenario">
+            A college tutoring center is creating a message for students who may be
+            hesitant to ask for academic help. The message says:
+            <strong>"Asking for help doesn't mean you're failing. It means you care enough
+            about your goals to keep going."</strong>
+        </div>
+
+        <div class="step active" id="sc3-audience">
+            <h3>First: Who Is the Audience?</h3>
+            <p class="step-question">Who is the primary audience for this message?</p>
+
+            <button class="choice" data-group="sc3a" data-answer="wrong-tutors">The tutors who work at the center</button>
+            <button class="choice" data-group="sc3a" data-answer="correct">Students who may be hesitant to ask for academic help</button>
+            <button class="choice" data-group="sc3a" data-answer="wrong-failing">Only students who are currently failing a class</button>
+            <button class="choice" data-group="sc3a" data-answer="wrong-faculty">College faculty</button>
+
+            <div class="feedback" id="sc3a-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc3-choice">
+            <h3>Step 1: Choice</h3>
+            <p class="step-question">What rhetorical choice does the message make?</p>
+
+            <button class="choice" data-group="sc3c" data-answer="wrong-label">The message uses pathos.</button>
+            <button class="choice" data-group="sc3c" data-answer="correct">The message reframes asking for help as evidence of persistence and commitment rather than failure.</button>
+            <button class="choice" data-group="sc3c" data-answer="wrong-fear">The message warns students about what will happen if they refuse tutoring.</button>
+            <button class="choice" data-group="sc3c" data-answer="wrong-stat">The message proves that tutoring improves grades.</button>
+
+            <div class="feedback" id="sc3c-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc3-relevance">
+            <h3>Step 2: Audience</h3>
+            <p class="step-question">
+                Why might that reframing matter specifically to students who are hesitant to seek help?
+            </p>
+
+            <button class="choice" data-group="sc3r" data-answer="correct">Some students may avoid asking for help because they worry that needing help means they are incapable or unsuccessful.</button>
+            <button class="choice" data-group="sc3r" data-answer="wrong-everyone">Every student is embarrassed by tutoring.</button>
+            <button class="choice" data-group="sc3r" data-answer="wrong-label">Because this audience is affected by pathos.</button>
+            <button class="choice" data-group="sc3r" data-answer="wrong-goals">Because students do not know that they are supposed to have academic goals.</button>
+
+            <div class="feedback" id="sc3r-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc3-human">
+            <h3>Step 3: Human Response</h3>
+            <p class="step-question">What is the writer banking on about people?</p>
+
+            <button class="choice" data-group="sc3h" data-answer="wrong-sad">People are persuaded most effectively when a message makes them sad.</button>
+            <button class="choice" data-group="sc3h" data-answer="wrong-label">People respond emotionally, so this is pathos.</button>
+            <button class="choice" data-group="sc3h" data-answer="correct">People often want to protect a positive view of themselves and may become more open to an action when it can fit that self-image.</button>
+            <button class="choice" data-group="sc3h" data-answer="wrong-trick">People can usually be tricked into changing their behavior if wording is positive enough.</button>
+
+            <div class="feedback" id="sc3h-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc3-effect">
+            <h3>Step 4: Effect</h3>
+            <p class="step-question">
+                How could this human response help the tutoring center accomplish its purpose?
+            </p>
+
+            <button class="choice" data-group="sc3e" data-answer="wrong-guarantee">Students will no longer feel uncomfortable asking anyone for help.</button>
+            <button class="choice" data-group="sc3e" data-answer="wrong-sad">Students will feel emotional enough to visit the tutoring center.</button>
+            <button class="choice" data-group="sc3e" data-answer="correct">Students may become more willing to seek tutoring because doing so has been connected to persistence rather than personal failure.</button>
+            <button class="choice" data-group="sc3e" data-answer="wrong-proof">Students will know that tutoring guarantees academic success.</button>
+
+            <div class="feedback" id="sc3e-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="complete" id="sc3-complete">
+            <h2>Pathos Can Work Through Self-Perception</h2>
+
+            <p class="chain">Choice &rarr; Audience &rarr; Human Response &rarr; Effect</p>
+
+            <p>
+                The message reframes help-seeking as persistence rather than failure &rarr;
+                the audience includes students who may hesitate because asking for help can
+                feel like admitting weakness &rarr; people often want to maintain a positive
+                view of themselves and may become more open to an action when it fits that
+                self-image &rarr; students may therefore become more willing to seek tutoring.
+            </p>
+
+            <p>
+                Pathos does not have to mean fear, sadness, or a dramatic story. Writers can
+                appeal to emotions such as pride, reassurance, hope, belonging, frustration,
+                confidence, or concern. The analytical question remains the same:
+                <strong>why might this emotional response matter to this audience?</strong>
+            </p>
+
+            <button class="continue-btn" data-next-scenario="4">Continue to Scenario 4 &rarr;</button>
+        </div>
+
+    </div>
+
+
+    <!-- SCENARIO 4 -->
+
+    <div class="card scenario-card" id="scenario4">
+
+        <div class="scenario-label">Scenario 4: Appeals Get Messy</div>
+        <h2>One Message, Several Things Happening</h2>
+
+        <div class="scenario">
+            A college is promoting its campus food pantry to students. The message says:
+            <strong>"Last semester, the pantry provided over 2,000 meals to students.
+            It's staffed by trained student services employees, and all visits are confidential.
+            College is demanding enough without worrying about where your next meal is coming from."</strong>
+        </div>
+
+        <div class="step active" id="sc4-audience">
+            <h3>First: Who Is the Audience?</h3>
+            <p class="step-question">Who is the primary audience for this message?</p>
+
+            <button class="choice" data-group="sc4a" data-answer="wrong-staff">Student services employees</button>
+            <button class="choice" data-group="sc4a" data-answer="wrong-public">Members of the general public</button>
+            <button class="choice" data-group="sc4a" data-answer="correct">College students who may need or consider using the food pantry</button>
+            <button class="choice" data-group="sc4a" data-answer="wrong-donors">People donating food to the pantry</button>
+
+            <div class="feedback" id="sc4a-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc4-choice">
+            <h3>Step 1: Choice</h3>
+            <p class="step-question">
+                This time, several rhetorical choices are working together. Which answer best describes what the writer is doing across the whole message?
+            </p>
+
+            <button class="choice" data-group="sc4c" data-answer="wrong-logos">The writer only uses logos by providing the number of meals served.</button>
+            <button class="choice" data-group="sc4c" data-answer="wrong-pathos">The writer mainly tries to make hungry students feel sad.</button>
+            <button class="choice" data-group="sc4c" data-answer="correct">The writer combines concrete evidence, information designed to build trust, and language that recognizes the stress students may experience.</button>
+            <button class="choice" data-group="sc4c" data-answer="wrong-ethos">The writer only establishes ethos by mentioning trained employees.</button>
+
+            <div class="feedback" id="sc4c-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc4-relevance">
+            <h3>Step 2: Audience</h3>
+            <p class="step-question">
+                Why might this combination of information be useful for this particular audience?
+            </p>
+
+            <button class="choice" data-group="sc4r" data-answer="wrong-one">Because every student will respond to the same appeal in the same way.</button>
+            <button class="choice" data-group="sc4r" data-answer="correct">Students considering the pantry may have several concerns at once, such as whether the service is legitimate, private, useful, or meant for someone in their situation.</button>
+            <button class="choice" data-group="sc4r" data-answer="wrong-label">Because strong arguments should always contain ethos, logos, and pathos.</button>
+            <button class="choice" data-group="sc4r" data-answer="wrong-number">Because students only need proof that the pantry has served many meals.</button>
+
+            <div class="feedback" id="sc4r-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc4-human">
+            <h3>Step 3: Human Response</h3>
+            <p class="step-question">
+                What is the writer banking on about people when these choices are combined?
+            </p>
+
+            <button class="choice" data-group="sc4h" data-answer="wrong-guarantee">People will use a service whenever enough rhetorical appeals appear in the advertisement.</button>
+            <button class="choice" data-group="sc4h" data-answer="wrong-label">People respond to logos, ethos, and pathos.</button>
+            <button class="choice" data-group="sc4h" data-answer="correct">People may be more willing to consider a vulnerable action when practical concerns are answered, trust is established, and their emotional concerns are acknowledged.</button>
+            <button class="choice" data-group="sc4h" data-answer="wrong-stat">People trust any service that provides statistics.</button>
+
+            <div class="feedback" id="sc4h-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc4-effect">
+            <h3>Step 4: Effect</h3>
+            <p class="step-question">
+                How could these responses help the college accomplish its purpose?
+            </p>
+
+            <button class="choice" data-group="sc4e" data-answer="correct">Students who need the pantry may feel more comfortable considering it because the message presents it as established, trustworthy, private, and responsive to a real student need.</button>
+            <button class="choice" data-group="sc4e" data-answer="wrong-guarantee">Any student experiencing food insecurity will now use the pantry.</button>
+            <button class="choice" data-group="sc4e" data-answer="wrong-pity">Students will feel sorry for other students and donate food.</button>
+            <button class="choice" data-group="sc4e" data-answer="wrong-three">Students will notice that the college successfully used all three rhetorical appeals.</button>
+
+            <div class="feedback" id="sc4e-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="complete" id="sc4-complete">
+            <h2>Real Messages Rarely Stay in Their Boxes</h2>
+
+            <p>
+                The number of meals can function as <strong>logos</strong> because it provides
+                concrete evidence that the pantry is actively used. It may also strengthen
+                <strong>ethos</strong> by making the program appear established.
+            </p>
+
+            <p>
+                The trained staff and confidentiality information can strengthen
+                <strong>ethos</strong> by addressing trust and professionalism, but they also
+                provide practical information that can support logical decision-making.
+            </p>
+
+            <p>
+                The final sentence can work through <strong>pathos</strong> because it acknowledges
+                the stress and burden of worrying about food while managing college.
+            </p>
+
+            <p>
+                Those categories help us notice rhetorical choices, but the more important
+                analytical work is explaining <strong>how those choices interact with this
+                audience and why they may help accomplish the writer's purpose.</strong>
+            </p>
+
+            <button class="continue-btn" id="showRealityCheck">Continue &rarr;</button>
+        </div>
+
+    </div>
+
+
+    <!-- REALITY CHECK -->
+
+    <div class="reality-check" id="realityCheck">
+
+        <div class="scenario-label">Before Scenario 5</div>
+        <h2>A Very Important Reality Check</h2>
+
+        <p>
+            So far, this activity has given you preset answers. That was intentional.
+            You needed a way to practice the reasoning process and receive immediate feedback.
+        </p>
+
+        <div class="callout">
+            <strong>Real rhetorical analysis is messier than this activity.</strong>
+        </div>
+
+        <p>
+            Ethos, logos, and pathos are not three sealed containers. They overlap.
+            A statistic may provide logical evidence while also making a writer seem
+            knowledgeable. Shared experience may build credibility while also creating
+            an emotional connection. A writer may make one choice that affects an audience
+            in several ways at once.
+        </p>
+
+        <p>
+            That means your job in a rhetorical analysis is <strong>not</strong> to guess
+            the one label your instructor has secretly decided is correct.
+        </p>
+
+        <p>
+            Your job is to make a <strong>reasonable analytical claim</strong> and support it.
+            If you can explain what the writer did, why that choice matters for this audience,
+            what the writer may be banking on about human response, and how that could help
+            accomplish the purpose, you are doing rhetorical analysis.
+        </p>
+
+        <div class="framework">
+            Don't just label it. Defend your reading of it.
+        </div>
+
+        <button class="continue-btn" id="startScenario5">I'm Ready for Scenario 5 &rarr;</button>
+
+    </div>
+
+
+    <!-- SCENARIO 5 -->
+
+    <div class="card scenario-card" id="scenario5">
+
+        <div class="scenario-label">Scenario 5: You're the Rhetorical Analyst</div>
+        <h2>Training Wheels Off</h2>
+
+        <div class="scenario">
+            A community college is encouraging students to meet with an academic advisor
+            before registering for next semester. The message says:
+            <strong>"You have already put time, energy, and money into your education.
+            Before you choose next semester's classes, take twenty minutes to meet with
+            an advisor. Advisors work with degree requirements every day and can help you
+            make sure the classes you choose actually move you toward your goal."</strong>
+        </div>
+
+        <div class="step active" id="sc5-audience">
+            <h3>First: Who Is the Audience?</h3>
+            <p class="step-question">Who is the primary audience for this message?</p>
+
+            <button class="choice" data-group="sc5a" data-answer="wrong-advisors">Academic advisors</button>
+            <button class="choice" data-group="sc5a" data-answer="correct">College students preparing to register for next semester</button>
+            <button class="choice" data-group="sc5a" data-answer="wrong-future">People considering whether to attend college someday</button>
+            <button class="choice" data-group="sc5a" data-answer="wrong-faculty">College faculty choosing next semester's courses</button>
+
+            <div class="feedback" id="sc5a-feedback" aria-live="polite"></div>
+        </div>
+
+        <div class="step" id="sc5-open">
+
+            <h3>Your Turn</h3>
+
+            <p>
+                There is no single rhetorical appeal you are required to choose here.
+                Read the message again and choose <strong>one rhetorical choice</strong>
+                that you think is worth analyzing.
+            </p>
+
+            <div class="analysis-box">
+                <label for="choiceResponse">1. Choice: What did the writer actually do?</label>
+                <textarea id="choiceResponse" placeholder="Describe one specific rhetorical choice from the message."></textarea>
+            </div>
+
+            <div class="analysis-box">
+                <label for="audienceResponse">2. Audience: Why might that choice matter to these students?</label>
+                <textarea id="audienceResponse" placeholder="Connect the specific choice to the specific audience."></textarea>
+            </div>
+
+            <div class="analysis-box">
+                <label for="humanResponse">3. Human Response: What is the writer banking on about people?</label>
+                <textarea id="humanResponse" placeholder="Explain the human tendency, concern, value, feeling, or response underneath the choice."></textarea>
+            </div>
+
+            <div class="analysis-box">
+                <label for="effectResponse">4. Effect: How could that response help accomplish the writer's purpose?</label>
+                <textarea id="effectResponse" placeholder="Explain how the choice could make the audience more receptive to the writer's purpose."></textarea>
+            </div>
+
+            <button class="continue-btn" id="checkAnalysis">Check My Reasoning &rarr;</button>
+
+            <div class="feedback" id="openFeedback" aria-live="polite"></div>
 
         </div>
+
+        <div class="complete" id="sc5-complete">
+
+            <h2>There Isn't an Answer Key This Time</h2>
+
+            <p>
+                You might have focused on the reminder that students have already invested
+                <strong>time, energy, and money</strong>. You might have focused on the advisor's
+                daily experience with degree requirements. You might have focused on the
+                relatively small request of <strong>twenty minutes</strong>, or on the language
+                about moving toward a student's goal.
+            </p>
+
+            <p>
+                Any of those choices could lead to a defensible rhetorical analysis.
+                They may even overlap across ethos, logos, and pathos.
+            </p>
+
+            <div class="framework">
+                The question is no longer "Did I guess the right appeal?"
+                <br><br>
+                The question is "Can I explain my reasoning?"
+            </div>
+
+            <p>
+                Before moving on, look back at what you wrote. Your analysis should create
+                a complete chain:
+            </p>
+
+            <p class="chain">
+                Choice &rarr; Audience &rarr; Human Response &rarr; Effect
+            </p>
+
+            <button class="continue-btn" id="finishActivity">Finish the Activity &rarr;</button>
+
+        </div>
+
     </div>
+
+
+    <!-- FINAL REFLECTION REMINDER -->
+
+    <div class="final-reflection" id="finalReflection">
+
+        <div class="scenario-label">Activity Complete</div>
+        <h2>Now Complete Your Think-Aloud Reflection</h2>
+
+        <p>
+            You have finished <em>The Human Behind the Appeal</em>. Your next step is to
+            complete the separate <strong>Think-Aloud Reflection</strong> assigned with this activity.
+        </p>
+
+        <p>
+            As you reflect, think back across the activity rather than simply summarizing
+            each scenario. Consider moments when your thinking changed, feedback that made
+            you reconsider an answer, distinctions that became clearer, or any
+            <strong>"aha" moments</strong> you had about rhetorical analysis.
+        </p>
+
+        <div class="framework">
+            The goal is not to tell me what you clicked.
+            <br><br>
+            Tell me what changed in your thinking.
+        </div>
+
+        <p>
+            Keep the central question from this activity with you as you return to your
+            own rhetorical annotation:
+        </p>
+
+        <p style="text-align:center; font-size:1.15rem;">
+            <strong>What was the writer banking on about people in order to get that response?</strong>
+        </p>
+
+    </div>
+
 </div>
+
 
 <script>
 
-const feedbackMessages = {
+/* -------------------------------------------------------
+   ACTIVITY DATA
+------------------------------------------------------- */
 
-    s1: {
-        "wrong-feelings": "The scenario does not tell us how the speaker personally feels. Look at what information she deliberately gives the audience about herself.",
-        "wrong-statistics": "There are no statistics in this statement. Her 18 years of experience describes her background, not numerical evidence about childhood nutrition.",
-        "wrong-story": "Nothing in this statement is a story. Focus on the specific information the speaker chooses to reveal about herself.",
-        "correct": "Yes. Before we even label this as ethos, we can describe what the speaker actually DID: she established that she has substantial medical experience related to the topic."
+const activity = {
+
+    sc1a: {
+        next: "sc1-choice",
+        correct: "Exactly. The pediatrician is the speaker. The children are the subject of the advice. The <strong>parents</strong> are the people she is directly trying to reach and influence.",
+        wrong: {
+            "wrong-speaker": "The pediatrician is delivering the message, so she is the <strong>speaker</strong>, not the audience.",
+            "wrong-children": "The children are important to the topic, but the pediatrician is not speaking directly to them.",
+            "wrong-general": "That audience is too broad. The scenario identifies a specific group actually receiving the message."
+        }
     },
 
-    s2: {
-        "wrong-label": "You have correctly named the appeal, but you have not explained why the audience would care. Saying something is ethos only labels the rhetorical choice. Keep going.",
-        "wrong-guarantee": "That assumes everyone responds to authority in exactly the same way. Rhetorical analysis should explain why a choice may influence an audience, not claim that it guarantees a response.",
-        "wrong-job": "Knowing that she has a job is not what makes this information rhetorically useful. Think about why THIS job matters for THIS topic and THIS audience.",
-        "correct": "Exactly. The credential matters because it connects directly to what this audience needs: reliable information about the health of their children."
+    sc1c: {
+        next: "sc1-relevance",
+        correct: "Yes. Before we label this as ethos, describe what the speaker actually DID: she established substantial medical experience related to the topic.",
+        wrong: {
+            "wrong-feelings": "The scenario does not tell us how the speaker personally feels. Focus on the information she deliberately gives the audience about herself.",
+            "wrong-statistics": "Her 18 years of experience describes her background, not numerical evidence about childhood nutrition.",
+            "wrong-story": "Nothing in this statement is a story. Focus on the specific information she reveals about herself."
+        }
     },
 
-    s3: {
-        "wrong-everything": "This goes too far. Expertise can increase credibility, but it does not guarantee that people will believe everything an expert says.",
-        "wrong-label": "This still stops at identifying ethos. The question is not what the appeal is called. Ask what the speaker expects PEOPLE to do or feel because of that credibility.",
-        "wrong-self": "That might occasionally be true for an individual, but nothing in this rhetorical situation suggests that this is the human tendency the speaker is relying on.",
-        "correct": "There it is. This is the human behavior underneath the rhetorical choice. When we do not have specialized knowledge ourselves, we often give additional weight to someone who has relevant training and experience."
+    sc1r: {
+        next: "sc1-human",
+        correct: "Exactly. The credential matters because it connects directly to what this audience needs: reliable information about the health of their children.",
+        wrong: {
+            "wrong-label": "You correctly named the appeal, but you have not explained why the audience would care. Saying something is ethos only labels the choice.",
+            "wrong-guarantee": "That assumes everyone responds to authority in exactly the same way. Rhetorical choices may influence an audience; they do not guarantee a response.",
+            "wrong-job": "Knowing that she has a job is not what makes this information useful. Think about why THIS job matters for THIS topic and THIS audience."
+        }
     },
 
-    s4: {
-        "wrong-sad": "Nothing about establishing medical expertise is designed primarily to make this audience sad. Return to the trust created by relevant expertise.",
-        "wrong-question": "That moves in the opposite direction from the likely rhetorical purpose of establishing relevant expertise. Think about what credibility might make an audience more willing to do.",
-        "wrong-guarantee": "Rhetorical analysis should not assume that an audience will automatically respond in an extreme way. Ask what response the speaker could reasonably hope to encourage.",
-        "correct": "Yes. Relevant expertise may increase this audience's trust, which may make the parents more willing to seriously consider the speaker's recommendations."
+    sc1h: {
+        next: "sc1-effect",
+        correct: "There it is. When we do not have specialized knowledge ourselves, we often give additional weight to someone who has relevant training and experience.",
+        wrong: {
+            "wrong-everything": "Expertise can increase credibility, but it does not guarantee that people will believe everything an expert says.",
+            "wrong-label": "You have identified ethos again. The question is what the speaker expects PEOPLE to do or feel because of that credibility.",
+            "wrong-self": "Nothing in this rhetorical situation suggests that people simply prefer speakers who talk about themselves."
+        }
+    },
+
+    sc1e: {
+        complete: "sc1-complete",
+        correct: "Yes. Notice the careful language: the choice <strong>may</strong> make the parents more willing to trust her later recommendations. Rhetorical choices influence audiences; they do not control them.",
+        wrong: {
+            "wrong-sad": "Nothing about establishing medical expertise is designed primarily to make this audience sad.",
+            "wrong-question": "That moves in the opposite direction from the likely purpose of establishing relevant expertise.",
+            "wrong-guarantee": "That response is too absolute. Rhetorical analysis should explain a reasonable possible effect, not guarantee audience behavior."
+        }
+    },
+
+
+    sc2a: {
+        next: "sc2-choice",
+        correct: "Exactly. The college graduate is the speaker. The <strong>first-generation college students</strong> are the specific people the speaker is trying to reach.",
+        wrong: {
+            "wrong-speaker": "The college graduate is delivering the message, so this person is the speaker.",
+            "wrong-family": "The family is part of the experience being described, but they are not receiving the talk.",
+            "wrong-general": "That is too broad. The rhetorical situation gives us a more specific audience."
+        }
+    },
+
+    sc2c: {
+        next: "sc2-relevance",
+        correct: "Exactly. The speaker deliberately reveals a personal experience that resembles what members of this audience may be experiencing themselves.",
+        wrong: {
+            "wrong-label": "Yes, this choice can help establish ethos, but you jumped ahead to labeling the appeal. What did the speaker actually DO?",
+            "wrong-advice": "The speaker may eventually offer advice, but this particular statement does not give advice.",
+            "wrong-family": "The family is mentioned, but the point is not to explain or criticize them. Focus on the experience the speaker reveals."
+        }
+    },
+
+    sc2r: {
+        next: "sc2-human",
+        correct: "Right. The value of the personal experience comes from its connection to this audience. The speaker presents themself as someone who understands a situation these students may recognize.",
+        wrong: {
+            "wrong-always": "Too broad. Personal experience does not automatically create credibility. The rhetorical value comes from the connection between THIS experience and THIS audience.",
+            "wrong-family": "The family detail matters because it establishes shared first-generation experience, not because students need information about the family.",
+            "wrong-sad": "The passage does not ask the students to pity the speaker. Look at the connection being created."
+        }
+    },
+
+    sc2h: {
+        next: "sc2-effect",
+        correct: "Exactly. People may become more receptive when they believe a speaker genuinely understands something they themselves have experienced.",
+        wrong: {
+            "wrong-label": "You identified ethos again. That still does not explain the human behavior underneath it.",
+            "wrong-same": "That is too absolute. Shared experience can create connection without requiring two people to have lived identical lives.",
+            "wrong-pity": "The speaker is building connection, not asking the audience for pity."
+        }
+    },
+
+    sc2e: {
+        complete: "sc2-complete",
+        correct: "Yes. The connection may make students more receptive to the speaker's advice because the speaker appears to understand the challenge from experience.",
+        wrong: {
+            "wrong-guarantee": "Shared experience may increase receptiveness, but it cannot guarantee that students will follow every piece of advice.",
+            "wrong-family": "Learning about the family is not the speaker's purpose.",
+            "wrong-label": "The audience does not need to identify the rhetorical appeal. Think about how the connection could affect their willingness to listen."
+        }
+    },
+
+
+    sc3a: {
+        next: "sc3-choice",
+        correct: "Exactly. The message is aimed specifically at <strong>students who may be hesitant to seek academic help</strong>.",
+        wrong: {
+            "wrong-tutors": "The tutors may help create or deliver the message, but they are not the people being persuaded to seek tutoring.",
+            "wrong-failing": "The message never limits the audience to students who are failing. Students can need help long before they reach that point.",
+            "wrong-faculty": "Faculty may encourage tutoring, but this message directly addresses students."
+        }
+    },
+
+    sc3c: {
+        next: "sc3-relevance",
+        correct: "Yes. The message changes the meaning attached to asking for help. Instead of connecting help-seeking with failure, it connects it with persistence and commitment.",
+        wrong: {
+            "wrong-label": "Pathos is a useful label, but what did the writer actually DO with the language?",
+            "wrong-fear": "There is no threat or warning here. The message takes a reassuring approach.",
+            "wrong-stat": "The message provides no evidence about tutoring outcomes."
+        }
+    },
+
+    sc3r: {
+        next: "sc3-human",
+        correct: "Exactly. The message addresses a possible emotional barrier: some students may connect needing help with a negative judgment about their own ability.",
+        wrong: {
+            "wrong-everyone": "That is too absolute. The audience is students who MAY be hesitant, not every student.",
+            "wrong-label": "Naming pathos does not explain why this particular emotional framing matters to this particular audience.",
+            "wrong-goals": "The message assumes students already care about their goals. It uses those goals to reframe help-seeking."
+        }
+    },
+
+    sc3h: {
+        next: "sc3-effect",
+        correct: "Yes. People often care about maintaining a positive sense of who they are. Reframing an action so that it fits that self-image may reduce resistance to it.",
+        wrong: {
+            "wrong-sad": "Pathos is not limited to sadness, and sadness is not what this message is trying to create.",
+            "wrong-label": "You have named pathos, but you still need to explain the human response underneath the appeal.",
+            "wrong-trick": "Rhetorical choices can influence how people understand an action, but that is different from assuming people can simply be tricked."
+        }
+    },
+
+    sc3e: {
+        complete: "sc3-complete",
+        correct: "Exactly. If asking for help can be understood as persistence rather than failure, students may feel more comfortable taking that action.",
+        wrong: {
+            "wrong-guarantee": "The message cannot eliminate every discomfort a student has about seeking help.",
+            "wrong-sad": "The purpose is not to make students emotional enough to act. Focus on how the message changes the meaning of help-seeking.",
+            "wrong-proof": "Nothing in the message promises that tutoring guarantees success."
+        }
+    },
+
+
+    sc4a: {
+        next: "sc4-choice",
+        correct: "Exactly. The message is aimed at <strong>college students who may need or consider using the pantry</strong>.",
+        wrong: {
+            "wrong-staff": "The staff members are described in the message, but they are not the people being persuaded to use the service.",
+            "wrong-public": "The message is specifically framed around college and student needs.",
+            "wrong-donors": "The message is encouraging use of the pantry, not requesting donations."
+        }
+    },
+
+    sc4c: {
+        next: "sc4-relevance",
+        correct: "Exactly. We now have several rhetorical choices operating together rather than one tidy example of one appeal.",
+        wrong: {
+            "wrong-logos": "The 2,000 meals are important, but that is only one part of the message.",
+            "wrong-pathos": "The final sentence acknowledges stress, but the message is doing more than creating an emotional response.",
+            "wrong-ethos": "The trained employees and confidentiality can build trust, but that is not the only rhetorical work happening."
+        }
+    },
+
+    sc4r: {
+        next: "sc4-human",
+        correct: "Exactly. Someone considering a food pantry may be making a complicated decision. Different parts of the message can address different concerns within that decision.",
+        wrong: {
+            "wrong-one": "Audiences are made of individual people. We should not assume every person responds identically.",
+            "wrong-label": "Writers do not need to collect all three appeals like rhetorical Pokémon. The question is why these particular choices are useful for this audience.",
+            "wrong-number": "The number provides useful evidence, but students may also have concerns about privacy, legitimacy, dignity, or whether the service is meant for them."
+        }
+    },
+
+    sc4h: {
+        next: "sc4-effect",
+        correct: "Yes. Vulnerable decisions can involve both practical and emotional concerns. Addressing several of those concerns may reduce different forms of resistance.",
+        wrong: {
+            "wrong-guarantee": "The presence of several appeals cannot guarantee behavior.",
+            "wrong-label": "That names the appeals without explaining what is happening in the audience.",
+            "wrong-stat": "Statistics can provide useful evidence, but people do not automatically trust every service that includes a number."
+        }
+    },
+
+    sc4e: {
+        complete: "sc4-complete",
+        correct: "Exactly. The message works toward reducing several possible barriers at once, which may make students more comfortable considering the service.",
+        wrong: {
+            "wrong-guarantee": "Even a strong message cannot guarantee that every student will use the pantry.",
+            "wrong-pity": "The message is aimed at potential pantry users, not primarily at donors.",
+            "wrong-three": "Again, the audience does not need to notice the rhetorical labels. The effect happens through their response to the message."
+        }
+    },
+
+
+    sc5a: {
+        next: "sc5-open",
+        correct: "Exactly. The message is directed at <strong>current college students preparing to choose next semester's classes</strong>.",
+        wrong: {
+            "wrong-advisors": "Advisors are discussed in the message, but they are not being persuaded to schedule an advising appointment.",
+            "wrong-future": "The audience has already invested in college and is preparing to choose next semester's classes.",
+            "wrong-faculty": "Faculty may care about advising, but the message directly addresses students choosing their own courses."
+        }
     }
-};
-const scenario2Feedback = {
 
-    s2c1: {
-        "wrong-label": "Yes, this choice can help establish ethos, but you jumped ahead to labeling the appeal. Before we analyze what a rhetorical choice does, we need to describe what the speaker actually DID. Look at the specific information the speaker chose to share.",
-        "wrong-advice": "The speaker may eventually offer advice, but this particular statement does not give the students advice. Focus only on the rhetorical choice we can actually see in the quoted passage.",
-        "wrong-family": "The speaker mentions that no one in the family had been through college before, but the point of the statement is not to explain or criticize the family. Look at the experience the speaker is revealing and how closely it resembles the audience's experience.",
-        "correct": "Exactly. The speaker deliberately reveals a personal experience that resembles what members of this audience may be experiencing themselves. Now we can begin asking why that choice might matter."
-    }
 };
-const nextSteps = {
-    s1: "step2",
-    s2: "step3",
-    s3: "step4"
-};
-document.querySelectorAll(".audience-choice").forEach(function(button) {
+
+
+/* -------------------------------------------------------
+   GENERIC MULTIPLE-CHOICE ENGINE
+------------------------------------------------------- */
+
+document.querySelectorAll(".choice").forEach(function(button) {
 
     button.addEventListener("click", function() {
 
+        const group = button.dataset.group;
         const answer = button.dataset.answer;
-        const feedback = document.getElementById("audienceFeedback");
+
+        if (!activity[group]) {
+            return;
+        }
+
+        const data = activity[group];
+        const feedback = document.getElementById(group + "-feedback");
 
         feedback.style.display = "block";
 
@@ -579,173 +1217,46 @@ document.querySelectorAll(".audience-choice").forEach(function(button) {
 
             feedback.className = "feedback correct";
 
+            let buttonText = "Continue &rarr;";
+
+            if (group.endsWith("a")) {
+                buttonText = "Begin the Analysis &rarr;";
+            }
+
+            if (data.complete) {
+                buttonText = "See the Full Analysis &rarr;";
+            }
+
             feedback.innerHTML =
-                "<h4>Exactly.</h4>" +
-                "<p>The pediatrician is the speaker. The children are the subject of the advice. But the <strong>parents</strong> are the people she is directly trying to reach and influence.</p>" +
-                '<button class="continue-btn" id="startAnalysis">Begin the Analysis &rarr;</button>';
+                "<h4>Yes. Keep going.</h4>" +
+                "<p>" + data.correct + "</p>" +
+                '<button class="continue-btn generated-continue">' + buttonText + "</button>";
 
-            document.getElementById("startAnalysis").addEventListener("click", function() {
+            const continueButton = feedback.querySelector(".generated-continue");
 
-                document.getElementById("startAnalysis").style.display = "none";
+            continueButton.addEventListener("click", function() {
 
-                const step1 = document.getElementById("step1");
-                step1.classList.add("active");
+                continueButton.style.display = "none";
 
-                step1.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
+                if (data.next) {
+                    revealElement(data.next);
+                }
+
+                if (data.complete) {
+                    const complete = document.getElementById(data.complete);
+                    complete.style.display = "block";
+                    complete.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+                }
             });
 
         } else {
 
             feedback.className = "feedback wrong";
 
-            let message = "";
-
-            if (answer === "wrong-doctor") {
-                message = "The pediatrician is the person delivering the message, so she is the <strong>speaker</strong>, not the audience. Ask yourself: Who is she trying to influence?";
-            }
-
-            if (answer === "wrong-children") {
-                message = "The children are important to the topic, but the pediatrician is not speaking directly to them. Who is actually receiving this presentation?";
-            }
-
-            if (answer === "wrong-general") {
-                message = "That audience is too broad for the rhetorical situation we have been given. The scenario identifies a specific group of people who are actually receiving the message.";
-            }
-
-            feedback.innerHTML =
-                "<h4>Not quite yet.</h4>" +
-                "<p>" + message + "</p>" +
-                "<p><strong>Identify who the speaker is actually trying to reach, then try again.</strong></p>";
-        }
-    });
-});
-   document.querySelectorAll(".scenario2-audience").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const answer = button.dataset.answer;
-        const feedback = document.getElementById("s2AudienceFeedback");
-
-        feedback.style.display = "block";
-
-        if (answer === "correct") {
-
-            feedback.className = "feedback correct";
-
-            feedback.innerHTML =
-    "<h4>Exactly.</h4>" +
-    "<p>The college graduate is the speaker, and the speaker's family is part of the experience being described. The <strong>first-generation college students</strong> are the specific people the speaker is trying to reach.</p>" +
-    "<p><strong>Keep that audience in mind. Every rhetorical choice we analyze next should eventually connect back to them.</strong></p>" +
-    '<button class="continue-btn" id="startScenario2">Begin the Analysis &rarr;</button>';
-
-document.getElementById("startScenario2").addEventListener("click", function() {
-
-    document.getElementById("startScenario2").style.display = "none";
-
-    const step1 = document.getElementById("s2step1");
-    step1.classList.add("active");
-
-    step1.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-});
-        } else {
-
-            feedback.className = "feedback wrong";
-
-            let message = "";
-
-            if (answer === "wrong-speaker") {
-                message = "The college graduate is delivering the message, so this person is the <strong>speaker</strong>, not the audience. Who is actually receiving the talk?";
-            }
-
-            if (answer === "wrong-family") {
-                message = "The speaker's family is mentioned as part of the personal experience, but they are not the people receiving this message.";
-            }
-
-            if (answer === "wrong-general") {
-                message = "Some of this advice might apply to many college students, but the rhetorical situation gives us a more specific audience. When a specific audience is identified, use that information rather than broadening it.";
-            }
-
-            feedback.innerHTML =
-                "<h4>Not quite yet.</h4>" +
-                "<p>" + message + "</p>" +
-                "<p><strong>Identify who the speaker is actually trying to reach, then try again.</strong></p>";
-        }
-    });
-});
-   document.querySelectorAll(".scenario2-analysis").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const step = button.dataset.step;
-        const answer = button.dataset.answer;
-        const feedback = document.getElementById(step + "feedback");
-        const message = scenario2Feedback[step][answer];
-
-        feedback.style.display = "block";
-
-        if (answer === "correct") {
-
-            feedback.className = "feedback correct";
-
-            feedback.innerHTML =
-                "<h4>Yes. Keep going.</h4>" +
-                "<p>" + message + "</p>";
-
-        } else {
-
-            feedback.className = "feedback wrong";
-
-            feedback.innerHTML =
-                "<h4>Not quite yet.</h4>" +
-                "<p>" + message + "</p>" +
-                "<p><strong>Think about the feedback, then try again.</strong></p>";
-        }
-    });
-});
-document.querySelectorAll(".choice:not(.audience-choice):not(.scenario2-audience):not(.scenario2-analysis)").forEach(function(button) {
-    button.addEventListener("click", function() {
-
-        const step = button.dataset.step;
-        const answer = button.dataset.answer;
-        const feedback = document.getElementById(step + "feedback");
-        const message = feedbackMessages[step][answer];
-
-        feedback.style.display = "block";
-
-        if (answer === "correct") {
-
-            feedback.className = "feedback correct";
-
-            if (step === "s4") {
-
-                feedback.innerHTML =
-                    "<h4>Yes. That completes the chain.</h4>" +
-                    "<p>" + message + "</p>" +
-                    '<button class="continue-btn" id="finishButton">See the Full Analysis &rarr;</button>';
-
-                document.getElementById("finishButton").addEventListener("click", finishScenario);
-
-            } else {
-
-                feedback.innerHTML =
-                    "<h4>Yes. Keep going.</h4>" +
-                    "<p>" + message + "</p>" +
-                    '<button class="continue-btn" id="continue-' + step + '">Continue &rarr;</button>';
-
-                document.getElementById("continue-" + step).addEventListener("click", function() {
-                    continueActivity(step);
-                });
-            }
-
-        } else {
-
-            feedback.className = "feedback wrong";
+            const message = data.wrong[answer] || "Look closely at the rhetorical situation and try again.";
 
             feedback.innerHTML =
                 "<h4>Not quite yet.</h4>" +
@@ -755,36 +1266,167 @@ document.querySelectorAll(".choice:not(.audience-choice):not(.scenario2-audience
     });
 });
 
-function continueActivity(currentStep) {
 
-    const feedback = document.getElementById(currentStep + "feedback");
-    const button = feedback.querySelector(".continue-btn");
+function revealElement(id) {
 
-    if (button) {
-        button.style.display = "none";
+    const element = document.getElementById(id);
+
+    if (!element) {
+        return;
     }
 
-    const next = document.getElementById(nextSteps[currentStep]);
+    element.classList.add("active");
 
-    next.classList.add("active");
-
-    next.scrollIntoView({
+    element.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
 }
 
-function finishScenario() {
 
-    const complete = document.getElementById("scenarioComplete");
+/* -------------------------------------------------------
+   MOVE BETWEEN SCENARIOS
+------------------------------------------------------- */
 
-    complete.style.display = "block";
+document.querySelectorAll("[data-next-scenario]").forEach(function(button) {
 
-    complete.scrollIntoView({
+    button.addEventListener("click", function() {
+
+        const nextNumber = button.dataset.nextScenario;
+
+        document.querySelectorAll(".scenario-card").forEach(function(card) {
+            card.classList.remove("active");
+        });
+
+        const nextScenario = document.getElementById("scenario" + nextNumber);
+        nextScenario.classList.add("active");
+
+        updateProgress(Number(nextNumber));
+
+        nextScenario.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});
+
+
+function updateProgress(number) {
+
+    document.getElementById("progressLabel").textContent =
+        "Scenario " + number + " of 5";
+
+    document.getElementById("progressFill").style.width =
+        (number * 20) + "%";
+}
+
+
+/* -------------------------------------------------------
+   REALITY CHECK
+------------------------------------------------------- */
+
+document.getElementById("showRealityCheck").addEventListener("click", function() {
+
+    document.getElementById("scenario4").classList.remove("active");
+
+    const reality = document.getElementById("realityCheck");
+    reality.style.display = "block";
+
+    document.getElementById("progressLabel").textContent =
+        "Reality Check: Before Scenario 5";
+
+    reality.scrollIntoView({
         behavior: "smooth",
         block: "start"
     });
-}
+});
+
+
+document.getElementById("startScenario5").addEventListener("click", function() {
+
+    document.getElementById("realityCheck").style.display = "none";
+
+    const scenario5 = document.getElementById("scenario5");
+    scenario5.classList.add("active");
+
+    updateProgress(5);
+
+    scenario5.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+
+/* -------------------------------------------------------
+   SCENARIO 5 OPEN ANALYSIS
+------------------------------------------------------- */
+
+document.getElementById("checkAnalysis").addEventListener("click", function() {
+
+    const choice = document.getElementById("choiceResponse").value.trim();
+    const audience = document.getElementById("audienceResponse").value.trim();
+    const human = document.getElementById("humanResponse").value.trim();
+    const effect = document.getElementById("effectResponse").value.trim();
+
+    const feedback = document.getElementById("openFeedback");
+
+    feedback.style.display = "block";
+
+    if (!choice || !audience || !human || !effect) {
+
+        feedback.className = "feedback wrong";
+
+        feedback.innerHTML =
+            "<h4>Your chain is not complete yet.</h4>" +
+            "<p>Make sure you have written something for all four parts: <strong>Choice, Audience, Human Response, and Effect.</strong></p>" +
+            "<p>This time, I am not checking for a secret correct answer. I am checking whether you have actually worked through the entire reasoning process.</p>";
+
+        return;
+    }
+
+    feedback.className = "feedback correct";
+
+    feedback.innerHTML =
+        "<h4>You built the whole chain.</h4>" +
+        "<p>There is no single answer key for this scenario. Your job now is to look at the four pieces you wrote and ask whether they actually connect to one another.</p>" +
+        "<p><strong>Does the human response you described help explain why THAT choice might matter to THIS audience and produce the effect you identified?</strong></p>" +
+        '<button class="continue-btn" id="reviewOpenAnalysis">Review the Final Lesson &rarr;</button>';
+
+    document.getElementById("reviewOpenAnalysis").addEventListener("click", function() {
+
+        const complete = document.getElementById("sc5-complete");
+        complete.style.display = "block";
+
+        complete.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+});
+
+
+/* -------------------------------------------------------
+   FINISH
+------------------------------------------------------- */
+
+document.getElementById("finishActivity").addEventListener("click", function() {
+
+    document.getElementById("scenario5").classList.remove("active");
+
+    const finalReflection = document.getElementById("finalReflection");
+    finalReflection.style.display = "block";
+
+    document.getElementById("progressLabel").textContent =
+        "Activity Complete";
+
+    document.getElementById("progressFill").style.width = "100%";
+
+    finalReflection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
 
 </script>
 
