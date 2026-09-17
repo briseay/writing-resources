@@ -275,8 +275,35 @@
             Early in the presentation, she explains that she has practiced pediatric
             medicine for 18 years.
         </div>
+        <div class="step active" id="audienceCheck">
 
-        <div class="step active" id="step1">
+            <h3>First: Who Is the Audience?</h3>
+
+            <p class="step-question">
+                Before analyzing any rhetorical choice, make sure you know who the speaker is trying to reach.
+                Who is the primary audience in this scenario?
+            </p>
+
+            <button class="choice audience-choice" data-answer="wrong-doctor">
+                The pediatrician
+            </button>
+
+            <button class="choice audience-choice" data-answer="correct">
+                The parents
+            </button>
+
+            <button class="choice audience-choice" data-answer="wrong-children">
+                The children
+            </button>
+
+            <button class="choice audience-choice" data-answer="wrong-general">
+                Anyone interested in nutrition
+            </button>
+
+            <div class="feedback" id="audienceFeedback" aria-live="polite"></div>
+
+        </div>
+  <div class="step" id="step1">
 
             <h3>Step 1: Choice</h3>
 
@@ -462,8 +489,63 @@ const nextSteps = {
     s2: "step3",
     s3: "step4"
 };
+document.querySelectorAll(".audience-choice").forEach(function(button) {
 
-document.querySelectorAll(".choice").forEach(function(button) {
+    button.addEventListener("click", function() {
+
+        const answer = button.dataset.answer;
+        const feedback = document.getElementById("audienceFeedback");
+
+        feedback.style.display = "block";
+
+        if (answer === "correct") {
+
+            feedback.className = "feedback correct";
+
+            feedback.innerHTML =
+                "<h4>Exactly.</h4>" +
+                "<p>The pediatrician is the speaker. The children are the subject of the advice. But the <strong>parents</strong> are the people she is directly trying to reach and influence.</p>" +
+                '<button class="continue-btn" id="startAnalysis">Begin the Analysis &rarr;</button>';
+
+            document.getElementById("startAnalysis").addEventListener("click", function() {
+
+                document.getElementById("startAnalysis").style.display = "none";
+
+                const step1 = document.getElementById("step1");
+                step1.classList.add("active");
+
+                step1.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+
+        } else {
+
+            feedback.className = "feedback wrong";
+
+            let message = "";
+
+            if (answer === "wrong-doctor") {
+                message = "The pediatrician is the person delivering the message, so she is the <strong>speaker</strong>, not the audience. Ask yourself: Who is she trying to influence?";
+            }
+
+            if (answer === "wrong-children") {
+                message = "The children are important to the topic, but the pediatrician is not speaking directly to them. Who is actually receiving this presentation?";
+            }
+
+            if (answer === "wrong-general") {
+                message = "That audience is too broad for the rhetorical situation we have been given. The scenario identifies a specific group of people who are actually receiving the message.";
+            }
+
+            feedback.innerHTML =
+                "<h4>Not quite yet.</h4>" +
+                "<p>" + message + "</p>" +
+                "<p><strong>Identify who the speaker is actually trying to reach, then try again.</strong></p>";
+        }
+    });
+});
+document.querySelectorAll(".choice:not(.audience-choice)").forEach(function(button) {
 
     button.addEventListener("click", function() {
 
