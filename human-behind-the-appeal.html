@@ -448,7 +448,50 @@
         </div>
 
     </div>
+    <!-- SCENARIO 2 -->
+       <div class="card" id="scenario2">
 
+        <div class="scenario-label">Scenario 2: Shared Experience</div>
+
+        <h2>Connection as Credibility</h2>
+
+        <div class="scenario">
+            A college graduate is speaking to a group of first-generation college students
+            about adjusting to college. Early in the talk, the speaker says,
+            <strong>"When I started college, no one in my family had been through this before.
+            During my first semester, I felt completely lost too."</strong>
+        </div>
+
+        <div class="step active" id="s2AudienceCheck">
+
+            <h3>First: Who Is the Audience?</h3>
+
+            <p class="step-question">
+                Before analyzing any rhetorical choice, make sure you know who the speaker
+                is trying to reach. Who is the primary audience in this scenario?
+            </p>
+
+            <button class="choice scenario2-audience" data-answer="wrong-speaker">
+                The college graduate
+            </button>
+
+            <button class="choice scenario2-audience" data-answer="correct">
+                First-generation college students
+            </button>
+
+            <button class="choice scenario2-audience" data-answer="wrong-family">
+                The speaker's family
+            </button>
+
+            <button class="choice scenario2-audience" data-answer="wrong-general">
+                All college students
+            </button>
+
+            <div class="feedback" id="s2AudienceFeedback" aria-live="polite"></div>
+
+        </div>
+
+    </div>
 </div>
 
 <script>
@@ -545,7 +588,50 @@ document.querySelectorAll(".audience-choice").forEach(function(button) {
         }
     });
 });
-document.querySelectorAll(".choice:not(.audience-choice)").forEach(function(button) {
+   document.querySelectorAll(".scenario2-audience").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const answer = button.dataset.answer;
+        const feedback = document.getElementById("s2AudienceFeedback");
+
+        feedback.style.display = "block";
+
+        if (answer === "correct") {
+
+            feedback.className = "feedback correct";
+
+            feedback.innerHTML =
+                "<h4>Exactly.</h4>" +
+                "<p>The college graduate is the speaker, and the speaker's family is part of the experience being described. The <strong>first-generation college students</strong> are the specific people the speaker is trying to reach.</p>" +
+                "<p><strong>Keep that audience in mind. Every rhetorical choice we analyze next should eventually connect back to them.</strong></p>";
+
+        } else {
+
+            feedback.className = "feedback wrong";
+
+            let message = "";
+
+            if (answer === "wrong-speaker") {
+                message = "The college graduate is delivering the message, so this person is the <strong>speaker</strong>, not the audience. Who is actually receiving the talk?";
+            }
+
+            if (answer === "wrong-family") {
+                message = "The speaker's family is mentioned as part of the personal experience, but they are not the people receiving this message.";
+            }
+
+            if (answer === "wrong-general") {
+                message = "Some of this advice might apply to many college students, but the rhetorical situation gives us a more specific audience. When a specific audience is identified, use that information rather than broadening it.";
+            }
+
+            feedback.innerHTML =
+                "<h4>Not quite yet.</h4>" +
+                "<p>" + message + "</p>" +
+                "<p><strong>Identify who the speaker is actually trying to reach, then try again.</strong></p>";
+        }
+    });
+});
+document.querySelectorAll(".choice:not(.audience-choice):not(.scenario2-audience)").forEach(function(button) {
 
     button.addEventListener("click", function() {
 
